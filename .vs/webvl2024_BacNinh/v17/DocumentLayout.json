@@ -1,0 +1,118 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_bacninh\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|e:\\webvl2024_bacninh\\webvl2024_bacninh\\webvl2024_bacninh\\views\\account\\_mainjob.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\views\\account\\_mainjob.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_bacninh\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_bacninh\\views\\account\\_maincandidate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\views\\account\\_maincandidate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_bacninh\\views\\account\\_candidatecategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\views\\account\\_candidatecategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_bacninh\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_MainCandidate.cshtml",
+              "DocumentMoniker": "E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_MainCandidate.cshtml",
+              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Views\\Account\\_MainCandidate.cshtml",
+              "ToolTip": "E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_MainCandidate.cshtml",
+              "RelativeToolTip": "webvl2024_BacNinh\\Views\\Account\\_MainCandidate.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAADoAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-19T11:54:54.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_MainJob.cshtml",
+              "DocumentMoniker": "E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_MainJob.cshtml",
+              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Views\\Account\\_MainJob.cshtml",
+              "ToolTip": "E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_MainJob.cshtml",
+              "RelativeToolTip": "webvl2024_BacNinh\\Views\\Account\\_MainJob.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACMAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-19T11:48:36.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_BacNinh\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_BacNinh\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "webvl2024_BacNinh\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABYAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T14:49:33.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "JobController.cs",
+              "DocumentMoniker": "E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_BacNinh\\Controllers\\JobController.cs",
+              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Controllers\\JobController.cs",
+              "ToolTip": "E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_BacNinh\\Controllers\\JobController.cs",
+              "RelativeToolTip": "webvl2024_BacNinh\\Controllers\\JobController.cs",
+              "ViewState": "AQIAAIUBAAAAAAAAAAAwwJIBAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T14:25:48.469Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_CandidateCategory.cshtml",
+              "DocumentMoniker": "E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_CandidateCategory.cshtml",
+              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Views\\Account\\_CandidateCategory.cshtml",
+              "ToolTip": "E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_CandidateCategory.cshtml",
+              "RelativeToolTip": "webvl2024_BacNinh\\Views\\Account\\_CandidateCategory.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAADAAAABuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-17T08:00:18.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_BacNinh\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Controllers\\AccountController.cs",
+              "ToolTip": "E:\\webvl2024_BacNinh\\webvl2024_BacNinh\\webvl2024_BacNinh\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "webvl2024_BacNinh\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAACECAAAAAAAAAAAYwDkCAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T08:26:39.803Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
