@@ -115,35 +115,54 @@ namespace webvl2024_BacNinh.DAO
         }
         public static List<New_small> Get_NewQCslideNOisActive(ModelBN db, int skip, int take)
         {//chỉ có 10 tin nổi bật
-            var dataphien = db.News.Where(kh => kh.CategoryId == 3303 && kh.isActive==true).Count();
+            //var dataphien = db.News.Where(kh => kh.CategoryId == 3303 && kh.isActive==true).Count();
+            //var model = new List<New_small>();
+            //if (skip == 0 && take == 1)
+            //{//chọn "Thông báo và kết quả Phiên giao dịch việc làm: 3303"
+            //    if (dataphien > 0)
+            //    {
+            //        model = model_NewsSlide.Where(kh => kh.CategoryId == 3303).ToList();
+            //    }
+            //    else
+            //    {
+            //        model = model_NewsSlide.OrderBy(kh => kh.CategoryId)
+            //                        .ThenByDescending(kh => kh.Createdate)
+            //                        .Take(1)
+            //                        .ToList();
+            //    }
+            //}else if(skip ==0 && take > 1)
+            //{// lấy theo ngày mới
+            //    model = model_NewsSlide.OrderByDescending(kh => kh.Createdate)
+            //                            .Take(take)
+            //                            .ToList();
+            //}
+            //else if(skip > 0)
+            //{// ưu tiên "Đào tạo, dạy nghề: 3680"
+            //    model = model_NewsSlide.Where(kh => kh.CategoryId != 3303)
+            //            .OrderBy(kh => kh.CategoryId).ThenByDescending(kh => kh.Createdate)
+            //            .Skip(skip)
+            //            .Take(take)
+            //            .ToList();
+            //} 
             var model = new List<New_small>();
             if (skip == 0 && take == 1)
-            {//chọn "Thông báo và kết quả Phiên giao dịch việc làm: 3303"
-                if (dataphien > 0)
-                {
-                    model = model_NewsSlide.Where(kh => kh.CategoryId == 3303).ToList();
-                }
-                else
-                {
-                    model = model_NewsSlide.OrderBy(kh => kh.CategoryId)
-                                    .ThenByDescending(kh => kh.Createdate)
+            {
+                model = model_NewsSlide
                                     .Take(1)
                                     .ToList();
-                }
-            }else if(skip ==0 && take > 1)
-            {// lấy theo ngày mới
-                model = model_NewsSlide.OrderByDescending(kh => kh.Createdate)
-                                        .Take(take)
-                                        .ToList();
             }
-            else if(skip > 0)
-            {// ưu tiên "Đào tạo, dạy nghề: 3680"
-                model = model_NewsSlide.Where(kh => kh.CategoryId != 3303)
-                        .OrderBy(kh => kh.CategoryId).ThenByDescending(kh => kh.Createdate)
+            else if (skip == 0 && take > 1)
+            {
+                model = model_NewsSlide.Take(1).Take(take).ToList();
+            }
+            else if (skip > 0)
+            {
+                model = model_NewsSlide
                         .Skip(skip)
                         .Take(take)
                         .ToList();
-            } 
+            }
+
             return model;
         }
         public List<New_small> Get_NewCategoryId(int CategoryId, int skip, int take)

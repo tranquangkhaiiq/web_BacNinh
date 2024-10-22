@@ -6025,7 +6025,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58931</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44312/</IISUrl>
+          <IISUrl>http://localhost:44312/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:44312/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
