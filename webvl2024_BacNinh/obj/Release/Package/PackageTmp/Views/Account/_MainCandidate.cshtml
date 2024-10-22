@@ -18,7 +18,11 @@
                     $.ajax({
                         url: "/Account/_CandidateDoc",
                         success: function (respone) {
-                            $("#Candidate_Mana").html(respone);
+                            if (respone == "No") {
+                                location.reload();
+                            } else {
+                                $("#Candidate_Mana").html(respone);
+                            }
                         }
                     });
                 });
@@ -27,11 +31,16 @@
                     $.ajax({
                         url: "/Account/_CandidateManagement",
                         success: function (respone) {
-                            setTimeout(function () {
-                                $("#Candidate_Mana").html(respone);
-                                //1s sau hiên lên
-                            }, 800);
-                            $("#loadingTD").hide();
+                            if (respone == "No") {
+                                location.reload();
+                            } else {
+                                setTimeout(function () {
+                                    $("#Candidate_Mana").html(respone);
+                                    //1s sau hiên lên
+                                }, 600);
+                                $("#loadingTD").hide();
+                            }
+                            
                         }
                     });
                 });
@@ -39,14 +48,15 @@
                     $.ajax({
                         url: "/Account/_CandidateInfo",
                         success: function (respone) {
-                            $("#Candidate_Mana").html(respone);
+                            if (respone == "No") {
+                                location.reload();
+                            } else {
+                                $("#Candidate_Mana").html(respone);
+                            }
                         }
                     });
                 });
             });
-            
-
-
         </script>
         @Html.Action("_CandidateDoc", "Account")
 

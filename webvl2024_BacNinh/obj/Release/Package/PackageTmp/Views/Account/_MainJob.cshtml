@@ -16,7 +16,11 @@
                     $.ajax({
                         url: "/Account/_JobDoc",
                         success: function (respone) {
-                            $("#Candidate_Mana").html(respone);
+                            if (respone == "No") {
+                                location.reload();
+                            } else {
+                                $("#Candidate_Mana").html(respone);
+                            }
                         }
                     });
                 });
@@ -25,11 +29,15 @@
                     $.ajax({
                         url: "/Account/_JobManagement",
                         success: function (respone) {
-                            setTimeout(function () {
-                                $("#Candidate_Mana").html(respone);
-                                //1s sau hiên lên
-                            }, 800);
-                            $("#loadingTVL").hide();
+                            if (respone == "No") {
+                                location.reload();
+                            } else {
+                                setTimeout(function () {
+                                    $("#Candidate_Mana").html(respone);
+                                    //1s sau hiên lên
+                                }, 600);
+                                $("#loadingTVL").hide();
+                            }
                         }
                     });
                 });
@@ -37,14 +45,15 @@
                     $.ajax({
                         url: "/Account/_JobInfo",
                         success: function (respone) {
-                            $("#Candidate_Mana").html(respone);
+                            if (respone == "No") {
+                                location.reload();
+                            } else {
+                                $("#Candidate_Mana").html(respone);
+                            }
                         }
                     });
                 });
             });
-
-
-
         </script>
         @Html.Action("_JobDoc", "Account")
     </div>
