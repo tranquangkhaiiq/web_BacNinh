@@ -5357,6 +5357,8 @@
     <Content Include="Content\Upload\News_Img\SlideLong321.jpg" />
     <Content Include="Content\Upload\QuangCao\customer-service.jpg" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont3295.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -5866,6 +5868,16 @@
     <Content Include="Content\Upload\News_Img\thutuchc\thongbaocovieclam-mau23.docx" />
     <Content Include="Content\Upload\News_Img\thutuchc\thongbaotimvieclam.docx" />
     <Content Include="Content\Upload\News_Img\thutuchc\TuVan,GTVL.docx" />
+    <Content Include="fonts\fontawesome-webfont3295.eot" />
+    <Content Include="fonts\fontawesome-webfont3295.ttf" />
+    <Content Include="fonts\fontawesome-webfont3295.woff" />
+    <Content Include="fonts\fontawesome-webfont3295.woff2" />
+    <Content Include="fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regulard41d.eot" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

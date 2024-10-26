@@ -3,33 +3,32 @@
   "WorkspaceRootPath": "E:\\GitHubDestop\\web_BacNinh\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|e:\\githubdestop\\web_bacninh\\webvl2024_bacninh\\views\\candidate\\_createcv.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\views\\candidate\\_createcv.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|e:\\githubdestop\\web_bacninh\\webvl2024_bacninh\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|e:\\githubdestop\\web_bacninh\\webvl2024_bacninh\\utils\\xstring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\utils\\xstring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\GitHubDestop\\web_BacNinh\\webvl2024_bacninh\\models\\dm_diachi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\models\\dm_diachi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\GitHubDestop\\web_BacNinh\\webvl2024_bacninh\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\GitHubDestop\\web_BacNinh\\webvl2024_bacninh\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|e:\\githubdestop\\web_bacninh\\webvl2024_bacninh\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\GitHubDestop\\web_BacNinh\\webvl2024_bacninh\\models\\khachhang_timvieclam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\models\\khachhang_timvieclam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\GitHubDestop\\web_BacNinh\\webvl2024_bacninh\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\GitHubDestop\\web_BacNinh\\webvl2024_bacninh\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|webvl2024_BacNinh||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Documents\\IISExpress\\config\\applicationhost.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\GitHubDestop\\web_BacNinh\\webvl2024_bacninh\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|e:\\githubdestop\\web_bacninh\\webvl2024_bacninh\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|909d16b3-c8e8-43d1-a2b8-26ea0d4b6b57"
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\GitHubDestop\\web_BacNinh\\webvl2024_bacninh\\utils\\xstring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\utils\\xstring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,19 +43,68 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_CreateCV.cshtml",
-              "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Views\\Candidate\\_CreateCV.cshtml",
-              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Views\\Candidate\\_CreateCV.cshtml",
-              "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Views\\Candidate\\_CreateCV.cshtml",
-              "RelativeToolTip": "webvl2024_BacNinh\\Views\\Candidate\\_CreateCV.cshtml",
-              "ViewState": "AQIAABkAAAAAAAAAAAAAACQAAAAnAAAA",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "webvl2024_BacNinh\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAOcAAAAAAAAAAAAAAKQAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T08:43:31.843Z",
+              "WhenOpened": "2024-10-26T13:14:13.006Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "DM_DiaChi.cs",
+              "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Models\\DM_DiaChi.cs",
+              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Models\\DM_DiaChi.cs",
+              "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Models\\DM_DiaChi.cs",
+              "RelativeToolTip": "webvl2024_BacNinh\\Models\\DM_DiaChi.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAA+wCIAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T04:34:09.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "KhachHang.cs",
+              "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Models\\KhachHang.cs",
+              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Models\\KhachHang.cs",
+              "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Models\\KhachHang.cs",
+              "RelativeToolTip": "webvl2024_BacNinh\\Models\\KhachHang.cs",
+              "ViewState": "AQIAAH4AAAAAAAAAAAAIwI0AAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T04:32:43.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KhachHang_TimViecLam.cs",
+              "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Models\\KhachHang_TimViecLam.cs",
+              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Models\\KhachHang_TimViecLam.cs",
+              "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Models\\KhachHang_TimViecLam.cs",
+              "RelativeToolTip": "webvl2024_BacNinh\\Models\\KhachHang_TimViecLam.cs",
+              "ViewState": "AQIAAHwAAAAAAAAAAAA0wJoAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T04:31:15.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "webvl2024_BacNinh\\App_Start\\RouteConfig.cs",
+              "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "webvl2024_BacNinh\\App_Start\\RouteConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T04:23:05.723Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "XString.cs",
               "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Utils\\XString.cs",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\Utils\\XString.cs",
@@ -64,68 +112,19 @@
               "RelativeToolTip": "webvl2024_BacNinh\\Utils\\XString.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAIAxwBEAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T08:21:56.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T08:21:56.17Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "applicationhost.config",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\IISExpress\\config\\applicationhost.config",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\IISExpress\\config\\applicationhost.config",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-10-22T03:53:23.521Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "webvl2024_BacNinh",
-              "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\webvl2024_BacNinh.csproj",
-              "RelativeDocumentMoniker": "webvl2024_BacNinh\\webvl2024_BacNinh.csproj",
-              "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\webvl2024_BacNinh.csproj",
-              "RelativeToolTip": "webvl2024_BacNinh\\webvl2024_BacNinh.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-10-22T03:45:28.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Web.config",
-              "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Web.config",
-              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Web.config",
-              "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Web.config",
-              "RelativeToolTip": "webvl2024_BacNinh\\Web.config",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAABkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-10-22T03:18:14.445Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "HomeController.cs",
               "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\Controllers\\HomeController.cs",
               "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Controllers\\HomeController.cs",
               "RelativeToolTip": "webvl2024_BacNinh\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAywFMAAAA6AAAA",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAywFQAAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T14:49:33.594Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "JobController.cs",
-              "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Controllers\\JobController.cs",
-              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Controllers\\JobController.cs",
-              "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Controllers\\JobController.cs",
-              "RelativeToolTip": "webvl2024_BacNinh\\Controllers\\JobController.cs",
-              "ViewState": "AQIAAIUBAAAAAAAAAAAwwJIBAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T14:25:48.469Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T14:49:33.594Z"
             }
           ]
         }
