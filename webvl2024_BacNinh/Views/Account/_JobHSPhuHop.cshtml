@@ -1,0 +1,38 @@
+﻿@using webvl2024_BacNinh.Models.table_mirro
+@using webvl2024_BacNinh.i18n
+@using webvl2024_BacNinh.Utils
+@using webvl2024_BacNinh.DAO
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<table class="table table-hover table-striped" style="box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2)">
+    <thead>
+        <tr style="background-color: #efce05; color: white">
+            <th>@Common.Title</th>
+            <th>Mã HS</th>
+            <th>@Common.Name</th>
+            <th>@Common.CreatedDate</th>
+            <th>@Common.Detail</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (KhachHang_TimViecLam_mirro Item in ViewBag.HSPhuHop)
+        {
+            var NTV = new NTV_KhachHang_Dao().GetNTV_ByKHID(Item.KH_ID);
+            var str = XString.ConvertToUnSign(NTV.HoTen);
+            var url = "/Nguoi-Tim-Viec/" + str.Replace("/", "-") + "-" + Item.TimViec_ID;
+            if (NTV != null)
+            {
+                <tr>
+                    <td>@Item.TenHoSo.Trim()</td>
+                    <td>@Item.TimViec_ID</td>
+                    <td>@NTV.HoTen</td>
+                    <td>@Html.FormatValue(Item.NgayTao, "{0:dd/MM/yyyy}")</td>
+                    <td>
+                        <a class="btn btn-success" href="@url" target="_blank"><span class="glyphicon glyphicon-eye-open"></span></a>
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>

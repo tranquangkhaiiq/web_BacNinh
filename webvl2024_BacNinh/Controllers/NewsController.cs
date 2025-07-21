@@ -95,6 +95,7 @@ namespace webvl2024_BacNinh.Controllers
                 {
                     model.View++;
                 }
+
                 dbc.SaveChanges();
                 Session[newgues] = "daxemnews";
             }

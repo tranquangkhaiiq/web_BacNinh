@@ -96,6 +96,7 @@
                                     if (ViewBag.HSNTVungtuyen > 0)
                                     {
                                         <a class="btn btn-primary btn-width btn-default" style="border-radius: 5px;"> <i class="material-icons" style="font-size:16px">assignment</i> Bạn đã ứng tuyển hồ sơ này</a>
+                                        <p style="margin-top:10px">** Theo dỏi "trạng thái Cty": <span><a style="color: darkblue" href="/Account/_MainCandidate">Chọn tài khoản</a>=>Quản Lý Tuyển Dụng=>Công Việc Đã Ứng Tuyển</span></p>
                                     }
                                     else
                                     {
@@ -110,42 +111,56 @@
                                 <a href="/Dang-Nhap" class="btn btn-primary btn-width btn-default" style="border-radius: 5px;"> <i class="material-icons" style="font-size:16px">assignment</i> Click ứng tuyển</a>
                                 <span>(bạn phải đăng nhập để ứng tuyển)</span>
                             }
-                            @using (Html.BeginForm("UngTuyen", "Job", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                            {
-                                <div class="row form-group" id="ungtuyen" style="padding:15px; margin:0px;font-size:larger;display:none">
-                                    <p>Tin nhắn gửi cty</p>
-                                    <div class="row">
-                                        <input name="idtuyendung" id="idtuyendung" value="@Model.TuyenDung_ID" hidden />
-                                        <input id="smsNTVtoDN" placeholder="Tôi muốn ứng tuyển ..." name="smsNTVtoDN" style="margin-right:10px;width:80%" required />
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog modal-lg" style="left:0; width: 400px; height: 450px; margin-top: 100px !important; background-position: center center; background-repeat: no-repeat; background-size: cover;box-sizing:border-box ">
+                                <div class="modal-content" style="height:430px">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title text-center" style="font-weight:bold;font-size:24px">Gửi CV Ứng Tuyển</h4>
                                     </div>
-                                    <div class="col-md-6">
-                                        <span>Tải hồ sơ ứng tuyển(giới hạn 5MB)</span>
-                                        <input id="file_inputDN" type="file" name="File_CVUngTuyen" />
-                                        <p id="thongbaosite" style="color:red; display:none">File quá lớn !!!</p>
-                                        @*<a href="~/Content/Upload/Document"><i class="glyphicon glyphicon-download"></i>nộp CV ứng tuyển</a>*@
-                                    </div>
-                                    <div class="col-md-12" style="margin:0px;font-size:larger">
-                                        <button id="btnLuu" type="submit">Gửi CV ứng tuyển</button>
-                                    </div>
-                                    <script>
-                                        $('#file_inputDN').bind('change', function () {
-                                            //this.files[0].size gets the size of your file.
-                                            var size = this.files[0].size;
-                                            const file = Math.round((size / 1024));
-                                            if (file >= 5200) {
-                                                $("#thongbaosite").css('display', 'block');
-                                                document.getElementById('btnLuu').disabled = true;
-                                            } else {
-                                                $("#thongbaosite").css('display', 'none')
-                                                document.getElementById('btnLuu').disabled = false;
-                                            }
-                                        });
-                                    </script>
-                                </div>
-                            }
+                                    <div class="modal-body" style="box-shadow: 1px 0 3px #8ba6c5">
+                                        <div style="padding:0 !important">
 
-                            @*<button class="btn btn-warning btn-width btn-send-msg" style="border-radius: 5px; float: right; "> <i class="material-icons" style="font-size:16px">assignment_returned</i> Tải xuống</button>*@
-                            @*<button class="btn btn-success btn-width btn-send-msg" style="border-radius: 5px; float: right; margin-right: 10px "> <i class="material-icons" style="font-size:16px">assignment_ind</i> In phiếu</button>*@
+                                            @using (Html.BeginForm("UngTuyen", "Job", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                            {<div class="row form-group" id="ungtuyen" style="padding:15px; margin:0px;font-size:larger">
+                                                    <p>Tin nhắn gửi cty</p>
+                                                    <div class="row">
+                                                        <input name="idtuyendung" id="idtuyendung" value="@Model.TuyenDung_ID" hidden />
+                                                        <input id="smsNTVtoDN" placeholder="Tôi muốn ứng tuyển ..." name="smsNTVtoDN" style="margin-right:10px;width:80%" required />
+                                                    </div>
+                                                    <div class="col-md-12" style="margin-top:10px">
+                                                        <span>Tải CV ứng tuyển(giới hạn 5MB)</span>
+                                                        <input id="file_inputDN" type="file" name="File_CVUngTuyen" required />
+                                                        <p id="thongbaosite" style="color:red; display:none">File quá lớn !!!</p>
+                                                        @*<a href="~/Content/Upload/Document"><i class="glyphicon glyphicon-download"></i>nộp CV ứng tuyển</a>*@
+                                                    </div>
+                                                    <div class="col-md-12" style="margin:0px;font-size:larger">
+                                                        <button id="btnLuu" type="submit">Gửi CV ứng tuyển</button>
+                                                    </div>
+                                                    <script>
+                                                        $('#file_inputDN').bind('change', function () {
+                                                            //this.files[0].size gets the size of your file.
+                                                            var size = this.files[0].size;
+                                                            const file = Math.round((size / 1024));
+                                                            if (file >= 5200) {
+                                                                $("#thongbaosite").css('display', 'block');
+                                                                document.getElementById('btnLuu').disabled = true;
+                                                            } else {
+                                                                $("#thongbaosite").css('display', 'none')
+                                                                document.getElementById('btnLuu').disabled = false;
+                                                            }
+                                                        });
+                                                    </script>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer" style="text-align:center">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng Cửa Sổ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                     <div class="row" style="margin: 0; background-color: #f3f6f9">
@@ -215,7 +230,7 @@
                                             <p>
                                                 @Html.Raw(Model.MoTaCongViec)
                                             </p>
-                                            <b style="text-decoration:underline">  Quyền hạn</b>
+                                            <b style="text-decoration:underline">  Quyền Lợi</b>
                                             <p>
                                                 @Html.Raw(Model.QuyenLoi)
                                             </p>
@@ -306,7 +321,7 @@
 
                                             </span>
                                         </div>
-                                        
+
                                     </div>
                                     <hr />
                                     <div class="row" style="margin: 0; margin-bottom: 10px">
@@ -331,15 +346,7 @@
                                                 <i class="material-icons" style="font-size:14px">done</i> @tg.TenThoiGianLamViec
                                             </span>
                                         </div>
-                                        @*<div class="col-md-5" style="padding:0; margin:0px">
-                                            <span style="color: #0168a5">
-                                                Phúc lợi:
-                                            </span>
-                                            <br />
-                                            <span>
-                                                @Html.Raw(Model.QuyenLoi)
-                                            </span>
-                                        </div>*@
+
                                     </div>
 
                                 </div>
@@ -354,7 +361,7 @@
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseTwo_1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
+                            <div id="collapseTwo_1" class="panel-collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                                 <div class="panel-body">
                                     <div class="row" style="margin: 0; margin-bottom: 10px">
                                         <div class="col-md-6" style="padding: 0; margin: 0px;   padding-right:30px">
@@ -413,7 +420,26 @@
                                 </div>
                             </div>
                         </div>
+                        @*//Công việc liên quan*@
+                        <div class="panel panel-info">
+                            <div class="panel-heading" role="tab">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-parent="#accordion_1"
+                                       aria-controls="collapseTwo_1">
+                                        Công việc liên quan
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse" role="tabpanel">
+                                <div class="panel-body">
+                                    <div id="job_lienquan" class="row" style="margin: 0; margin-bottom: 10px">
+                                        
+                                    </div>
 
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -503,7 +529,7 @@
                             <div class="row">
                                 <div class="col-xs-12 col-md-5">
                                     <h5 style="float: left; margin-top: 0; margin-bottom: 0; font-weight: bold ">
-                                        <i class="icon-paper-clip"></i> Ngành kinh doanh:
+                                        <i class="icon-paper-clip"></i> Ngành Nghề:
                                     </h5>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
@@ -542,12 +568,13 @@
                                         if (ViewBag.hsluu > 0)
                                         {
                                             <a class="btn icon-btn btn-danger" href="" style="background-color: #d9534f; color: white; border-color: #d43f3a; "><span class="glyphicon btn-glyphicon glyphicon-heart img-circle text-danger"></span>Bạn đã Lưu tuyển dụng này</a>
+                                            <p style="margin-top:10px"><span><a style="color: darkblue" href="/Account/_MainCandidate">Chọn tài khoản</a>=>Quản Lý Tuyển Dụng=>Hồ Sơ Đã Lưu</span></p>
                                         }
                                         else
                                         {
                                             <a title="Lưu lại để xem sau" class="btn icon-btn btn-danger" href="/Job/JobSave/@Model.TuyenDung_ID?DN_ID=@Model.DN_ID&TenHoSo=@Model.TieuDeTuyenDung" style="font-family: monospace;background-color: #d9534f; color: white; border-color: #d43f3a; "><span class="glyphicon btn-glyphicon glyphicon-heart img-circle text-danger"></span>Lưu để xem sau</a>
                                         }
-                                        <p style="margin-top:10px"><span><a style="color: darkblue" href="/Account/_MainCandidate">Chọn tài khoản</a>=>Quản Lý Tuyển Dụng=>Hồ Sơ Đã Lưu</span></p>
+
                                     }
                                 }
                                 else
@@ -647,12 +674,8 @@
 }
 <script>
     function uwngtuyen() {
-        if (document.getElementById('ungtuyen').style.display == 'none') {
-            document.getElementById('ungtuyen').style.display = 'block';
-        } else {
-            document.getElementById('ungtuyen').style.display = 'none';
-        }
-    }
+        $('#myModal').modal('show');
+    };
     onload();
     function onload() {
         //Kiểm tra xem icon font nào lỗi thì xóa luôn
@@ -663,5 +686,14 @@
                 modle[i].textContent="";
             }
         }
+        //Goi ViewBag.Job_lienquan
+        var idtd = $('#idtuyendung').val();
+        $.ajax({
+            url: "/Job/JobListLienQuan",
+            data: { tuyendungid: idtd },
+            success: function (response) {
+                $("#job_lienquan").append(response);
+            }
+        });
     }
 </script>

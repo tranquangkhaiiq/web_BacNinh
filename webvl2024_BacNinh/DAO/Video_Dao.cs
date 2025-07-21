@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using webvl2024_BacNinh.Models;
 namespace webvl2024_BacNinh.DAO

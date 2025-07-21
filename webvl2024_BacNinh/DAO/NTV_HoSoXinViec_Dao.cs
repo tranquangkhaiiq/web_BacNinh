@@ -9,15 +9,16 @@ using webvl2024_BacNinh.Models;
 using System.Drawing.Printing;
 using System.Data.SqlClient;
 using Microsoft.Ajax.Utilities;
+using webvl2024_BacNinh.Models.table_mirro;
 
 namespace webvl2024_BacNinh.DAO
 {
     public class NTV_HoSoXinViec_Dao
     {
         ModelBN dbc = new ModelBN();
-        public static List<KhachHang_TimViecLam> model_kh_tvl = new List<KhachHang_TimViecLam>();
+        public static List<KhachHang_TimViecLam_mirro> model_kh_tvl = new List<KhachHang_TimViecLam_mirro>();
         public static List<KhachHang_TimViecLam> model_ListNTV = new List<KhachHang_TimViecLam>();
-        
+
         public static string getSession_CanType_kh()
         {
             string session = "";
@@ -37,7 +38,7 @@ namespace webvl2024_BacNinh.DAO
             var model = db.Database.SqlQuery<KhachHang_TimViecLam>("exec GetBase_KH_NTV_khai").ToList();
             return model;
         }
-        private static List<KhachHang_TimViecLam> LinQ_HSTV_StrAPI(ModelBN db, string str)
+        private static List<KhachHang_TimViecLam> LinQ_HSTV_StrAPI(string str)
         {
             var mode = new List<KhachHang_TimViecLam>();
             if (str.Trim() == "")
@@ -46,12 +47,12 @@ namespace webvl2024_BacNinh.DAO
             }
             else
             {
-                mode = model_ListNTV.Where(p=>p.TenHoSo.ToLower().Contains(str.ToLower())).ToList();
+                mode = model_ListNTV.Where(p => p.TenHoSo.ToLower().Contains(str.ToLower())).ToList();
             }
             return mode;
         }
         //01/04/2020
-        public static List<KhachHang_TimViecLam> GetListNTV_phuhop_NoSkip(ModelBN db, int Sec, int pageSize, int nganhKDID,string strnganh, string strtencty)
+        public static List<KhachHang_TimViecLam> GetListNTV_phuhop_NoSkip(int Sec, int pageSize, int nganhKDID, string strnganh, string strtencty)
         {
             var mode = model_ListNTV.Where(p => p.NganhMongMuon_ID == nganhKDID || p.TenHoSo.ToLower().Contains(strnganh.ToLower())
                             || p.TenHoSo.ToLower().Contains(strtencty.ToLower()))
@@ -60,16 +61,16 @@ namespace webvl2024_BacNinh.DAO
                     .ToList();
             return mode;
         }
-        public static int GetListNTV_phuhop_NoSkip_count(ModelBN db, int nganhKDID, string strnganh,string strtencty)
+        public static int GetListNTV_phuhop_NoSkip_count( int nganhKDID, string strnganh, string strtencty)
         {
             var mode = model_ListNTV.Where(p => p.NganhMongMuon_ID == nganhKDID || p.TenHoSo.ToLower().Contains(strnganh.ToLower())
                             || p.TenHoSo.ToLower().Contains(strtencty.ToLower()))
                     .Count();
             return mode;
         }
-        public List<KhachHang_TimViecLam> LinQ_NTV_Main_Skip(int sec, int pageSize, string str, int id,List<int>Ids)
+        public List<KhachHang_TimViecLam_mirro> LinQ_NTV_Main_Skip(int sec, int pageSize, string str, int id, List<int> Ids)
         {
-            var model = new List<KhachHang_TimViecLam>();
+            var model = new List<KhachHang_TimViecLam_mirro>();
             if (str == "")
             {
                 model = model_kh_tvl
@@ -80,8 +81,8 @@ namespace webvl2024_BacNinh.DAO
             if (str == "duoi10tr")
             {
                 model = model_kh_tvl
-                    .Where(kh => kh.MucLuongMongMuonDen < 10 && kh.MucLuongMongMuonDen > 0 ||
-                    (kh.MucLuongMongMuonDen > 1000000 && kh.MucLuongMongMuonDen < 10000000))
+                    .Where(kh => kh.MucLuongMongMuonDen <= 10 && kh.MucLuongMongMuonDen > 0 ||
+                    (kh.MucLuongMongMuonDen > 1000000 && kh.MucLuongMongMuonDen <= 10000000))
                         .Skip(sec * pageSize)
                         .Take(pageSize)
                         .ToList();
@@ -89,8 +90,8 @@ namespace webvl2024_BacNinh.DAO
             if (str == "10den20tr")
             {
                 model = model_kh_tvl
-                    .Where(kh => kh.MucLuongMongMuonTu >= 10 && kh.MucLuongMongMuonDen <= 20 ||
-                    (kh.MucLuongMongMuonTu > 10000000 && kh.MucLuongMongMuonDen <= 20000000))
+                    .Where(kh => kh.MucLuongMongMuonDen > 10 && kh.MucLuongMongMuonDen <= 20 ||
+                    (kh.MucLuongMongMuonDen > 10000000 && kh.MucLuongMongMuonDen <= 20000000))
                         .Skip(sec * pageSize)
                         .Take(pageSize)
                         .ToList();
@@ -177,15 +178,15 @@ namespace webvl2024_BacNinh.DAO
             }
             return model;
         }
-        public static List<KhachHang_TimViecLam> LinQ_TimViec_left(ModelBN db)
+        public static List<KhachHang_TimViecLam_mirro> LinQ_TimViec_left(ModelBN db)
         {
             //load o trang candidate =>model_kh_tvl
-            var model = db.Database.SqlQuery<KhachHang_TimViecLam>("exec GetBase_KH_NTV_khai_NTV").ToList();
+            var model = db.Database.SqlQuery<KhachHang_TimViecLam_mirro>("exec GetBase_KH_NTV_khai_NTV").ToList();
             return model;
         }
-        public List<KhachHang_TimViecLam> LinQ_NTV_Main(string str, int id,List<int>Ids)
+        public List<KhachHang_TimViecLam_mirro> LinQ_NTV_Main(string str, int id, List<int> Ids)
         {
-            var model = new List<KhachHang_TimViecLam>();
+            var model = new List<KhachHang_TimViecLam_mirro>();
             if (str == "" && id == 0)
             {
                 model = model_kh_tvl;
@@ -193,14 +194,14 @@ namespace webvl2024_BacNinh.DAO
             if (str == "duoi10tr" && id == 0)
             {
                 model = model_kh_tvl
-                   .Where(kh => kh.MucLuongMongMuonDen < 10 && kh.MucLuongMongMuonDen > 0 ||
-                   (kh.MucLuongMongMuonDen > 1000000 && kh.MucLuongMongMuonDen < 10000000)).ToList();
+                   .Where(kh => kh.MucLuongMongMuonDen <= 10 && kh.MucLuongMongMuonDen > 0 ||
+                   (kh.MucLuongMongMuonDen > 1000000 && kh.MucLuongMongMuonDen <= 10000000)).ToList();
             }
             if (str == "10den20tr" && id == 0)
             {
                 model = model_kh_tvl
-                    .Where(kh => kh.MucLuongMongMuonTu >= 10 && kh.MucLuongMongMuonDen <= 20 ||
-                    (kh.MucLuongMongMuonTu > 10000000 && kh.MucLuongMongMuonDen <= 20000000)).ToList();
+                    .Where(kh => kh.MucLuongMongMuonDen > 10 && kh.MucLuongMongMuonDen <= 20 ||
+                    (kh.MucLuongMongMuonDen > 10000000 && kh.MucLuongMongMuonDen <= 20000000)).ToList();
             }
             if (str == "hon20tr" && id == 0)
             {
@@ -216,7 +217,7 @@ namespace webvl2024_BacNinh.DAO
             if (str == "xemnhieu" && id == 0)
             {
                 model = model_kh_tvl
-                        .OrderByDescending(kh=>kh.LuotXem).ToList();
+                        .OrderByDescending(kh => kh.LuotXem).ToList();
             }
             if (str == "toanthoigian" && id == 0)
             {
@@ -248,7 +249,7 @@ namespace webvl2024_BacNinh.DAO
                 model = model_kh_tvl
                         .Where(kh => Ids.Contains(kh.TimViec_ID)).ToList();
             }
-            
+
             if (id > 0 && str == "")
             {
                 model = model_kh_tvl
@@ -257,8 +258,8 @@ namespace webvl2024_BacNinh.DAO
             }
             return model;
         }
-        
-        public static Object GetList_HSNTV_Cty(ModelBN db, int Id, int KH_ID)
+
+        public static Object GetList_HSNTV_Cty(int Id, int KH_ID)
         {
             var mode = model_ListNTV
                     .Where(p => p.TimViec_ID != Id && p.KH_ID == KH_ID)
@@ -266,15 +267,73 @@ namespace webvl2024_BacNinh.DAO
                     .ToList();
             return mode;
         }
-        public List<KhachHang_TimViecLam> GetmapTVLbyTieudeTD(int TD_ID)
+
+        public List<KhachHang_TimViecLam_mirro> GetmapTVLbyTVLid(int timviecid)
         {
-            model_kh_tvl = LinQ_TimViec_left(dbc);
-            var modelhsduyet = new DAO.DN_HoSoTuyenDung_Dao().GetDSHSbyDN(TD_ID).Where(kh=>kh.TinhTrangHoSo == 3);
+            var modelhsduyet = dbc.KhachHang_TimViecLam.Where(kh => kh.TimViec_ID == timviecid);
+            if (modelhsduyet != null)
+            {
+                var modelallmap = new DAO.DN_HoSoTuyenDung_Dao().GetAllmapaotu().Select(kh => kh.Id).ToList();
+                /////
+                var model = new List<KhachHang_TimViecLam_mirro>();
+                var model_TVL = new List<KhachHang_TimViecLam_mirro>();
+
+                model_TVL = model_kh_tvl;
+                ////duyệt bang mapaotu
+                for (int i = 0; i < modelallmap.Count(); i++)
+                {
+                    int modeltotal = 0;
+                    int id = modelallmap[i];
+                    var modelmapSub = dbc.aspnet_mapSubs.Where(kh => kh.mapautoId == id)
+                        .Select(kh => kh.Substr)
+                        .ToList();
+                    if (modelmapSub != null)
+                    {
+                        ////Dò trong ds hồ sơ hiện tại trước
+                        modeltotal = modelhsduyet.Where(kh => modelmapSub.Any(x => kh.TenHoSo.ToLower().Contains(x)))
+                                .Count();
+                        if (modeltotal > 0)
+                        {
+                            ////mang mapSub ra dò ds hồ sơ ntv
+                            var modelTD = model_TVL.Where(kh => modelmapSub.Any(x => kh.TenHoSo.ToLower().Contains(x)))
+                                            .Take(6)
+                                            .ToList();
+                            model.AddRange(modelTD);
+                            break;
+                        }
+                    }
+                }
+                var modelhsduyet2 = dbc.KhachHang_TimViecLam.Find(timviecid);
+                if (modelhsduyet2 != null && modelhsduyet2.NgheMongMuon_ID > 0)
+                {
+                    var model_manghe = model_TVL.Where(kh => kh.NgheMongMuon_ID == modelhsduyet2.NgheMongMuon_ID);
+                    if (model_manghe != null)
+                    {
+                        model.AddRange(model_manghe);
+                    }
+                }
+                if (model != null)
+                {
+                    return model.Where(kh => kh.TimViec_ID != timviecid).Distinct()
+                        .Take(9)
+                        .ToList();
+                }
+                return model;
+            }
+            return null;
+        }
+
+
+
+
+        public List<KhachHang_TimViecLam_mirro> GetmapTVLbyTieudeTD(int TD_ID)
+        {
+            var modelhsduyet = new DAO.DN_HoSoTuyenDung_Dao().GetDSHSbyDN(TD_ID).Where(kh => kh.TinhTrangHoSo == 3);
             var modelallmap = new DAO.DN_HoSoTuyenDung_Dao().GetAllmapaotu().Select(kh => kh.Id).ToList();
             /////
-            var model = new List<KhachHang_TimViecLam>();
-            var model_TVL = new List<KhachHang_TimViecLam>();
-            
+            var model = new List<KhachHang_TimViecLam_mirro>();
+            var model_TVL = new List<KhachHang_TimViecLam_mirro>();
+
             model_TVL = model_kh_tvl;
             ////duyệt bang mapaotu
             for (int i = 0; i < modelallmap.Count(); i++)
@@ -306,7 +365,7 @@ namespace webvl2024_BacNinh.DAO
             return null;
         }
         //Thứ tự ưu tiên:     LuotXem
-        public static List<KhachHang_TimViecLam> GetListNTV_XemNhieu(ModelBN db, int Skip, int take)
+        public static List<KhachHang_TimViecLam> GetListNTV_XemNhieu(int Skip, int take)
         {
             var mode = new List<KhachHang_TimViecLam>();
             if (Skip == 0)
@@ -324,12 +383,12 @@ namespace webvl2024_BacNinh.DAO
                         .Take(take)
                         .ToList();
             }
-            
+
             return mode;
         }
         //ok
         //Thứ tự ưu tiên:     Ngaycapnhat
-        public static List<KhachHang_TimViecLam> GetListNTV_moinhat(ModelBN db,int skip, int take)
+        public static List<KhachHang_TimViecLam> GetListNTV_moinhat(int skip, int take)
         {
             var mode = new List<KhachHang_TimViecLam>();
             if (skip == 0)
@@ -349,7 +408,7 @@ namespace webvl2024_BacNinh.DAO
             }
             return mode;
         }
-        public static Object GetListNTV_Skip(ModelBN db, int Sec, int pageSize)
+        public static Object GetListNTV_Skip(int Sec, int pageSize)
         {
             var mode = model_ListNTV
                         .OrderByDescending(p => p.NgayCapNhat)
@@ -358,7 +417,7 @@ namespace webvl2024_BacNinh.DAO
                         .ToList();
             return mode;
         }
-        public static Object GetListNTV_NoSkip(ModelBN db, int Sec, int pageSize)
+        public static Object GetListNTV_NoSkip(int Sec, int pageSize)
         {
             var mode = model_ListNTV
                         .OrderByDescending(p => p.NgayCapNhat)
@@ -368,7 +427,7 @@ namespace webvl2024_BacNinh.DAO
         }
         public static Object GetListCustomNTV_NoSkip(ModelBN db, int Sec, int pageSize, string strTK)
         {
-            var mode = LinQ_HSTV_StrAPI(db, strTK)
+            var mode = LinQ_HSTV_StrAPI(strTK)
                         .OrderByDescending(p => p.NgayCapNhat)
                         .Take((Sec + 1) * pageSize)
                         .ToList();
@@ -376,7 +435,7 @@ namespace webvl2024_BacNinh.DAO
         }
         public static Object GetListCustomNTV_Skip(ModelBN db, int Sec, int pageSize, string strTK)
         {
-            var mode = LinQ_HSTV_StrAPI(db, strTK)
+            var mode = LinQ_HSTV_StrAPI(strTK)
                         .OrderByDescending(p => p.NgayCapNhat)
                         .Skip(Sec * pageSize)
                         .Take(pageSize)
@@ -389,14 +448,14 @@ namespace webvl2024_BacNinh.DAO
             if (HttpContext.Current.Session["searchStrNTV"] != null)
             {
                 string strTK = HttpContext.Current.Session["searchStrNTV"].ToString();
-                var model = LinQ_HSTV_StrAPI(dbc, strTK)
+                var model = LinQ_HSTV_StrAPI(strTK)
                         .Where(p => dbc.KhachHangs.FirstOrDefault(kh => kh.KH_ID == p.KH_ID).TamTru_Huyen_ID == Id)
                         .OrderByDescending(p => p.NgayCapNhat)
                         .Skip(Sec * pageSize)
                         .Take(pageSize)
                         .ToList();
                 if (Id == 9999)
-                    model = LinQ_HSTV_StrAPI(dbc, strTK)
+                    model = LinQ_HSTV_StrAPI(strTK)
                         .Where(p => dbc.KhachHangs.FirstOrDefault(kh => kh.KH_ID == p.KH_ID).TamTru_Tinh_ID != 42)
                         .OrderByDescending(p => p.NgayCapNhat)
                         .Skip(Sec * pageSize)
@@ -427,13 +486,13 @@ namespace webvl2024_BacNinh.DAO
             if (HttpContext.Current.Session["searchStrNTV"] != null)
             {
                 string strTK = HttpContext.Current.Session["searchStrNTV"].ToString();
-                var model = LinQ_HSTV_StrAPI(dbc, strTK)
+                var model = LinQ_HSTV_StrAPI(strTK)
                         .Where(p => dbc.KhachHangs.FirstOrDefault(kh => kh.KH_ID == p.KH_ID).TamTru_Huyen_ID == Id)
                         .OrderByDescending(p => p.NgayCapNhat)
                         .Take((Sec + 1) * pageSize)
                         .ToList();
                 if (Id == 9999)
-                    model = LinQ_HSTV_StrAPI(dbc, strTK)
+                    model = LinQ_HSTV_StrAPI(strTK)
                         .Where(p => dbc.KhachHangs.FirstOrDefault(kh => kh.KH_ID == p.KH_ID).TamTru_Tinh_ID != 42)
                         .OrderByDescending(p => p.NgayCapNhat)
                         .Take((Sec + 1) * pageSize)
@@ -457,14 +516,14 @@ namespace webvl2024_BacNinh.DAO
             }
         }
         //nhutcc
-        public static List<KhachHang_TimViecLam> GetListNTV_XemNhieu(ModelBN db)
-        {
-            var mode = model_ListNTV
-                        .OrderByDescending(p => p.LuotXem)
-                        .Take(7)
-                        .ToList();
-            return mode;
-        }
+        //public static List<KhachHang_TimViecLam> GetListNTV_XemNhieu()
+        //{
+        //    var mode = model_ListNTV
+        //                .OrderByDescending(p => p.LuotXem)
+        //                .Take(7)
+        //                .ToList();
+        //    return mode;
+        //}
         private static List<KhachHang_TimViecLam> LinQ_HSTV_byKH(ModelBN db, int KHID)
         {
             var model = db.Database.SqlQuery<KhachHang_TimViecLam>("exec GetBase_NTV_khaibyKH @KH_ID", new SqlParameter("KH_ID", KHID)).ToList();
@@ -472,23 +531,23 @@ namespace webvl2024_BacNinh.DAO
         }
         public List<KhachHang_TimViecLam> GetListTimViecbyKHID(int KHID)
         {
-            var model = LinQ_HSTV_byKH(dbc,KHID).ToList();
+            var model = LinQ_HSTV_byKH(dbc, KHID).ToList();
             return model;
         }
         public List<KhachHang_TimViecLam> GetListTimViecbyKHID_conhan(int KHID)
         {
-            var model = LinQ_HSTV_byKH(dbc,KHID).Where(kh => kh.NgayHoSoHetHan > DateTime.Now &&
+            var model = LinQ_HSTV_byKH(dbc, KHID).Where(kh => kh.NgayHoSoHetHan > DateTime.Now &&
                                 kh.HienThiTrenWeb == true && kh.TinhTrangPheDuyetHoSo_ID == 3).ToList();
             return model;
         }
         public int GetTimViecbyKHID(int KHID)
         {
-            var model = LinQ_HSTV_byKH(dbc,KHID).Count();
+            var model = LinQ_HSTV_byKH(dbc, KHID).Count();
             return model;
         }
         public int GetTimViecbyKHID_tinhtrang(int KHID, int tinhtrang)
         {
-            var model = LinQ_HSTV_byKH(dbc,KHID).Where(kh => kh.TinhTrangPheDuyetHoSo_ID == tinhtrang).Count();
+            var model = LinQ_HSTV_byKH(dbc, KHID).Where(kh => kh.TinhTrangPheDuyetHoSo_ID == tinhtrang).Count();
             return model;
         }
         public int GetTimViecbyKHID_Duyet_hethan(int KHID)

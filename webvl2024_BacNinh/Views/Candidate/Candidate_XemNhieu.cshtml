@@ -11,18 +11,18 @@
 
     <div class="QC-Nh-list">
         @if(Model.Count() > 0)
-            {
-            ModelBN dbcc = new ModelBN();
-            
-        foreach (KhachHang_TimViecLam h in Model)
         {
-            var HT = Khachhang_trinhdo_nghiepvu_DAO.GetName_TV(dbcc, "HoTen", @h.KH_ID);
-            var strTenNgheKD = Khachhang_trinhdo_nghiepvu_DAO.GetName_TV(dbcc, "TenNgheKD", @h.KH_ID);
-            var strTenDiaChi = Khachhang_trinhdo_nghiepvu_DAO.GetName_TV(dbcc, "TenDiaChi", @h.KH_ID);
-            var tenhs = XString.Truncate(h.TenHoSo, 50);
-            var str = XString.ConvertToUnSign(tenhs);
-            var hoten = XString.Truncate(HT, 50);
-            var url = "/Nguoi-Tim-Viec/" + str.Replace("/", "-") + "-" + h.TimViec_ID;
+            ModelBN dbcc = new ModelBN();
+
+            foreach (KhachHang_TimViecLam h in Model)
+            {
+                var HT = Khachhang_trinhdo_nghiepvu_DAO.GetName_TV(dbcc, "HoTen", @h.KH_ID);
+                var strTenNgheKD = Khachhang_trinhdo_nghiepvu_DAO.GetName_TV(dbcc, "TenNgheKD", @h.KH_ID);
+                var strTenDiaChi = Khachhang_trinhdo_nghiepvu_DAO.GetName_TV(dbcc, "TenDiaChi", @h.KH_ID);
+                var tenhs = XString.Truncate(h.TenHoSo, 50);
+                var str = XString.ConvertToUnSign(tenhs);
+                var hoten = XString.Truncate(HT, 50);
+                var url = "/Nguoi-Tim-Viec/" + str.Replace("/", "-") + "-" + h.TimViec_ID;
             <div class="QC-Nh-item" style="position:relative">
                 <div class="QC-Nh-item-name">
                     <a href=@url><p>@tenhs</p></a>

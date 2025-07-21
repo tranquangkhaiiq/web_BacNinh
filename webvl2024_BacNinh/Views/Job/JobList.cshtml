@@ -1,13 +1,13 @@
 ﻿@using webvl2024_BacNinh.Models
 @using webvl2024_BacNinh.DAO
 @using webvl2024_BacNinh.Utils
-
+@using webvl2024_BacNinh.Models.table_mirro
 <style>
     p {
         margin: 0px 0 5px;
     }
 </style>
-@foreach (DoanhNghiep_TuyenDung all in ViewBag.Job_list)
+@foreach (DoanhNghiep_TuyenDung_mirro all in ViewBag.Job_list)
 {
     var dndn = new DN_DoanhNghiep_Dao();
     var dm = new DanhMuc_Dao();
@@ -73,7 +73,7 @@
         }
         var str = XString.ConvertToUnSign(tentieude);
         var url = "/Tuyen-Dung/"+str+ "-" + all.TuyenDung_ID.ToString();
-        <a href="@url">
+        <a href="@url" target="_blank">
             <div class="col-md-6 col-xs-12">
                 <div class="div_card_hstd">
                     <div class="col-md-2" style="padding: 0; margin-bottom: 0">

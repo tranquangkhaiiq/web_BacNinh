@@ -1,0 +1,39 @@
+﻿@using webvl2024_BacNinh.i18n
+@using webvl2024_BacNinh.Models.table_mirro
+@using webvl2024_BacNinh.Utils
+@using webvl2024_BacNinh.DAO
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<table class="table table-hover table-striped">
+    <thead>
+        <tr style="background-color: #efce05;color:white">
+            <td>@Common.Title</td>
+            <td>Mã hồ sơ</td>
+            <td>Tên Cty</td>
+            <td>@Common.CreatedDate</td>
+            <td>@Common.Detail</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DoanhNghiep_TuyenDung_mirro Item in ViewBag.VLPhuHop)
+        {
+            var tieude = Item.TieuDeTuyenDung;
+            var str = XString.ConvertToUnSign(Item.TieuDeTuyenDung);
+
+            var url = "/Tuyen-Dung/" + str.Replace("/", "-") + "-" + Item.TuyenDung_ID;
+            var dndn = new DN_DoanhNghiep_Dao();
+            var DN = dndn.GetDN_ByDNID(Item.DN_ID);
+            if (DN != null)
+            {
+                <tr>
+                    <td>@tieude</td>
+                    <td>@Item.TuyenDung_ID</td>
+                    <td>@DN.TenDoanhNghiep</td>
+                    <td>@Html.FormatValue(Item.NgayTao, "{0:dd/MM/yyyy}")</td>
+                    <td>
+                        <a class="btn btn-success" target="_blank" href="@url"><span class="glyphicon glyphicon-eye-open"></span></a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

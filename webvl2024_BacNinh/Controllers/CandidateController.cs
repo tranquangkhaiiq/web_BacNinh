@@ -12,6 +12,7 @@ using webvl2024_BacNinh.DAO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web.Helpers;
+using webvl2024_BacNinh.Models.table_mirro;
 
 namespace webvl2024_BacNinh.Controllers
 {
@@ -22,7 +23,7 @@ namespace webvl2024_BacNinh.Controllers
         // GET: Candidate
         public ActionResult MainCandidate()
         {
-            List<KhachHang_TimViecLam> model = new List<KhachHang_TimViecLam>();
+            List<KhachHang_TimViecLam_mirro> model = new List<KhachHang_TimViecLam_mirro>();
             NTV_HoSoXinViec_Dao.model_kh_tvl = NTV_HoSoXinViec_Dao.LinQ_TimViec_left(dbc);
             model = NTV_HoSoXinViec_Dao.model_kh_tvl;
             //Truy van hang da xem
@@ -33,7 +34,7 @@ namespace webvl2024_BacNinh.Controllers
             }
             var Ids = cookies.Values.AllKeys.Select(k => int.Parse(k)).ToList();
             //new NTV_HoSoXinViec_Dao().LinQ_NTV_Main("", 0);
-            ViewBag.duoi10tr = new NTV_HoSoXinViec_Dao().LinQ_NTV_Main("duoi10tr", 0,Ids).Count();
+            ViewBag.duoi10tr = new NTV_HoSoXinViec_Dao().LinQ_NTV_Main("duoi10tr", 0, Ids).Count();
             ViewBag.den20tr = new NTV_HoSoXinViec_Dao().LinQ_NTV_Main("10den20tr", 0, Ids).Count();
             ViewBag.hon20tr = new NTV_HoSoXinViec_Dao().LinQ_NTV_Main("hon20tr", 0, Ids).Count();
             ViewBag.thoathuan = new NTV_HoSoXinViec_Dao().LinQ_NTV_Main("thoathuan", 0, Ids).Count();
@@ -112,29 +113,35 @@ namespace webvl2024_BacNinh.Controllers
             }
             var Ids = cookies.Values.AllKeys.Select(k => int.Parse(k)).ToList();
             //str_timkiem != "", thì vào action này và không phân trang
-            ViewBag.Candidate_timkiem = new NTV_HoSoXinViec_Dao().LinQ_NTV_Main(str, id,Ids)
-                                    .Where(kh => kh.TenHoSo.ToLower().Contains(str_timkiem.ToLower()))
+            ViewBag.Candidate_timkiem = new NTV_HoSoXinViec_Dao().LinQ_NTV_Main(str, id, Ids)
+                                    .Where(kh => kh.TenHoSo.ToLower().Contains(str_timkiem.ToLower())
+                                    || kh.HoTen.ToLower().Contains(str_timkiem.ToLower()))
                                     .Skip(0)
                                     .Take(30)
                                     .ToList();
             return PartialView();
         }
 
-        [ProtectUser]
-        public ActionResult Candidate_XemNhieu()
+        //[ProtectUser]
+        //public ActionResult Candidate_XemNhieu()
+        //{
+        //    if (Session["quyen"].ToString() == "TD")
+        //    {
+        //        int uID = int.Parse(Session["UsrID"].ToString());
+
+        //        var model = DAO.NTV_HoSoXinViec_Dao.GetListNTV_XemNhieu();
+
+        //        return PartialView("Candidate_XemNhieu", model);
+        //    }
+
+        //    return PartialView();
+        //}
+        public ActionResult CanListtuongtu(int timviecid = 0)
         {
-            if (Session["quyen"].ToString() == "TD")
-            {
-                int uID = int.Parse(Session["UsrID"].ToString());
-
-                var model = DAO.NTV_HoSoXinViec_Dao.GetListNTV_XemNhieu(dbc);
-
-                return PartialView("Candidate_XemNhieu", model);
-            }
+            ViewBag.NTV_tuongtu = new NTV_HoSoXinViec_Dao().GetmapTVLbyTVLid(timviecid);
 
             return PartialView();
         }
-
         public ActionResult CandidateDetail(int Id)
         {
             Session["requestUri"] = "/Candidate/CandidateDetail/" + Id;
@@ -156,7 +163,7 @@ namespace webvl2024_BacNinh.Controllers
                     dbc.SaveChanges();
                     Session[tenHSNTVDX] = "daxem";
                 }
-                ViewBag.HSkhac = DAO.NTV_HoSoXinViec_Dao.GetList_HSNTV_Cty(dbc, Id, model.KH_ID);
+                ViewBag.HSkhac = DAO.NTV_HoSoXinViec_Dao.GetList_HSNTV_Cty(Id, model.KH_ID);
                 if (Session["UsrID"] != null)
                 {
                     int uID = int.Parse(Session["UsrID"].ToString());
@@ -185,7 +192,7 @@ namespace webvl2024_BacNinh.Controllers
                 return Redirect(requestUri);
             }
             return Redirect("/Candidate/MainCandidate");
-            
+
         }
         public ActionResult CandidateSave(int Id, int NTV_ID, string TenHoSo)
         {
@@ -294,7 +301,7 @@ namespace webvl2024_BacNinh.Controllers
                         Session["ThongBao_DN_TD"] = "Có Lỗi thêm mới hồ sơ: " + tvl.TenHoSo;
                         return Redirect("/Account/_MainCandidate");
                     }
-                    
+
 
                     return PartialView("CandidateCreate");
                 }

@@ -58,6 +58,18 @@
       <HintPath>..\..\..\pulishwebninhthuan\bin\MaHoa_GiaiMa_TaiKhoan.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.2.2\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.2.2\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -288,6 +300,7 @@
     <Compile Include="Models\SVL_UngVien.cs" />
     <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\table_mirro\DoanhNghiep_TuyenDung_mirro.cs" />
+    <Compile Include="Models\table_mirro\KhachHang_TimViecLam_mirro.cs" />
     <Compile Include="Models\ThongKe_DN_SanOnline_Online.cs" />
     <Compile Include="Models\ThongKe_NTV_SanOnline_Online.cs" />
     <Compile Include="Models\UserSignIR_TuVan.cs" />
@@ -5898,29 +5911,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\DanhMuc.cshtml" />
-    <Content Include="Views\Shared\_Contact.cshtml" />
-    <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\Shared\_Footer_login.cshtml" />
-    <Content Include="Views\Shared\_LD_MoiNhat.cshtml" />
-    <Content Include="Views\Shared\_MainLayout.cshtml" />
-    <Content Include="Views\Shared\_MainLayout2.cshtml" />
-    <Content Include="Views\Shared\_MainLayout3.cshtml" />
-    <Content Include="Views\Shared\_MainMenu.cshtml" />
-    <Content Include="Views\Shared\_Menu.cshtml" />
-    <Content Include="Views\Shared\_QuangCao2.cshtml" />
-    <Content Include="Views\Shared\_QuangCaoVD.cshtml" />
-    <Content Include="Views\Shared\_Slider.cshtml" />
-    <Content Include="Views\Shared\_SliderTinHot_T.cshtml" />
-    <Content Include="Views\Shared\_SubLayout.cshtml" />
-    <Content Include="Views\Shared\_TD_LDMoiNhat.cshtml" />
-    <Content Include="Views\Shared\_ThemKinhNghiem.cshtml" />
-    <Content Include="Views\Shared\_TopMenu.cshtml" />
     <Content Include="Views\News\DM_News.cshtml" />
     <Content Include="Views\News\FindNews.cshtml" />
     <Content Include="Views\News\LatestNews.cshtml" />
@@ -5929,22 +5919,34 @@
     <Content Include="Views\News\NewsCategory.cshtml" />
     <Content Include="Views\News\NewsDetail.cshtml" />
     <Content Include="Views\News\Panel_Right.cshtml" />
-    <Content Include="Views\Job\JobCreate.cshtml" />
-    <Content Include="Views\Job\JobDetail.cshtml" />
-    <Content Include="Views\Job\JobList.cshtml" />
-    <Content Include="Views\Job\Job_Quantam.cshtml" />
-    <Content Include="Views\Job\Job_timkiem.cshtml" />
-    <Content Include="Views\Job\Job_XemNhieu.cshtml" />
-    <Content Include="Views\Job\MainJob.cshtml" />
-    <Content Include="Views\Job\SMStoDN.cshtml" />
+    <Content Include="Views\Shared\DanhMuc.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Contact.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Footer_login.cshtml" />
+    <Content Include="Views\Shared\_LD_MoiNhat.cshtml" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\Shared\_MainLayout2.cshtml" />
+    <Content Include="Views\Shared\_MainLayout3.cshtml" />
+    <Content Include="Views\Shared\_QuangCao2.cshtml" />
+    <Content Include="Views\Shared\_QuangCaoVD.cshtml" />
+    <Content Include="Views\Shared\_Slider.cshtml" />
+    <Content Include="Views\Shared\_SliderTinHot_T.cshtml" />
+    <Content Include="Views\Shared\_SubLayout.cshtml" />
+    <Content Include="Views\Shared\_TD_LDMoiNhat.cshtml" />
+    <Content Include="Views\Shared\_ThemKinhNghiem.cshtml" />
+    <Content Include="Views\Shared\_TopMenu.cshtml" />
+    <Content Include="Views\Shared\_TuVan_KyNang.cshtml" />
     <Content Include="Views\Account\_CandidateAccount.cshtml" />
     <Content Include="Views\Account\_CandidateCategory.cshtml" />
     <Content Include="Views\Account\_CandidateDoc.cshtml" />
     <Content Include="Views\Account\_CandidateEdit.cshtml" />
+    <Content Include="Views\Account\_CandidateHSPhuHop.cshtml" />
     <Content Include="Views\Account\_CandidateInfo.cshtml" />
     <Content Include="Views\Account\_CandidateManagement.cshtml" />
     <Content Include="Views\Account\_ChangePass.cshtml" />
     <Content Include="Views\Account\_EditCandidateAccount.cshtml" />
+    <Content Include="Views\Account\_EditCddAccount.cshtml" />
     <Content Include="Views\Account\_EditJobAccount.cshtml" />
     <Content Include="Views\Account\_ForgotPass.cshtml" />
     <Content Include="Views\Account\_JobAccount.cshtml" />
@@ -5952,6 +5954,7 @@
     <Content Include="Views\Account\_JobDoc.cshtml" />
     <Content Include="Views\Account\_JobDoc_Pay.cshtml" />
     <Content Include="Views\Account\_JobEdit.cshtml" />
+    <Content Include="Views\Account\_JobHSPhuHop.cshtml" />
     <Content Include="Views\Account\_JobInfo.cshtml" />
     <Content Include="Views\Account\_JobManagement.cshtml" />
     <Content Include="Views\Account\_Login.cshtml" />
@@ -5967,24 +5970,36 @@
     <Content Include="Views\Candidate\CandidateResult.cshtml" />
     <Content Include="Views\Candidate\Candidate_timkiem.cshtml" />
     <Content Include="Views\Candidate\Candidate_XemNhieu.cshtml" />
+    <Content Include="Views\Candidate\CanListtuongtu.cshtml" />
     <Content Include="Views\Candidate\FindCandidate.cshtml" />
     <Content Include="Views\Candidate\MainCandidate.cshtml" />
     <Content Include="Views\Candidate\_CreateCV.cshtml" />
     <Content Include="Views\Document\DocumentCategory.cshtml" />
     <Content Include="Views\Document\MainDocument.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\HotJob_PC.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\mlienket.cshtml" />
     <Content Include="Views\Home\QCTT_small.cshtml" />
     <Content Include="Views\Home\QLLoGo.cshtml" />
     <Content Include="Views\Home\Slide_Right.cshtml" />
+    <Content Include="Views\Home\Slide_RightTB.cshtml" />
     <Content Include="Views\Home\UngVienXemNhieu_PC.cshtml" />
     <Content Include="Views\Home\_LD_MoiNhat.cshtml" />
     <Content Include="Views\Home\_Slider_Mobile.cshtml" />
     <Content Include="Views\Home\_Slider_PC.cshtml" />
     <Content Include="Views\Home\_TD_Luxury.cshtml" />
     <Content Include="Views\Home\_TD_MoiNhat.cshtml" />
-    <Content Include="Views\Home\_TD_MoiNhat_login.cshtml" />
     <Content Include="Views\Home\_TD_NganhNghe.cshtml" />
+    <Content Include="Views\Job\JobCreate.cshtml" />
+    <Content Include="Views\Job\JobDetail.cshtml" />
+    <Content Include="Views\Job\JobList.cshtml" />
+    <Content Include="Views\Job\JobListLienQuan.cshtml" />
+    <Content Include="Views\Job\Job_Quantam.cshtml" />
+    <Content Include="Views\Job\Job_timkiem.cshtml" />
+    <Content Include="Views\Job\Job_XemNhieu.cshtml" />
+    <Content Include="Views\Job\MainJob.cshtml" />
+    <Content Include="Views\Job\SMStoDN.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="i18n\Common.resx" />

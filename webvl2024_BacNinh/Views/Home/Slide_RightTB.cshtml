@@ -1,0 +1,50 @@
+﻿<script src="~/Content/AdminBSB-cssjs/plugins/bootstrap/js/bootstrap.min.js"></script>
+@if (Session["quyen"].ToString() == "TD")
+{
+    <div class="card card_t">
+        <div class="header bgcardhead header_t" style=" border-bottom: 2px solid white !important;">
+            <label class="label_cardhead">
+                Thông Báo
+            </label>
+
+        </div>
+        <div class="body" style="padding: 0; margin: -1px; font-weight: 500">
+
+            <p><span>&ensp;Hồ sơ đang online:&ensp;@ViewBag.Tonghoso_Online</span></p>
+            <p><span>&ensp;Hồ sơ chờ duyệt:&ensp;@ViewBag.TonghosoChoDuyet</span></p>
+            <p><span>&ensp;Hồ sơ đã duyệt:&ensp;@ViewBag.TonghosoDuyet</span></p>
+
+            <p><span>&ensp;Đã duyệt nhưng hết hạn:&ensp;@ViewBag.TonghosoDuyet_hethan</span></p>
+            <p><span>&ensp;Không hiển thị web:&ensp;@ViewBag.Tonghoso_NoWeb</span></p>
+            <p><span>&ensp;Hồ sơ bị hủy:&ensp;@ViewBag.TonghosoHuy</span></p>
+            <p><span>&ensp;Tổng hồ sơ:&ensp;@ViewBag.Tonghoso</span></p>
+            <p><span>&ensp;Tin chưa xem:&ensp;@ViewBag.Tinchuaxem</span></p>
+            <p><span>&ensp;NTV ứng tuyển:&ensp;@ViewBag.totalungtuyen</span></p>
+
+        </div>
+    </div>
+}
+@if (Session["quyen"].ToString() == "NTV")
+{
+    <div class="card card_t">
+        <div class="header bgcardhead header_t" style=" border-bottom: 2px solid white !important;">
+            <label class="label_cardhead">
+                Thông Báo
+            </label>
+
+        </div>
+        <div class="body" style="padding: 0; margin: -1px; font-weight: 500">
+
+            <p><span>&ensp;Hồ sơ đang online:&ensp;@ViewBag.Tonghoso_Online</span></p>
+            <p><span>&ensp;Hồ sơ chờ duyệt:&ensp;@ViewBag.TonghosoChoDuyet</span></p>
+            <p><span>&ensp;Hồ sơ đã duyệt:&ensp;@ViewBag.TonghosoDuyet</span></p>
+
+            <p><span>&ensp;Đã duyệt nhưng hết hạn:&ensp;@ViewBag.TonghosoDuyet_hethan</span></p>
+            <p><span>&ensp;Không hiển thị web:&ensp;@ViewBag.Tonghoso_NoWeb</span></p>
+            <p><span>&ensp;Hồ sơ bị hủy:&ensp;@ViewBag.TonghosoHuy</span></p>
+            <p><span>&ensp;Tổng hồ sơ:&ensp;@ViewBag.Tonghoso</span></p>
+            <p><span>&ensp;Hồ sơ tự ứng tuyển:&ensp;@ViewBag.Tonghoso_ungtuyen</span></p>
+
+        </div>
+    </div>
+}

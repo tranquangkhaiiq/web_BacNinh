@@ -11,6 +11,7 @@ using System.Web.Mvc;
 using webvl2024_BacNinh.DAO;
 using webvl2024_BacNinh.Filters;
 using webvl2024_BacNinh.Models;
+using webvl2024_BacNinh.Models.table_mirro;
 using webvl2024_BacNinh.Utils;
 
 namespace webvl2024_BacNinh.Controllers
@@ -24,7 +25,7 @@ namespace webvl2024_BacNinh.Controllers
         {
             New_Dao.Pay_Sys = New_Dao.GetPay_Sys(dbc);
             Session["Pay"] = New_Dao.Pay_Sys.Pay;
-            List<DoanhNghiep_TuyenDung> model = new List<DoanhNghiep_TuyenDung>();
+            List<DoanhNghiep_TuyenDung_mirro> model = new List<DoanhNghiep_TuyenDung_mirro>();
             if ((bool)Session["Pay"] == true)
             {
                 DN_HoSoTuyenDung_Dao.model_DNTD_Job_Pay = DN_HoSoTuyenDung_Dao.LinQ_Job_left_Pay(dbc);
@@ -43,7 +44,7 @@ namespace webvl2024_BacNinh.Controllers
             }
             var Ids = cookies.Values.AllKeys.Select(k => int.Parse(k)).ToList();
             //key =>keyNghanhNghe =>tổng nghành nghề
-            ViewBag.duoi10tr = new DN_HoSoTuyenDung_Dao().LinQ_DN_TD_Job("duoi10tr", (bool)Session["Pay"], 0,Ids).Count();
+            ViewBag.duoi10tr = new DN_HoSoTuyenDung_Dao().LinQ_DN_TD_Job("duoi10tr", (bool)Session["Pay"], 0, Ids).Count();
             ViewBag.den20tr = new DN_HoSoTuyenDung_Dao().LinQ_DN_TD_Job("10den20tr", (bool)Session["Pay"], 0, Ids).Count();
             ViewBag.hon20tr = new DN_HoSoTuyenDung_Dao().LinQ_DN_TD_Job("hon20tr", (bool)Session["Pay"], 0, Ids).Count();
             ViewBag.thoathuan = new DN_HoSoTuyenDung_Dao().LinQ_DN_TD_Job("thoathuan", (bool)Session["Pay"], 0, Ids).Count();
@@ -70,18 +71,24 @@ namespace webvl2024_BacNinh.Controllers
             //ViewBag.QC_TuyenDungTieuBieu = new DAO.New_Dao().Get_NewQCslideisActive(4167, 0, 8);
 
             ViewBag.DMtg = dbc.DM_DiaChi.Where(kh => kh.ParentId == TT_Tinh).ToList();
-            if(searchNN != "")
+            if (searchNN != "")
             {
                 var ii = int.Parse(searchNN);
                 var mapaotu = dbc.aspnet_mapautos.Find(ii);
 
-                Session["ViewNghanhNghe"]=mapaotu !=null? mapaotu.Keystr:"";
+                Session["ViewNghanhNghe"] = mapaotu != null ? mapaotu.Keystr : "";
             }
-            
+
             Session["keyNghanhNghe"] = key;
             Session["SearchNghanhNghe"] = searchNN;
             Session["requestUri"] = "/Tuyen-Dung/" + key + "/" + searchNN; //"/Job/MainJob?key=" +key.ToString();
             return View(model);
+        }
+        public ActionResult JobListLienQuan(int tuyendungid)
+        {
+            ViewBag.Job_lienquan = new DN_HoSoTuyenDung_Dao().GetmapTDbytuyendungID(tuyendungid);
+
+            return PartialView();
         }
         public ActionResult JobList(int pageNo = 0, int pageSize = 10, string str = "", int id = 0, int keyNghanhNghe = 0, string searchNN = "")
         {
@@ -98,7 +105,7 @@ namespace webvl2024_BacNinh.Controllers
                     cookies = new HttpCookie("TD_DaXem");
                 }
                 var Ids = cookies.Values.AllKeys.Select(k => int.Parse(k)).ToList();
-                ViewBag.Job_list = new DN_HoSoTuyenDung_Dao().LinQ_DN_TD_Job_Skip(pageNo, (bool)Session["Pay"], pageSize, str, id,Ids);
+                ViewBag.Job_list = new DN_HoSoTuyenDung_Dao().LinQ_DN_TD_Job_Skip(pageNo, (bool)Session["Pay"], pageSize, str, id, Ids);
             }
 
             return PartialView();
@@ -113,19 +120,16 @@ namespace webvl2024_BacNinh.Controllers
             }
             var Ids = cookies.Values.AllKeys.Select(k => int.Parse(k)).ToList();
             //str_timkiem != "", thì vào action này và không phân trang
-            ViewBag.Job_timkiem = new DN_HoSoTuyenDung_Dao().LinQ_DN_TD_Job(str, (bool)Session["Pay"], id,Ids)
-                                    .Where(kh => kh.TieuDeTuyenDung.ToLower().Contains(str_timkiem.ToLower()))
+            ViewBag.Job_timkiem = new DN_HoSoTuyenDung_Dao().LinQ_DN_TD_Job(str, (bool)Session["Pay"], id, Ids)
+                                    .Where(kh => kh.TieuDeTuyenDung.ToLower().Contains(str_timkiem.ToLower())
+                                        || kh.TenDoanhNghiep.ToLower().Contains(str_timkiem.ToLower()))
                                     .Skip(0)
                                     .Take(30)
                                     .ToList();
+
             return PartialView();
         }
-        //public ActionResult Job_TDbyNghanhNghe_PC(int pageNo = 0, int pageSize = 10, string search = "")
-        //{
-        //    //Index
-        //    ViewBag.Job_TDbyNghanhNghe = new DN_HoSoTuyenDung_Dao().GetListTDbyNghanhNghe(pageNo, pageSize, search);
-        //    return PartialView();
-        //}
+
         public ActionResult Job_Quantam(int pageNo = 0, int pageSize_ph = 4)
         {
             if (Session["quyen"].ToString() == "NTV")
@@ -256,7 +260,7 @@ namespace webvl2024_BacNinh.Controllers
                 var tenHSTDDX = "HSTDDX" + Id.ToString();
                 if (Session[tenHSTDDX] == null)
                 {
-                    if(model.SoLuotXem == null)
+                    if (model.SoLuotXem == null)
                     {
                         model.SoLuotXem = 1;
                     }

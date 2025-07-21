@@ -14,7 +14,7 @@
             loop: true,
             margin: 10,
             autoplay: true,
-            autoplayTimeout: 2000,
+            autoplayTimeout: 5000,
             autoplayHoverPause: true,
             responsive: {
                 600: {
@@ -136,6 +136,22 @@
             padding-left: 0;
         }
     }
+    /*@@media screen and (min-width:700px){
+
+    }*/
+    .noibatindex {
+        min-height: 460px;
+        padding-bottom: 0;
+    }
+
+    #p_LastestJob_PC {
+        min-height: 730px;
+        padding-bottom: 0;
+    }
+
+    #p_LastestCandidate_PC {
+        min-height: 730px;
+    }
 </style>
 
 <div class="row">
@@ -166,7 +182,10 @@
                                                     max-height: 300px;
                                                 }
                                             </style>
-                                            @Html.Action("QCslide_Mobile", "Home")
+                                            <div id="p_QCslide_Mobile">
+
+                                            </div>
+                                            @*@Html.Action("QCslide_Mobile", "Home")*@
                                             <!-- End Carousel Inner -->
                                             <style>
                                                 .a_control_t {
@@ -197,7 +216,7 @@
 
                                 var clickEvent = false;
                                 $('#myCarousel').carousel({
-                                    interval: 5000
+                                    interval: 9000
                                 }).on('click', '.list-group li', function () {
                                     clickEvent = true;
                                     $('.list-group li').removeClass('active').removeClass('cl_red');
@@ -235,10 +254,10 @@
                             Xem thêm
                         </a>
                         <div class="row" style="margin:0">
-                            <div class="col-md-12" style="margin-bottom:0;padding:0">
+                            <div id="p_QCslide_PC" class="col-md-12" style="margin-bottom:0;padding:0">
 
                                 @*Slide PC*@
-                                @Html.Action("QCslide_PC", "Home")
+                                @*@Html.Action("QCslide_PC", "Home")*@
 
                             </div>
                         </div>
@@ -249,27 +268,28 @@
 
         </div>
         @Html.Action("QCTT_small", "Home")
-        
+
         <style>
 
             .div_bannerbig div {
                 padding-left: 5px;
                 padding-right: 5px;
-                margin-bottom: 0
+                margin-bottom: 0;
             }
 
-                    .div_bannerbig div img {
-                        box-shadow: 1px 0 3px #8ba6c5;
-                        width: 100%;
-                        max-height: 120px;
-                    }
+                .div_bannerbig div img {
+                    box-shadow: 1px 0 3px #8ba6c5;
+                    width: 100%;
+                    max-height: 120px;
+                }
         </style>
         <div class="row div_bannerbig">
             @foreach (New_small QCPaNel in ViewBag.QC_TuyenDungPanel)
             {
                 var str = " ";
                 var title = QCPaNel.Title.ToLower();
-                var path = XString.maplocal + "News_Img\\" + QCPaNel.ImagePath;
+                string fullPath = Request.MapPath("~/Content/UpLoad/News_Img/" + QCPaNel.ImagePath);
+                var hinhpath = File.Exists(fullPath) ? QCPaNel.ImagePath : "NoPic.jpg";
                 if (QCPaNel.Title.Length > 100)
                 {
                     str = XString.ConvertToUnSign(QCPaNel.Title.Substring(0, 100));
@@ -281,24 +301,11 @@
                 var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QCPaNel.NewId;
                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
                     <a href="@url" title="QC_Banner: @title" target="_blank">
-                        @if (File.Exists(path))
-                        {
-                            <img src="@XString.GetImgBase64("News_Img",QCPaNel.ImagePath)" hidden />
-                            <img src="~/Content/Upload/News_Img/@QCPaNel.ImagePath" style="width:100%;height:130px" />
-                        }
-                        else
-                        {<img src="~/Content/Upload/News_Img/NoPic.jpg" style="width: 100%; height: 130px" />}
+                        <img src="~/Content/Upload/News_Img/@hinhpath" style="width:100%;height:130px" />
                     </a>
                 </div>
             }
-            @for (int i = 0; i < ViewBag.QC_PanelTT; i++)
-            {
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
-                    <a href="" title="Quảng Cáo_Banner">
-                        <img src="~/Content/Upload/News_Img/200.jpg" style="width: 100%; height: 130px" />
-                    </a>
-                </div>
-            }
+
         </div>
         <style>
             .div_tieude {
@@ -372,17 +379,14 @@
                                     Xem thêm <i class="icon-long-arrow-right"></i>
                                 </a>
                             </div>
-                            <div class="body" style="padding-bottom:0">
+                            <div class="body noibatindex">
                                 <div class="row">
                                     <div class="col-md-12" style="margin-bottom:0">
                                         <div id="myCarousel_vieclam" class="carousel slide" data-ride="carousel">
                                             <div class="row" style="margin:0">
-                                                <div class="col-md-12" style="padding: 0; margin-bottom: 0">
+                                                <div id="p_HotJob_PC" class="col-md-12" style="padding: 0; margin-bottom: 0">
                                                     <!-- Wrapper for slides -->
-                                                    @*Slide PC*@
-
-
-                                                    @Html.Action("HotJob_PC", "Home")
+                                                    @*@Html.Action("HotJob_PC", "Home")*@
 
                                                     <!-- End Carousel Inner -->
                                                     <style>
@@ -412,10 +416,19 @@
                                                         }
                                                     </style>
                                                     <ol class="carousel-indicators">
-                                                        <li data-target="#myCarousel_vieclam" data-slide-to="0" class="active"></li>
-                                                        <li data-target="#myCarousel_vieclam" data-slide-to="1"></li>
-                                                        <li data-target="#myCarousel_vieclam" data-slide-to="2"></li>
-                                                        <li data-target="#myCarousel_vieclam" data-slide-to="3"></li>
+                                                        @for (int i = 0; i < ViewBag.HotJob_count; i++)
+                                                        {
+                                                            if (i == 0)
+                                                            {
+                                                                <li data-target="#myCarousel_vieclam" data-slide-to="@i" class="active"></li>
+                                                            }
+                                                            else
+                                                            {
+                                                                <li data-target="#myCarousel_vieclam" data-slide-to="@i"></li>
+                                                            }
+                                                        }
+                                                        @*<li data-target="#myCarousel_vieclam" data-slide-to="2"></li>
+                                                            <li data-target="#myCarousel_vieclam" data-slide-to="3"></li>*@
                                                     </ol>
                                                 </div>
                                             </div>
@@ -429,7 +442,7 @@
 
                                         var clickEvent = false;
                                         $('#myCarousel_vieclam').carousel({
-                                            interval: 5000
+                                            interval: 9000
                                         }).on('click', '.list-group li', function () {
                                             clickEvent = true;
                                             $('.list-group li').removeClass('active').removeClass('cl_red');
@@ -463,14 +476,14 @@
                                     Xem thêm <i class="icon-long-arrow-right"></i>
                                 </a>
                             </div>
-                            <div class="body" style="padding-bottom:0">
+                            <div class="body noibatindex">
                                 <div class="row">
                                     <div class="col-md-12" style="margin-bottom:0">
                                         <div id="myCarousel_ungvien" class="carousel slide" data-ride="carousel">
 
 
                                             <div class="row" style="margin:0">
-                                                <div class="col-md-12" style="padding: 0; margin-bottom: 0">
+                                                <div id="p_UngVienXemNhieu_PC" class="col-md-12" style="padding: 0; margin-bottom: 0">
                                                     <!-- Wrapper for slides -->
                                                     @*Slide mobile*@
                                                     <style>
@@ -479,7 +492,7 @@
                                                         }
                                                     </style>
 
-                                                    @Html.Action("UngVienXemNhieu_PC", "Home")
+                                                    @*@Html.Action("UngVienXemNhieu_PC", "Home")*@
 
                                                     <!-- End Carousel Inner -->
                                                     <style>
@@ -509,10 +522,17 @@
                                                         }
                                                     </style>
                                                     <ol class="carousel-indicators">
-                                                        <li data-target="#myCarousel_ungvien" data-slide-to="0" class="active"></li>
-                                                        <li data-target="#myCarousel_ungvien" data-slide-to="1"></li>
-                                                        <li data-target="#myCarousel_ungvien" data-slide-to="2"></li>
-                                                        <li data-target="#myCarousel_ungvien" data-slide-to="3"></li>
+                                                        @for (int i = 0; i < ViewBag.CandidateXemNhieu_count; i++)
+                                                        {
+                                                            if (i == 0)
+                                                            {
+                                                                <li data-target="#myCarousel_ungvien" data-slide-to="@i" class="active"></li>
+                                                            }
+                                                            else
+                                                            {
+                                                                <li data-target="#myCarousel_ungvien" data-slide-to="@i"></li>
+                                                            }
+                                                        }
                                                     </ol>
                                                 </div>
                                             </div>
@@ -526,7 +546,7 @@
 
                                         var clickEvent = false;
                                         $('#myCarousel_ungvien').carousel({
-                                            interval: 5000
+                                            interval: 9000
                                         }).on('click', '.list-group li', function () {
                                             clickEvent = true;
                                             $('.list-group li').removeClass('active').removeClass('cl_red');
@@ -584,7 +604,8 @@
                                         {
                                             var str = " ";
                                             var title = QCTB.Title.ToLower();
-                                            var path = XString.maplocal + "News_Img\\" + QCTB.ImagePath;
+                                            string fullPath = Request.MapPath("~/Content/UpLoad/News_Img/" + QCTB.ImagePath);
+                                            var hinhpath = File.Exists(fullPath) ? QCTB.ImagePath : "NoPic.jpg";
                                             if (QCTB.Title.Length > 100)
                                             {
                                                 str = XString.ConvertToUnSign(QCTB.Title.Substring(0, 100));
@@ -595,19 +616,10 @@
                                             }
                                             var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QCTB.NewId;
                                             <div class="item" style="box-shadow: 1px 0 3px #8ba6c5">
-                                                @if (File.Exists(path))
-                                                {<a src="@XString.GetImgBase64("News_Img",QCTB.ImagePath)" hidden />
-                                                    <a href="@url" title="QC_TieuBieu: @title" data-sub-html="Hình 1">
-                                                        <img class="lazy" data-src="/Content/Upload/News_Img/@QCTB.ImagePath" style="width:100%;height:130px" />
+                                                <a href="@url" target="_blank" title="QC_TieuBieu: @title" data-sub-html="Hình 1">
+                                                    <img class="lazy" data-src="/Content/Upload/News_Img/@hinhpath" style="width:100%;height:130px" />
 
-                                                    </a>
-                                                }
-                                                else
-                                                {
-                                                    <a href="@url" title="QuangCao_TieuBieu" data-sub-html="Hình 1">
-                                                        <img class="lazy" data-src="/Content/Upload/News_Img/NoPic.jpg" style="width:100%;height:130px" />
-                                                    </a>
-                                                }
+                                                </a>
                                             </div>
                                         }
                                     }
@@ -626,7 +638,7 @@
 
                                         </div>
                                     }
-                                
+
                                 </div>
 
                             </div>
@@ -648,8 +660,8 @@
                                     Xem thêm <i class="icon-long-arrow-right"></i>
                                 </a>
                             </div>
-                            <div class="body" style="padding-bottom:0">
-                                @Html.Action("LastestJob_PC", "Home")
+                            <div id="p_LastestJob_PC" class="body">
+                                @*@Html.Action("LastestJob_PC", "Home")*@
 
                             </div>
                         </div>
@@ -664,9 +676,9 @@
                                     Xem thêm <i class="icon-long-arrow-right"></i>
                                 </a>
                             </div>
-
-                            @Html.Action("LastestCandidate_PC", "Home")
-
+                            <div id="p_LastestCandidate_PC">
+                                @*@Html.Action("LastestCandidate_PC", "Home")*@
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -677,6 +689,8 @@
                             var str = " ";
                             var title = Long.Title.ToLower();
                             var path = XString.maplocal + "News_Img\\" + Long.ImagePath;
+                            string fullPath = Request.MapPath("~/Content/UpLoad/News_Img/" + Long.ImagePath);
+                            var hinhpath = File.Exists(fullPath) ? Long.ImagePath : "SlideLong321.jpg";
                             if (Long.Title.Length > 100)
                             {
                                 str = XString.ConvertToUnSign(Long.Title.Substring(0, 100));
@@ -687,13 +701,7 @@
                             }
                             var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + Long.NewId;
                             <a href="@url" title="1470_TT_Long" target="_blank">
-                                @if (File.Exists(path))
-                                {
-                                    <img src="@XString.GetImgBase64("News_Img", Long.ImagePath)" hidden />
-                                    <img style="width:100%;height:120px" src="~/Content/Upload/News_Img/@Long.ImagePath" />
-                                }
-                                else
-                                {<img src="~/Content/Upload/News_Img/SlideLong321.jpg" />}
+                                <img style="width:100%;height:120px" src="~/Content/Upload/News_Img/@hinhpath" />
                             </a>
                         }
                     </div>
@@ -727,7 +735,7 @@
                                     CÔNG VIỆC CẤP QUẢN LÝ
                                 </label>
                                 <a href="/Tuyen-Dung/0/" style="position:absolute;right:20px; bottom:5px;color:white;font-weight:bold">
-                                     <i class="icon-long-arrow-right"></i>
+                                    <i class="icon-long-arrow-right"></i>
                                 </a>
                             </div>
                             <div class="body" style="padding-bottom:0">
@@ -748,7 +756,7 @@
                                 </label>
 
                             </div>
-                            @Html.Action("mlienket", "Home")
+                            @Html.Action("Mlienket", "Home")
                         </div>
                     </div>
                 </div>
@@ -782,8 +790,8 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                @*<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.0538345114956!2d108.98860997486925!3d11.570562488630667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3170d025d96543dd%3A0x392f7fb40c45ccb9!2zVHJ1bmcgVMOibSBE4buLY2ggVuG7pSBWaeG7h2MgTMOgbSBU4buJbmggTmluaCBUaHXhuq1uIChFTVBMT1lNRU5UIFNFUlZJQ0UgQ0VOVEVSIE5JTkggVEhVQU4gUFJPVklOQ0Up!5e1!3m2!1svi!2s!4v1713752260667!5m2!1svi!2s" frameborder="0" style="border:0;width:100%;height:250px" allowfullscreen loading="lazy"></iframe>*@
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d782.0890271034888!2d106.06976787737513!3d21.181695196540712!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31350c03675959ff%3A0xceabe7b2889a4f58!2zVHJ1bmcgdMOibSBE4buLY2ggduG7pSBWaeG7h2MgbMOgbSBC4bqvYyBOaW5o!5e0!3m2!1svi!2s!4v1727659722710!5m2!1svi!2s" frameborder="0" style="border:0;width:100%;height:250px" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.0538345114956!2d108.98860997486925!3d11.570562488630667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3170d025d96543dd%3A0x392f7fb40c45ccb9!2zVHJ1bmcgVMOibSBE4buLY2ggVuG7pSBWaeG7h2MgTMOgbSBU4buJbmggTmluaCBUaHXhuq1uIChFTVBMT1lNRU5UIFNFUlZJQ0UgQ0VOVEVSIE5JTkggVEhVQU4gUFJPVklOQ0Up!5e1!3m2!1svi!2s!4v1713752260667!5m2!1svi!2s" frameborder="0" style="border:0;width:100%;height:250px" allowfullscreen loading="lazy"></iframe>
+
                                             </div>
                                         </div>
 
@@ -850,6 +858,8 @@
     </div>
 </div>
 <script>
+    /*onloadtb()*/
+    onload();
     document.addEventListener("DOMContentLoaded", function () {
         var lazyloadImages = document.querySelectorAll("img.lazy");
         var lazyloadThrottleTimeout;
@@ -879,6 +889,63 @@
         window.addEventListener("resize", lazyload);
         window.addEventListener("orientationChange", lazyload);
     });
+
+
+    function onload() {
+        $.ajax({
+            url: "/Home/QCslide_Mobile",
+            data: {},
+            success: function (response) {
+                $("#p_QCslide_Mobile").append(response);
+            }
+        });
+        $.ajax({
+            url: "/Home/QCslide_PC",
+            data: {},
+            success: function (response) {
+                $("#p_QCslide_PC").append(response);
+            }
+        });
+
+        $.ajax({
+            url: "/Home/HotJob_PC",
+            data: {},
+            success: function (response) {
+                $("#p_HotJob_PC").append(response);
+            }
+        });
+        $.ajax({
+            url: "/Home/UngVienXemNhieu_PC",
+            data: {},
+            success: function (response) {
+                $("#p_UngVienXemNhieu_PC").append(response);
+            }
+        });
+        $.ajax({
+            url: "/Home/LastestJob_PC",
+            data: {},
+            success: function (response) {
+                $("#p_LastestJob_PC").append(response);
+            }
+        });
+        $.ajax({
+            url: "/Home/LastestCandidate_PC",
+            data: {},
+            success: function (response) {
+                $("#p_LastestCandidate_PC").append(response);
+            }
+        });
+    }
+
+    //function onloadtb() {
+    //    $.ajax({
+    //        url: "/Home/Slide_RightTB",
+    //        data: {},
+    //        success: function (response) {
+    //            $("#p_Slide_Right").append(response);
+    //        }
+    //    });
+    //}
 </script>
 
 

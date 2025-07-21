@@ -62,7 +62,6 @@
         .glyphicon {
             line-height: 2 !important;
         }
-        
     </style>
     <style>
         .bgnavbarTD {
@@ -74,8 +73,8 @@
             margin: 0 !important;
             color: white;
             padding: 0 !important;
-
         }
+
         .bgnavbar {
             background: rgb(0,111,199);
             background: -moz-linear-gradient(180deg, rgba(0,111,199,1) 0%, rgba(0,114,181,1) 50%, rgba(0,111,199,1) 100%);
@@ -148,7 +147,7 @@
 
         .title_user {
             font-style: inherit;
-            font-weight:bold;
+            font-weight: bold;
         }
 
         .div_nganhnghe {
@@ -223,11 +222,13 @@
             right: 0;
             border-width: 3px;
         }
+
         @@media screen and (max-width:767px) {
             #topmenu {
                 color: white;
                 margin-left: 0 !important;
             }
+
             .hr_thongtin {
                 position: relative;
                 top: 0;
@@ -246,19 +247,23 @@
                 width: 70%;
             }
             /*////cau hinh trang News*/
-         }
+        }
+
         #topmenu {
             color: white;
             margin-left: 45px;
         }
-        .container > .navbar-header{
-            margin-right:0;
-            margin-left:0;
+
+        .container > .navbar-header {
+            margin-right: 0;
+            margin-left: 0;
         }
-.row{
-    margin-right:-3px !important;
-    margin-left:-3px !important;
-}
+
+        .row {
+            margin-right: -3px !important;
+            margin-left: -3px !important;
+        }
+
         #movetop {
             display: none;
             position: fixed;
@@ -276,7 +281,7 @@
             padding: 0;
             line-height: 36px;
             border-radius: 35px;
-            scroll-behavior:smooth;
+            scroll-behavior: smooth;
             transition: 0.3s ease-out;
         }
     </style>
@@ -341,9 +346,11 @@
                     border-radius: 3px;
                     padding: 5px
                 }
-                .img_sp{
-                    max-height:150px;
+
+                .img_sp {
+                    max-height: 150px;
                 }
+
                 .div_moinhat {
                     border: 1px solid rgb(200, 200, 200);
                     border-radius: 3px;
@@ -370,16 +377,16 @@
                 }
             </style>
             <div class="row">
-                <div class="col-md-12" style="padding-bottom: 20px; min-height: 575px">
+                <div class="col-md-12" style="padding-bottom: 20px; min-height: 650px">
                     @RenderBody()
                 </div>
 
             </div>
         </div>
-        
+
         @Html.Partial("_Footer")
     </div>
-    
+
     <!-- Jquery DataTable Plugin Js -->
     <script src="~/Content/AdminBSB-cssjs/plugins/jquery-datatable/jquery.dataTables.js"></script>
     <script src="~/Content/AdminBSB-cssjs/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>

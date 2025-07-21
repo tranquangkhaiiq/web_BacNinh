@@ -1,0 +1,164 @@
+﻿
+@using webvl2024_BacNinh.Models
+@using webvl2024_BacNinh.DAO
+@using webvl2024_BacNinh.Utils
+@using webvl2024_BacNinh.Models.table_mirro
+<style>
+    p {
+        margin: 0px 0 5px;
+    }
+    @@media screen and (min-width: 550px) {
+        .div_card_hstd {
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            /*margin-bottom: 10px;*/
+            height: 234px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .imgTD {
+            padding: 0;
+            margin-bottom: 0;
+            max-height: 120px
+        }
+    }
+
+    @@media screen and (max-width:550px) {
+        .div_card_hstd {
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .imgTD {
+            padding: 0;
+            margin-bottom: 0;
+        }
+    }
+</style>
+@foreach (DoanhNghiep_TuyenDung_mirro all in ViewBag.Job_lienquan)
+{
+    var dndn = new DN_DoanhNghiep_Dao();
+    var dm = new DanhMuc_Dao();
+    var DMchucdanh = dm.GetChucDanhbyID(all.ChucDanh_ID);
+    var chucdanh = DMchucdanh != null ? DMchucdanh.TenChucDanh : "Không có";
+    var DMChuyenMon = dm.GetChuyenMonbyID(all.YeuCauTrinhDo_ID);
+    var ChuyenMon = DMChuyenMon != null ? DMChuyenMon.TenChuyenMon : "Không yêu cầu";
+    var DN = dndn.GetDN_ByDNID(all.DN_ID);
+
+    if (DN != null)
+    {
+
+        var Lg = DN.Logo;
+        var tentieude = XString.Truncate(all.TieuDeTuyenDung, 40);
+        var tencty = XString.Truncate(DN.TenDoanhNghiep, 30);
+        
+        var tg = dm.GetTGbyID(all.ThoiGianLamViec_ID);
+        var logo = XString.Cutstring(Lg);
+        var path = XString.maplocal + "Logo_DN\\" + XString.Cutstring(logo);
+        int noilamviecH = 12286;
+        if (all.NoiLamViec_HuyenID != null)
+        {
+            noilamviecH = all.NoiLamViec_HuyenID.Value;
+        }
+        int tt = all.NoiLamViec_TinhID.Value;
+        string tendc = dndn.GetDiaChiById(noilamviecH).TenDiaChi;
+        string tinh = dndn.GetDiaChiById(tt).TenDiaChi;
+
+        var kn = "";
+        
+        if (all.SoNamKinhNghiem == null || all.SoNamKinhNghiem < 1)
+        {
+            kn = "Không cần kinh nghiệm";
+        }
+        else
+        { kn = all.SoNamKinhNghiem.ToString() + " năm kinh nghiệm."; }
+        
+        var luong = " ";
+        if ((all.LuongTu == 0 && all.LuongDen == 0) || all.LuongTu == null || all.LuongDen == null)
+        {
+            luong = "Lương thỏa thuận";
+        }
+        else if (all.LuongTu > 500000)
+        {
+            luong = @Html.FormatValue(all.LuongTu, "{0:#,###.##}") + " đến " + @Html.FormatValue(all.LuongDen, "{0:#,###.##}");
+        }
+        else
+        {
+            luong = all.LuongTu + " đến " + all.LuongDen + " triệu";
+        }
+        var str = XString.ConvertToUnSign(tentieude);
+        var url = "/Tuyen-Dung/" + str + "-" + all.TuyenDung_ID.ToString();
+        <a href="@url" target="_blank">
+            <div class="col-md-4 col-xs-12">
+                <div class="div_card_hstd">
+                    <div class="col-md-2" style="padding: 0; margin-bottom: 0">
+                        @if (File.Exists(path))
+                        {
+                            <img src="@XString.GetImgBase64("Logo_DN",logo)" class="img_avatar" hidden />
+                            <img src="~/Content/Upload/Logo_DN/@logo" class="img_avatar" />
+                        }
+                        else
+                        {<img src="~/Content/Tien/icon3d/ctyicon.jpg" class="img_avatar" />}
+                    </div>
+                    <div class="col-md-10" style="padding: 0;padding-left:5px; margin-bottom: 0">
+                        <h5 class="h4_tieude" style="margin-top:0px">
+                            @tentieude.ToUpper()
+                            
+                        </h5>
+
+                        
+                    </div>
+                    <div class="col-md-12" style="padding: 0;padding-left:5px; margin-bottom: 0">
+                        <h6 class="h5_name" style="margin-bottom: 0; text-transform: capitalize">
+                            Cty: @tencty
+                            
+                        </h6>
+                        
+                    </div>
+
+                    <div class="col-md-12" style="padding: 0; margin-bottom: 0">
+
+                        <p style="margin-top:10px;margin-bottom:5px">
+                            <a>
+                                <i class="icon-usd"></i> @luong
+                            </a>
+
+                            @*<a style="float:right">
+                                <i class="icon-time"></i>  @tg.TenThoiGianLamViec
+                            </a>*@
+
+                        </p>
+                        <p style="margin-bottom:5px">
+
+                            <a>
+                                <i class="icon-map-marker"></i>  @tendc _ @tinh
+                            </a>
+
+                        </p>
+                        <p>
+                            <a class="hstd_date">
+                                <i class="icon-star"></i>
+                                @Html.FormatValue(all.NgayCapNhat, "{0:dd/MM/yyyy}")
+                            </a>
+                            <span style="float:right">
+                                <i class="icon-eye-open"></i> @all.SoLuotXem
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                </div>
+        </a>
+    }
+
+}
+
+
+
+
+
+
+
+

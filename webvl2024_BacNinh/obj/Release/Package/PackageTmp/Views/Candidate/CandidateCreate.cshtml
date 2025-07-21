@@ -1,12 +1,11 @@
 ﻿@using webvl2024_BacNinh.Models
 @using webvl2024_BacNinh.i18n
-@using webvl2024_BacNinh.Utils
 @model KhachHang_TimViecLam
 @{
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
-<script src="~/Content/js/summernote-vi-VN.js"></script>
+@*<script src="~/Content/js/summernote-vi-VN.js"></script>*@
 <script src="~/Content/js/summernote.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link href="~/Content/css/Info_Style.css" rel="stylesheet" />
@@ -142,7 +141,6 @@
                                     </div>
                                     <div class="validation"></div>
                                 </div>
-
                                 @*Mới đính kèm CV*@
                                 <div class="form-group">
                                     <p>Đính kèm CV_nếu có (giới hạn 5MB) <span></span></p>
@@ -168,7 +166,6 @@
                             </div>
 
                             <div class="rightcontact">
-
                                 <div class="form-group">
                                     <p>@Common.Thedaycanstartwork <span>*</span></p>
                                     <span class="icon-case"><i class="glyphicon glyphicon-calendar"></i></span>

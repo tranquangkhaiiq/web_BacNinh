@@ -129,5 +129,6 @@ namespace webvl2024_BacNinh.Models.table_mirro
         public int? MucDichLamViec_2022 { get; set; }
 
         public int? HopDongLaoDong_2022 { get; set; }
+        public string TenDoanhNghiep { get; set; }
     }
 }

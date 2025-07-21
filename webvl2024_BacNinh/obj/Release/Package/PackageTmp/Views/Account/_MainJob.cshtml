@@ -25,18 +25,19 @@
                     });
                 });
                 $(".menu-content a:eq(1)").click(function () {
-                    $("#loadingTVL").show();
+                    //$("#loadingTVL").show();
                     $.ajax({
                         url: "/Account/_JobManagement",
                         success: function (respone) {
                             if (respone == "No") {
                                 location.reload();
                             } else {
-                                setTimeout(function () {
-                                    $("#Candidate_Mana").html(respone);
-                                    //1s sau hiên lên
-                                }, 600);
-                                $("#loadingTVL").hide();
+                                $("#Candidate_Mana").html(respone);
+                                //setTimeout(function () {
+                                //    $("#Candidate_Mana").html(respone);
+                                //    //1s sau hiên lên
+                                //}, 600);
+                                //$("#loadingTVL").hide();
                             }
                         }
                     });
@@ -54,6 +55,9 @@
                     });
                 });
             });
+
+
+
         </script>
         @Html.Action("_JobDoc", "Account")
     </div>

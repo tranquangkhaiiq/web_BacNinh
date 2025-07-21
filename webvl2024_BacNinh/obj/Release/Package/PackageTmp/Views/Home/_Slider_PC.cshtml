@@ -76,7 +76,7 @@
                         }
                         var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QC.NewId;
 
-                        <a href="@url">
+                        <a href="@url" target="_blank">
 
                             @if (File.Exists(path))
                             {
@@ -106,7 +106,7 @@
 
                     var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QC.NewId;
                     <li>
-                        <a href="@url">
+                        <a href="@url" target="_blank">
                             @if (File.Exists(path))
                             {
                                 <img src="@XString.GetImgBase64("News_Img", QC.ImagePath)" hidden/>
@@ -140,7 +140,7 @@
                             str = XString.ConvertToUnSign(QC.Title);
                         }
                         var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QC.NewId;
-                        <a href="@url" style=" text-transform: capitalize">
+                        <a href="@url" style=" text-transform: capitalize" target="_blank">
                             <i class="icon-double-angle-right"></i>@title
                         </a>
                     }
@@ -159,7 +159,7 @@
                     }
                     var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QC.NewId;
                     <li>
-                        <a href="@url" style=" text-transform: capitalize">
+                        <a href="@url" target="_blank" style=" text-transform: capitalize">
                             <i class="icon-double-angle-right"></i>@title
                         </a>
                     </li>
@@ -183,7 +183,7 @@
         
         $("#number_slideshow").number_slideshow({
             slideshow_autoplay: 'enable',//enable disable
-            slideshow_time_interval: 4000,
+            slideshow_time_interval: 9000,
             slideshow_window_background_color: "#fff",
             slideshow_window_padding: '0',
             //slideshow_window_width: '400',

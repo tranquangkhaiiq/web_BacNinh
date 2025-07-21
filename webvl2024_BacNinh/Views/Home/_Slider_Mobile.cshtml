@@ -18,7 +18,7 @@
                 str = XString.ConvertToUnSign(QC.Title);
             }
             var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QC.NewId;
-            <a href="@url">
+            <a href="@url" target="_blank">
 
                 @if (File.Exists(path))
                 {
@@ -50,7 +50,7 @@
         }
         var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QC.NewId;
         <div class="item">
-            <a href="@url">
+            <a href="@url" target="_blank">
                 @if (File.Exists(path))
                 {
 

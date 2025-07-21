@@ -38,7 +38,7 @@
                         var strid = ut.KH_ID + "" + ut.TuyenDung_ID;
                         var tuyendung = new DN_HoSoTuyenDung_Dao();
                         var td = tuyendung.GetList_byTuyendungID(ut.TuyenDung_ID);
-
+                        var tdid = ut.TuyenDung_ID.ToString();
 
                         if (td != null)
                         {
@@ -46,16 +46,16 @@
                             var url = "/Tuyen-Dung/" + str + "-" + ut.TuyenDung_ID.ToString();
                             <tr>
                                 <td>
-                                    <a href="@url">
+                                    <a href="@url" target="_blank">
                                         @td.TieuDeTuyenDung
                                     </a>
                                 </td>
                                 <td>
                                     <input id="utKHID" value="@ut.KH_ID" hidden />
-                                    <input id="utTuyenDungID" value="@ut.TuyenDung_ID" hidden />
+                                    <input id="@tdid" value="@ut.TuyenDung_ID" hidden />
                                     @Html.FormatValue(ut.NgayUngTuyen, "{0:dd/MM/yyyy}")
                                 </td>
-                                @if (ut.DN_TuChoi == "Từ chối")
+                                @if (ut.DN_TuChoi == "TUCHOI")
                                 {
                                     <td><span style="background-color: #ff6a00">@ut.DN_TuChoi</span></td>
                                 }
@@ -69,7 +69,7 @@
                                 }
                                 @if (ut.NTV_TrangThaiUngTuyen)
                                 {
-                                    <td><button class="btn" style="background-color: #ff6a00" id="HTWW_@strid.ToString()" onclick="NgungUngTuyen(@strid.ToString())">Click để Ngưng Ứng Tuyển</button></td>
+                                    <td><button class="btn" style="background-color: #ff6a00" id="HTWW_@strid.ToString()" onclick="NgungUngTuyen(@strid.ToString(),@tdid)">Click để Ngưng Ứng Tuyển</button></td>
                                 }
                                 else
                                 {
@@ -87,43 +87,11 @@
         </div>
     </div>
     <div id="phuhop" class="kh1" style="display:none">
-        <div class="table-responsive" style="margin-top:20px;">
-            <p><span>***</span>Hồ sơ tuyển dụng do hệ thống tự động chọn giúp bạn.</p>
-            <p><span>***</span>Hệ thống lựa chọn dựa trên những hồ sơ được duyệt của bạn.</p>
-            <table class="table table-hover table-striped">
-                <thead>
-                    <tr style="background-color: #efce05;color:white">
-                        <td>@Common.Title</td>
-                        <td>Mã hồ sơ</td>
-                        <td>Tên Cty</td>
-                        <td>@Common.CreatedDate</td>
-                        <td>@Common.Detail</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (DoanhNghiep_TuyenDung Item in ViewBag.VLPhuHop)
-                    {
-                        var tieude = Item.TieuDeTuyenDung;
-                        var str = XString.ConvertToUnSign(Item.TieuDeTuyenDung);
-
-                        var url = "/Tuyen-Dung/" + str.Replace("/", "-") + "-" + Item.TuyenDung_ID;
-                        var dndn = new DN_DoanhNghiep_Dao();
-                        var DN = dndn.GetDN_ByDNID(Item.DN_ID);
-                        if (DN != null)
-                        {
-                            <tr>
-                                <td>@tieude</td>
-                                <td>@Item.TuyenDung_ID</td>
-                                <td>@DN.TenDoanhNghiep</td>
-                                <td>@Html.FormatValue(Item.NgayTao, "{0:dd/MM/yyyy}")</td>
-                                <td>
-                                    <a class="btn btn-success" target="_blank" href="@url"><span class="glyphicon glyphicon-eye-open"></span></a>
-                                </td>
-                            </tr>
-                        }
-                    }
-                </tbody>
-            </table>
+        <p style="margin-top:20px;"><span>***</span>Hồ sơ tuyển dụng do hệ thống tự động chọn giúp bạn.</p>
+        <p><span>***</span>Hệ thống lựa chọn dựa trên những hồ sơ được duyệt của bạn.</p>
+        <div id="Canphuhop" class="table-responsive">
+            <img id="loadingTD" src="~/Content/img/loading.gif" hidden />
+            @*//load Canphuhop*@
         </div>
     </div>
     <div id="menu2" class="kh2" style="display:none">
@@ -175,14 +143,14 @@
         $('.kh1').css("display", "none");
         $('.kh2').css("display", "block");
     });
-    function NgungUngTuyen(id) {
+    function NgungUngTuyen(id, ttdid) {
         if (document.getElementById("HTWW_" + id).innerHTML === "Click để Ngưng Ứng Tuyển") {
 
             if (!confirm("Bạn MUỐN ngưng ứng tuyển vị trí này ??")) {
                 return false;
             } else {
                 var khid = $('#utKHID').val();
-                var tdid = $('#utTuyenDungID').val();
+                var tdid = $('#' + ttdid).val();
                 
                 $.ajax({
                     url: "/Account/ungvien_tuchoiDN",
@@ -207,7 +175,7 @@
                 return false;
             } else {
                 var khid = $('#utKHID').val();
-                var tdid = $('#utTuyenDungID').val();
+                var tdid = $('#' + ttdid).val();
                 
                 $.ajax({
                     url: "/Account/ungvien_tuchoiDN",
@@ -231,4 +199,16 @@
             }
         }
     };
+    onload();
+    function onload() {
+        $("#loadingTD").show();
+        $.ajax({
+            url: "/Account/_CandidateHSPhuHop",
+            data: {},
+            success: function (response) {
+                $("#Canphuhop").append(response);
+                $("#loadingTD").hide();
+            }
+        });
+    }
 </script>

@@ -8,7 +8,7 @@
 }
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
-<script src="~/Content/js/summernote-vi-VN.js"></script>
+@*<script src="~/Content/js/summernote-vi-VN.js"></script>*@
 <script src="~/Content/js/summernote.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link href="~/Content/css/Info_Style.css" rel="stylesheet" />
@@ -208,12 +208,12 @@
 
                         <div class="form-group" style="border: 1px dashed #423333; padding: 20px">
                             <div>
-                                <p>Ngành kinh doanh</p>
+                                <p>Ngành:</p>
                                 <span class="icon-case"><i class="glyphicon glyphicon-education"></i></span>
                                 @Html.DropDownList("NganhKD_ID", null, new { @class = "form-control", @style = "width: 75%; height: 41px" })
                             </div>
                             <div>
-                                <p>Nghề kinh doanh</p>
+                                <p>Nghề:</p>
                                 <span class="icon-case"><i class="glyphicon glyphicon-envelope"></i></span>
                                 @Html.DropDownList("NgheKD_ID", new SelectList(string.Empty, "Value", "Text"), new { @style = "width: 75%; height: 41px" })
                             </div>

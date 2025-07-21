@@ -27,20 +27,20 @@
                     });
                 });
                 $(".menu-content a:eq(1)").click(function () {
-                    $("#loadingTD").show();
+                    //$("#loadingTD").show();
                     $.ajax({
                         url: "/Account/_CandidateManagement",
                         success: function (respone) {
                             if (respone == "No") {
                                 location.reload();
                             } else {
-                                setTimeout(function () {
-                                    $("#Candidate_Mana").html(respone);
-                                    //1s sau hiên lên
-                                }, 600);
-                                $("#loadingTD").hide();
+                                $("#Candidate_Mana").html(respone);
+                                //setTimeout(function () {
+                                //    $("#Candidate_Mana").html(respone);
+                                //    //1s sau hiên lên
+                                //}, 800);
+                                //$("#loadingTD").hide();
                             }
-                            
                         }
                     });
                 });
@@ -57,6 +57,9 @@
                     });
                 });
             });
+            
+
+
         </script>
         @Html.Action("_CandidateDoc", "Account")
 

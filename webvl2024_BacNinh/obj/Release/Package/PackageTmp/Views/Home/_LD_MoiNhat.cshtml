@@ -40,15 +40,16 @@
                     <div class="col-md-2" style="padding: 0; margin-bottom: 0">
                         @if (File.Exists(path))
                         {
+                            //Dung onload thay cho lazyload 
                             <img src="@XString.GetImgBase64("Avatar_UV",hinh)" class="img_avatar" hidden/>
-                            <img data-src="/Content/Upload/Avatar_UV/@hinh" class="lazy img_avatar" />
+                            <img src="/Content/Upload/Avatar_UV/@hinh" class="img_avatar" />
                         }
                         else
-                        { <img data-src="/Content/Tien/icon3d/NguoiTimViecIcon.png" class="lazy img_avatar" />}
+                        { <img src="/Content/Tien/icon3d/NguoiTimViecIcon.png" class="img_avatar" />}
                     </div>
                     <div class="col-md-10" style="padding: 0;padding-left:10px; margin-bottom: 0">
 
-                        <a href="@url" style="color: #555">
+                        <a href="@url" style="color: #555" target="_blank">
                             <h4 class="h4_tieude">
                                 @kh.TenHoSo.ToUpper()
                                 @if (tgmm != null)

@@ -282,7 +282,7 @@
                                 </span>
                             </li>
                         </ul><p style="text-align:left;"><span style="color: #005b9f "><strong>TRUNG TÂM DỊCH VỤ VIỆC LÀM TỈNH @XString.tinh</strong></span></p>
-                        <p style="text-align:left;"><span style="color: #005b9f ">Địa chỉ:&nbsp; <strong>@XString.DiaChi</strong></span></p>
+                        <p style="text-align:left;"><span style="color: #005b9f "><i>Địa chỉ:</i>&nbsp; <strong>@XString.DiaChi</strong></span></p>
                         <p style="text-align:left;"><span style="color: #005b9f ">ĐT: <strong>@XString.SDT</strong> </span></p>
                         <p style="text-align:left;"><span style="color: #005b9f ">Email: <strong>@XString.EmailLienhe</strong>;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Website: <strong>  </strong></span></p>
                         @*View pdf và In file*@
@@ -293,11 +293,12 @@
                                 //alert('sdfdfdsf');
                             }
                             var pdf = '@XString.getStringpdf(Model.ImagePath2)';
+
                             var url = "/Content/Upload/News_Img/" + pdf;
                             var myState = {
 				                            pdf: null,
 				                            currentPage: 1,
-				                            zoom: 1.5
+				                            zoom: 1.4
                             }
                             //console.log(pdf);
                             pdfjsLib.getDocument('/Content/Upload/News_Img/' + pdf).then((pdf) => {

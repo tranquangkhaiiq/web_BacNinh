@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
@@ -22,6 +23,7 @@ namespace webvl2024_BacNinh
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             var Max = dbc.aspnet_getVisitors.OrderByDescending(kh => kh.Id)
                                             .Take(1)
                                             .Single();
@@ -112,7 +114,7 @@ namespace webvl2024_BacNinh
                 }
             }
         }
-        void Session_End(object sender, EventArgs e)
+        public void Session_End(object sender, EventArgs e)
         {
             //Xảy ra khi phiên làm việc không có gởi yêu cầu hoặc làm tươi trang aspx của ứng dụng web trong một khoảng thời gian (mặc định là 20 phút)
             Application.Lock();

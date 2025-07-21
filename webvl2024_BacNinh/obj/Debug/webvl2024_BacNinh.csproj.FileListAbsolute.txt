@@ -270,3 +270,10 @@ E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\obj\Debug\vi\webvl2024_BacNinh.res
 E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\obj\Debug\webvl202.1D05B706.Up2Date
 E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\obj\Debug\webvl2024_BacNinh.dll
 E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\obj\Debug\webvl2024_BacNinh.pdb
+E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.dll
+E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.Security.dll
+E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.Security.Facebook.dll
+E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\bin\Owin.dll
+E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.xml
+E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.Security.xml
+E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.Security.Facebook.xml

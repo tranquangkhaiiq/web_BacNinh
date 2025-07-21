@@ -16,8 +16,8 @@ namespace webvl2024_BacNinh.DAO
     public class DN_HoSoTuyenDung_Dao
     {
         ModelBN db = new ModelBN();
-        public static List<DoanhNghiep_TuyenDung> model_DNTD_Job = new List<DoanhNghiep_TuyenDung>();
-        public static List<DoanhNghiep_TuyenDung> model_DNTD_Job_Pay = new List<DoanhNghiep_TuyenDung>();
+        public static List<DoanhNghiep_TuyenDung_mirro> model_DNTD_Job = new List<DoanhNghiep_TuyenDung_mirro>();
+        public static List<DoanhNghiep_TuyenDung_mirro> model_DNTD_Job_Pay = new List<DoanhNghiep_TuyenDung_mirro>();
         public static List<DoanhNghiep_TuyenDung> model_ListTD = new List<DoanhNghiep_TuyenDung>();
         public static List<DoanhNghiep_TuyenDung> model_ListTD_Pay = new List<DoanhNghiep_TuyenDung>();
         public static string getSession_JobType_kh()
@@ -59,27 +59,28 @@ namespace webvl2024_BacNinh.DAO
             var model = db.Database.SqlQuery<DoanhNghiep_TuyenDung>("exec GetBase_DN_TD_khai_Pay").ToList();
             return model;
         }
-        public static List<DoanhNghiep_TuyenDung> LinQ_Job_left(ModelBN db)
+        public static List<DoanhNghiep_TuyenDung_mirro> LinQ_Job_left(ModelBN db)
         {
-            var model = db.Database.SqlQuery<DoanhNghiep_TuyenDung>("exec GetBase_DN_TD_khai_Job")
-                                .OrderByDescending(kh=>kh.NoiBat)
-                                .ThenByDescending(kh=>kh.TuyenDung_ID)
+            var model = db.Database.SqlQuery<DoanhNghiep_TuyenDung_mirro>("exec GetBase_DN_TD_khai_Job")
+                                .OrderByDescending(kh => kh.NoiBat)
+                                .ThenByDescending(kh => kh.TuyenDung_ID)
                                 .ToList();
+
             return model;
         }
-        public static List<DoanhNghiep_TuyenDung> LinQ_Job_left_Pay(ModelBN db)
+        public static List<DoanhNghiep_TuyenDung_mirro> LinQ_Job_left_Pay(ModelBN db)
         {
-            var model = db.Database.SqlQuery<DoanhNghiep_TuyenDung>("exec GetBase_DN_TD_khai_Job_Pay")
+            var model = db.Database.SqlQuery<DoanhNghiep_TuyenDung_mirro>("exec GetBase_DN_TD_khai_Job_Pay")
                                 .OrderByDescending(kh => kh.NoiBat)
                                 .ThenByDescending(kh => kh.TuyenDung_ID)
                                 .ToList();
             return model;
         }
         //Lấy tất cả cho MainJob
-        public List<DoanhNghiep_TuyenDung> LinQ_DN_TD_Job(string str, bool key, int id,List<int>Ids)
+        public List<DoanhNghiep_TuyenDung_mirro> LinQ_DN_TD_Job(string str, bool key, int id, List<int> Ids)
         {
-            var model = new List<DoanhNghiep_TuyenDung>();
-            var model_DNTD = new List<DoanhNghiep_TuyenDung>();
+            var model = new List<DoanhNghiep_TuyenDung_mirro>();
+            var model_DNTD = new List<DoanhNghiep_TuyenDung_mirro>();
             model_DNTD = (key == true) ? model_DNTD_Job_Pay : model_DNTD_Job;
             if (str == "" && id == 0)
             {
@@ -88,12 +89,12 @@ namespace webvl2024_BacNinh.DAO
             if (str == "duoi10tr" && id == 0)
             {
                 model = model_DNTD
-                   .Where(kh => kh.LuongDen < 10 && kh.LuongDen > 0 || (kh.LuongDen > 1000000 && kh.LuongDen < 10000000)).ToList();
+                   .Where(kh => kh.LuongDen <= 10 && kh.LuongDen > 0 || (kh.LuongDen > 1000000 && kh.LuongDen <= 10000000)).ToList();
             }
             if (str == "10den20tr" && id == 0)
             {
                 model = model_DNTD
-                    .Where(kh => kh.LuongTu >= 10 && kh.LuongDen <= 20 || (kh.LuongTu > 10000000 && kh.LuongDen <= 20000000)).ToList();
+                    .Where(kh => kh.LuongDen > 10 && kh.LuongDen <= 20 || (kh.LuongDen > 10000000 && kh.LuongDen <= 20000000)).ToList();
             }
             if (str == "hon20tr" && id == 0)
             {
@@ -148,10 +149,10 @@ namespace webvl2024_BacNinh.DAO
             }
             return model;
         }
-        public List<DoanhNghiep_TuyenDung> LinQ_DN_TD_Job_Skip(int sec, bool key, int pageSize, string str, int id,List<int>Ids)
+        public List<DoanhNghiep_TuyenDung_mirro> LinQ_DN_TD_Job_Skip(int sec, bool key, int pageSize, string str, int id, List<int> Ids)
         {
-            var model = new List<DoanhNghiep_TuyenDung>();
-            var model_DNTD = new List<DoanhNghiep_TuyenDung>();
+            var model = new List<DoanhNghiep_TuyenDung_mirro>();
+            var model_DNTD = new List<DoanhNghiep_TuyenDung_mirro>();
             model_DNTD = (key == true) ? model_DNTD_Job_Pay : model_DNTD_Job;
             if (str == "")
             {
@@ -163,7 +164,7 @@ namespace webvl2024_BacNinh.DAO
             if (str == "duoi10tr")
             {
                 model = model_DNTD
-                    .Where(kh => kh.LuongDen < 10 && kh.LuongDen > 0 || (kh.LuongDen > 1000000 && kh.LuongDen < 10000000))
+                    .Where(kh => kh.LuongDen <= 10 && kh.LuongDen > 0 || (kh.LuongDen > 1000000 && kh.LuongDen <= 10000000))
                         .Skip(sec * pageSize)
                         .Take(pageSize)
                         .ToList();
@@ -171,7 +172,7 @@ namespace webvl2024_BacNinh.DAO
             if (str == "10den20tr")
             {
                 model = model_DNTD
-                    .Where(kh => kh.LuongTu > 10 && kh.LuongDen <= 20 || (kh.LuongTu > 10000000 && kh.LuongDen <= 20000000))
+                    .Where(kh => kh.LuongDen > 10 && kh.LuongDen <= 20 || (kh.LuongDen > 10000000 && kh.LuongDen <= 20000000))
                         .Skip(sec * pageSize)
                         .Take(pageSize)
                         .ToList();
@@ -258,14 +259,14 @@ namespace webvl2024_BacNinh.DAO
             }
             return model;
         }
-//Lấy tất cả cho MainJob
-        public List<DoanhNghiep_TuyenDung> GetListTDbyNghanhNghe(int sec, bool key, int pageSize, string searchId)
+        //Lấy tất cả cho MainJob
+        public List<DoanhNghiep_TuyenDung_mirro> GetListTDbyNghanhNghe(int sec, bool key, int pageSize, string searchId)
         {
-            
-            var model = new List<DoanhNghiep_TuyenDung>();
-            var model_DNTD = new List<DoanhNghiep_TuyenDung>();
+
+            var model = new List<DoanhNghiep_TuyenDung_mirro>();
+            var model_DNTD = new List<DoanhNghiep_TuyenDung_mirro>();
             model_DNTD = (key == true) ? model_DNTD_Job_Pay : model_DNTD_Job;
-            if (searchId== "")
+            if (searchId == "")
             {
                 model = model_DNTD
                         .Skip(sec * pageSize)
@@ -281,7 +282,7 @@ namespace webvl2024_BacNinh.DAO
                         .ToList();
                 if (modelmapSub != null)
                 {
-                    model = model_DNTD.Where(kh => modelmapSub.Any(x=> kh.TieuDeTuyenDung.ToLower().Contains(x)))
+                    model = model_DNTD.Where(kh => modelmapSub.Any(x => kh.TieuDeTuyenDung.ToLower().Contains(x)))
                             .Skip(sec * pageSize)
                             .Take(pageSize)
                             .ToList();
@@ -295,31 +296,82 @@ namespace webvl2024_BacNinh.DAO
             var model = db.aspnet_mapautos.ToList();
             return model;
         }
-        public List<DoanhNghiep_TuyenDung> GetCountTDbyNghanhNghe(string search, bool key)
+        public List<DoanhNghiep_TuyenDung_mirro> GetCountTDbyNghanhNghe(string search, bool key)
         {
             int nn = int.Parse(search);
             var modelmapSub = db.aspnet_mapSubs.Where(kh => kh.mapautoId == nn)
                         .Select(kh => kh.Substr)
                         .ToList();
-            var model = new List<DoanhNghiep_TuyenDung>();
-            var model_DNTD = new List<DoanhNghiep_TuyenDung>();
+            var model = new List<DoanhNghiep_TuyenDung_mirro>();
+            var model_DNTD = new List<DoanhNghiep_TuyenDung_mirro>();
             model_DNTD = (key == true) ? model_DNTD_Job_Pay : model_DNTD_Job;
             if (modelmapSub != null)
             {
-                model = model_DNTD.Where(kh => modelmapSub.Any(x=> kh.TieuDeTuyenDung.ToLower().Contains(x)))
+                model = model_DNTD.Where(kh => modelmapSub.Any(x => kh.TieuDeTuyenDung.ToLower().Contains(x)))
                         .ToList();
                 return model;
             }
             return null;
         }
-        public List<DoanhNghiep_TuyenDung> GetmapTDbyTieudeTVL(int KH_ID, bool key)
+        public List<DoanhNghiep_TuyenDung_mirro> GetmapTDbytuyendungID(int tuyendungid)
+        {
+            var modelhsduyet = db.DoanhNghiep_TuyenDung.Where(kh => kh.TuyenDung_ID == tuyendungid);
+            if (modelhsduyet != null)
+            {
+                var modelallmap = GetAllmapaotu().Select(kh => kh.Id).ToList();
+                /////
+                var model = new List<DoanhNghiep_TuyenDung_mirro>();
+                var model_DNTD = new List<DoanhNghiep_TuyenDung_mirro>();
+                model_DNTD = model_DNTD_Job;
+                for (int i = 0; i < modelallmap.Count(); i++)
+                {
+                    int modeltdmap = 0;
+                    int id = modelallmap[i];
+                    var modelmapSub = db.aspnet_mapSubs.Where(kh => kh.mapautoId == id)
+                        .Select(kh => kh.Substr)
+                        .ToList();
+                    if (modelmapSub != null)
+                    {
+                        modeltdmap = modelhsduyet.Where(kh => modelmapSub.Any(x => kh.TieuDeTuyenDung.ToLower().Contains(x)))
+                            .Count();
+                        if (modeltdmap > 0)
+                        {
+                            var modelTD = model_DNTD.Where(kh => modelmapSub.Any(x => kh.TieuDeTuyenDung.ToLower().Contains(x)))
+                                            .Take(6)
+                                            .ToList();
+                            model.AddRange(modelTD);
+                            break;
+                        }
+
+                    }
+                }
+                var modelhsduyet2 = db.DoanhNghiep_TuyenDung.Find(tuyendungid);
+                if (modelhsduyet2 != null && modelhsduyet2.YeuCauNghe_ID > 0)
+                {
+                    var model_manghe = model_DNTD.Where(kh => kh.YeuCauNghe_ID == modelhsduyet2.YeuCauNghe_ID);
+                    if (model_manghe != null)
+                    {
+                        model.AddRange(model_manghe);
+                    }
+                }
+                if (model != null)
+                {
+                    return model.Where(kh => kh.TuyenDung_ID != tuyendungid).Distinct()
+                    .Take(9)
+                    .ToList();
+                }
+                return model;
+            }
+            return null;
+        }
+        public List<DoanhNghiep_TuyenDung_mirro> GetmapTDbyTieudeTVL(int KH_ID, bool key)
         {
             ////get hồ sơ được duyệt của NTV
-            var modelhsduyet = NTV_HoSoXinViec_Dao.LinQ_HSTV(db).Where(kh=>kh.KH_ID==KH_ID);
+            var modelhsduyet = NTV_HoSoXinViec_Dao.LinQ_HSTV(db).Where(kh => kh.KH_ID == KH_ID);
             var modelallmap = GetAllmapaotu().Select(kh => kh.Id).ToList();
             /////
-            var model = new List<DoanhNghiep_TuyenDung>();
-            var model_DNTD = new List<DoanhNghiep_TuyenDung>();
+            var model = new List<DoanhNghiep_TuyenDung_mirro>();
+            var model_DNTD = new List<DoanhNghiep_TuyenDung_mirro>();
             model_DNTD = (key == true) ? model_DNTD_Job_Pay : model_DNTD_Job;
             for (int i = 0; i < modelallmap.Count(); i++)
             {
@@ -341,7 +393,7 @@ namespace webvl2024_BacNinh.DAO
                     }
                 }
             }
-            if(model != null)
+            if (model != null)
             {
                 return model.Distinct().ToList();
             }
@@ -351,17 +403,19 @@ namespace webvl2024_BacNinh.DAO
         {
             var mode = new List<DoanhNghiep_TuyenDung>();
             var model_List = new List<DoanhNghiep_TuyenDung>();
+            //model_ListTD = LinQ_DN_TD(dbc);
+            //model_ListTD_Pay = LinQ_DN_TD_Pay(dbc);
             model_List = (key == true) ? model_ListTD_Pay : model_ListTD;
             if (skip == 0)
             {
-                mode = model_List.Where(p => p.NgayNoiBat != null && p.NgayNoiBat > DateTime.Now && p.NoiBat ==true)
+                mode = model_List.Where(p => p.NgayNoiBat != null && p.NgayNoiBat > DateTime.Now && p.NoiBat == true)
                                         .OrderByDescending(p => p.NgayCapNhat)
                                         .Take(take)
                                         .ToList();
             }
             else
             {
-                mode = model_List.Where(p => p.NgayNoiBat != null && p.NgayNoiBat > DateTime.Now && p.NoiBat==true)
+                mode = model_List.Where(p => p.NgayNoiBat != null && p.NgayNoiBat > DateTime.Now && p.NoiBat == true)
                                         .OrderByDescending(p => p.NgayCapNhat)
                                         .Skip(skip)
                                         .Take(take)
@@ -472,10 +526,10 @@ namespace webvl2024_BacNinh.DAO
         }
 
         //DANH SÁCH HỒ SƠ TUYỂN DUNG XEM NHIỀU
-        public static List<DoanhNghiep_TuyenDung> GetListTD_XemNhieu(string key)
+        public static List<DoanhNghiep_TuyenDung> GetListTD_XemNhieu(ModelBN dbc, string key)
         {
             var model_List = new List<DoanhNghiep_TuyenDung>();
-            model_List = (key == "true") ? model_ListTD_Pay : model_ListTD; 
+            model_List = (key == "true") ? model_ListTD_Pay : model_ListTD;
             var mode = model_List
                     .OrderByDescending(p => p.SoLuotXem)
                     .Take(6)
@@ -491,7 +545,7 @@ namespace webvl2024_BacNinh.DAO
         public List<DoanhNghiep_TuyenDung> GetDSHSbyDN(int DNID)
         {
             var model = LinQ_TDbyDN(db, DNID)
-                        .OrderBy(kh=>kh.TinhTrangHoSo)
+                        .OrderBy(kh => kh.TinhTrangHoSo)
                         .ToList();
             return model;
         }
@@ -517,7 +571,7 @@ namespace webvl2024_BacNinh.DAO
         }
         public int Tinchuaxem(int DNID)
         {
-            var model = db.SMS_AdmintoDNs.Where(kh => kh.DNID == DNID && kh.DaXem ==false).Count();
+            var model = db.SMS_AdmintoDNs.Where(kh => kh.DNID == DNID && kh.DaXem == false).Count();
             return model;
         }
         public int GetTuyenDungbyDNID_hienthiweb(int DNID, bool hienthi)

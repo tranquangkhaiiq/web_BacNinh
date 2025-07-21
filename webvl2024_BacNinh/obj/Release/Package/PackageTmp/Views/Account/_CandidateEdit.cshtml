@@ -7,7 +7,7 @@
 }
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
-<script src="~/Content/js/summernote-vi-VN.js"></script>
+@*<script src="~/Content/js/summernote-vi-VN.js"></script>*@
 <script src="~/Content/js/summernote.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link href="~/Content/css/Info_Style.css" rel="stylesheet" />
@@ -184,8 +184,9 @@
                                     <div class="validation"></div>
                                 </div>
                             </div>
-                            <div class="rightcontact">
 
+                            <div class="rightcontact">
+                                
                                 <div class="form-group">
                                     <p>Ngành mong muốn <span>*</span></p>
                                     <span class="icon-case"><i class="glyphicon glyphicon-folder-open"></i></span>
@@ -193,19 +194,19 @@
                                     <div class="validation"></div>
                                 </div>
                                 <div class="form-group">
-                                    <p>Nghề mm 1 <span>*</span></p>
+                                    <p>Nghề mm 1<span>*</span></p>
                                     <span class="icon-case"><i class="glyphicon glyphicon-folder-open"></i></span>
                                     @Html.DropDownList("NgheMongMuon_ID", null, new { @class = "form-control", style = "width: 70%; height: 41px" })
                                 </div>
-                                <input id="nghemm2" value="@ViewBag.NgheMongMuon_22ID" hidden />
-                                <input id="tennghemm2" value="@ViewBag.Tengnhemm22" hidden />
+                                <input id="nghemm2" value="@ViewBag.NgheMongMuon_22ID" hidden/>
+                                <input id="tennghemm2" value="@ViewBag.Tengnhemm22" hidden/>
                                 <div class="form-group">
                                     <p>Nghề mm 2</p>
                                     <span class="icon-case"><i class="glyphicon glyphicon-folder-open"></i></span>
                                     @Html.DropDownList("NgheMongMuon_2ID", new SelectList(string.Empty, "Value", "Text"), new { @style = "width: 70%; height: 41px" })
                                 </div>
-                                <input id="nghemm3" value="@ViewBag.NgheMongMuon_33ID" hidden />
-                                <input id="tennghemm3" value="@ViewBag.Tengnhemm33" hidden />
+                                <input id="nghemm3" value="@ViewBag.NgheMongMuon_33ID" hidden/>
+                                <input id="tennghemm3" value="@ViewBag.Tengnhemm33" hidden/>
                                 <div class="form-group">
                                     <p>Nghề mm 3</p>
                                     <span class="icon-case"><i class="glyphicon glyphicon-folder-open"></i></span>
@@ -319,6 +320,32 @@
     </section>
 
 <script>
+    ////  XỬ LÝ LOAD NGÀNH NGHỀ
+    //$(function () {
+    //    $('#NganhMongMuon_ID').change(function () {
+    //        $('#NgheMongMuon_ID').empty();
+    //        var MaQuanHuyen = $('#NganhMongMuon_ID').val();
+    //        //alert(MaQuanHuyen.toString());
+    //        $.ajax({
+    //            url: "/Candidate/NgheMongMuon_ID", // we are calling json method
+    //            data: { NganhMongMuon_ID: MaQuanHuyen },
+    //            success: function (response) {
+    //                // states contains the JSON list
+    //                // of states passed from the controller
+    //                $(response).each(function (i, e) {
+    //                    $("#NgheMongMuon_ID").append(
+    //                        $('<option />')
+    //                            .attr('value', e.NgheLaoDong_ID)
+    //                            .text(e.TenNgheLaoDong)
+    //                    );
+    //                });
+    //            },
+    //            error: function (ex) {
+    //                alert('Lỗi load ngành nghề: ' + ex);
+    //            }
+    //        });
+    //    });
+    //});
     //  XỬ LÝ LOAD NGÀNH NGHỀ
     $(function () {
         var MaQuanHuyen = $("#NganhMongMuon_ID").val();//truyền hằng số cho lần chạy đầu tiên
@@ -330,7 +357,7 @@
             url: "/Candidate/NgheMongMuon_edit", // we are calling json method
             data: { NganhMongMuon_ID: MaQuanHuyen, nghemm: nghemm2 },
             success: function (response) {
-                if (nghemm2 === '0' || nghemm2 === '') {
+                if (nghemm2 === '0' || nghemm2==='') {
                     $("#NgheMongMuon_2ID").append(
                         $('<option/>')
                             .attr('value', 0)
@@ -348,25 +375,25 @@
                             .text('Không chọn')
                     );
                 }
-
-                $(response).each(function (i, e) {
-
-                    $("#NgheMongMuon_2ID").append(
-                        $('<option/>')
-                            .attr('value', e.NgheLaoDong_ID)
-                            .text(e.TenNgheLaoDong)
-                    );
-                });
+                
+            $(response).each(function (i, e) {
+                
+                $("#NgheMongMuon_2ID").append(
+                    $('<option/>')
+                        .attr('value', e.NgheLaoDong_ID)
+                        .text(e.TenNgheLaoDong)
+                );
+            });
             },
-            error: function (ex) {
-                alert('Lỗi load ngành nghề: ' + ex);
+        error: function (ex) {
+            alert('Lỗi load ngành nghề: ' + ex);
             }
         });
         $.ajax({
             url: "/Candidate/NgheMongMuon_edit", // we are calling json method
             data: { NganhMongMuon_ID: MaQuanHuyen, nghemm: nghemm3 },
             success: function (response) {
-
+                
                 if (nghemm3 === '0' || nghemm3 === '') {
                     $("#NgheMongMuon_3ID").append(
                         $('<option/>')
@@ -398,51 +425,52 @@
             }
         });
     });
-    //  XỬ LÝ LOAD NGHỀ khi nghanh thay doi
-    $(function () {
-        $('#NganhMongMuon_ID').change(function () {
-            $('#NgheMongMuon_ID').empty();
-            $('#NgheMongMuon_2ID').empty();
-            $('#NgheMongMuon_3ID').empty();
-            var MaQuanHuyen = $('#NganhMongMuon_ID').val();
 
-            $.ajax({
-                url: "/Candidate/NgheMongMuon_ID", // we are calling json method
-                data: { NganhMongMuon_ID: MaQuanHuyen },
-                success: function (response) {
-                    $("#NgheMongMuon_2ID").append(
-                        $('<option/>')
-                            .attr('value', 0)
-                            .text('Không chọn')
-                    );
-                    $("#NgheMongMuon_3ID").append(
-                        $('<option/>')
-                            .attr('value', 0)
-                            .text('Không chọn')
-                    );
-                    $(response).each(function (i, e) {
-                        $("#NgheMongMuon_ID").append(
-                            $('<option/>')
-                                .attr('value', e.NgheLaoDong_ID)
-                                .text(e.TenNgheLaoDong)
-                        );
+
+        // LOAD NGHỀ KHI NGÀNH THAY ĐỔI
+        $(function () {
+            $('#NganhMongMuon_ID').change(function () {
+                $('#NgheMongMuon_ID').empty();
+                $('#NgheMongMuon_2ID').empty();
+                $('#NgheMongMuon_3ID').empty();
+                var MaQuanHuyen = $('#NganhMongMuon_ID').val();
+
+                $.ajax({
+                    url: "/Candidate/NgheMongMuon_ID", // we are calling json method
+                    data: { NganhMongMuon_ID: MaQuanHuyen },
+                    success: function (response) {
                         $("#NgheMongMuon_2ID").append(
                             $('<option/>')
-                                .attr('value', e.NgheLaoDong_ID)
-                                .text(e.TenNgheLaoDong)
+                                .attr('value', 0)
+                                .text('Không chọn')
                         );
                         $("#NgheMongMuon_3ID").append(
                             $('<option/>')
-                                .attr('value', e.NgheLaoDong_ID)
-                                .text(e.TenNgheLaoDong)
+                                .attr('value', 0)
+                                .text('Không chọn')
                         );
-                    });
-                },
-                error: function (ex) {
-                    alert('Lỗi load ngành nghề: ' + ex);
-                }
+                        $(response).each(function (i, e) {
+                            $("#NgheMongMuon_ID").append(
+                                $('<option/>')
+                                    .attr('value', e.NgheLaoDong_ID)
+                                    .text(e.TenNgheLaoDong)
+                            );
+                            $("#NgheMongMuon_2ID").append(
+                                $('<option/>')
+                                    .attr('value', e.NgheLaoDong_ID)
+                                    .text(e.TenNgheLaoDong)
+                            );
+                            $("#NgheMongMuon_3ID").append(
+                                $('<option/>')
+                                    .attr('value', e.NgheLaoDong_ID)
+                                    .text(e.TenNgheLaoDong)
+                            );
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Lỗi load ngành nghề: ' + ex);
+                    }
+                });
             });
-        });
     });
-
 </script>

@@ -38,7 +38,7 @@ namespace webvl2024_BacNinh.DAO
             }
 
         }
-        public bool InsertUserWeb(string UserName,string EmailConnection, int DN_khachhangid, string PasswordSalt, string CirpherPass,int Loaitaikhoan)
+        public bool InsertUserWeb(string UserName,string EmailConnection,string note, int DN_khachhangid, string PasswordSalt, string CirpherPass,int Loaitaikhoan)
         {
             UserWeb model2 = new UserWeb();
 
@@ -46,7 +46,7 @@ namespace webvl2024_BacNinh.DAO
             model2.PasswordSalt = PasswordSalt;
             model2.UserName = UserName;
             model2.EmailConnection = EmailConnection;
-
+            model2.Note = note;
             model2.UserRoles_NVLoaitaikhoan = Loaitaikhoan;
             model2.CreateDate = DateTime.Now;
             model2.UserChild_id = DN_khachhangid;

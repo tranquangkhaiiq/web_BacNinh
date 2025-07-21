@@ -65,7 +65,8 @@
                     {
                         var str = " ";
                         var title = QC.Title.ToLower();
-                        var path = XString.maplocal+ "News_Img\\"+ QC.ImagePath;
+                        string fullPath = Request.MapPath("~/Content/UpLoad/News_Img/" + QC.ImagePath);
+                        var hinhpath = File.Exists(fullPath) ? QC.ImagePath : "noimgSmall.jpg";
                         if (QC.Title.Length > 100)
                         {
                             str = XString.ConvertToUnSign(QC.Title.Substring(0, 100));
@@ -76,16 +77,8 @@
                         }
                         var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QC.NewId;
 
-                        <a href="@url">
-
-                            @if (File.Exists(path))
-                            {
-                                <img src="@XString.GetImgBase64("News_Img", QC.ImagePath)" hidden/>
-                                <img src="~/Content/Upload/News_Img/@QC.ImagePath" />
-                            }
-                            else
-                            {<img src="~/Content/Upload/News_Img/noimgSmall.jpg" />}
-
+                        <a href="@url" target="_blank">
+                            <img src="~/Content/Upload/News_Img/@hinhpath" />
                             <h4 style="text-transform: capitalize">@title</h4>
                             <p>
                                 @Html.Raw(QC.Summary)
@@ -97,7 +90,8 @@
                 {
                     var str = " ";
                     var title = QC.Title.ToLower();
-                    var path = XString.maplocal + "News_Img\\" + QC.ImagePath;
+                    string fullPath = Request.MapPath("~/Content/UpLoad/News_Img/" + QC.ImagePath);
+                    var hinhpath = File.Exists(fullPath) ? QC.ImagePath : "NoPic.jpg";
                     if (QC.Title.Length > 100)
                     {
                         str = XString.ConvertToUnSign(QC.Title.Substring(0, 100));
@@ -106,14 +100,8 @@
 
                     var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QC.NewId;
                     <li>
-                        <a href="@url">
-                            @if (File.Exists(path))
-                            {
-                                <img src="@XString.GetImgBase64("News_Img", QC.ImagePath)" hidden/>
-                                <img src="~/Content/Upload/News_Img/@QC.ImagePath" />
-                            }
-                            else
-                            {<img src="~/Content/Upload/News_Img/NoPic.jpg" />}
+                        <a href="@url" target="_blank">
+                            <img src="~/Content/Upload/News_Img/@hinhpath" />
                             <h4 style="text-transform: capitalize">@title</h4>
                             <p>
                                 @Html.Raw(QC.Summary)
@@ -140,7 +128,7 @@
                             str = XString.ConvertToUnSign(QC.Title);
                         }
                         var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QC.NewId;
-                        <a href="@url" style=" text-transform: capitalize">
+                        <a href="@url" style=" text-transform: capitalize" target="_blank">
                             <i class="icon-double-angle-right"></i>@title
                         </a>
                     }
@@ -159,7 +147,7 @@
                     }
                     var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QC.NewId;
                     <li>
-                        <a href="@url" style=" text-transform: capitalize">
+                        <a href="@url" target="_blank" style=" text-transform: capitalize">
                             <i class="icon-double-angle-right"></i>@title
                         </a>
                     </li>
@@ -183,7 +171,7 @@
         
         $("#number_slideshow").number_slideshow({
             slideshow_autoplay: 'enable',//enable disable
-            slideshow_time_interval: 4000,
+            slideshow_time_interval: 9000,
             slideshow_window_background_color: "#fff",
             slideshow_window_padding: '0',
             //slideshow_window_width: '400',

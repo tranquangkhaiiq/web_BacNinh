@@ -119,7 +119,7 @@ namespace webvl2024_BacNinh.DAO
     //                "[TrongLuongNang_2022] =null,[DungDiLai_2022] =null,[NgheNoi_2022] =null, " +
     //                "[ThiLuc_2022] =null,[ThaoTacBangTay_2022] =null,[Dung2Tay_2022] =null, " +
     //                "[YeuCauThem_2022] =null,[MucDichLamViec_2022] =null,HopDongLaoDong_2022 =null " +
-    //            "FROM [VLBN].[dbo].[DoanhNghiep_TuyenDung] " +
+    //            "FROM [ModelBN].[dbo].[DoanhNghiep_TuyenDung] " +
     //            "where TieuDeTuyenDung is not null and NgayHetHan is not null and DN_ID in (select DN_ID from DoanhNghiep) " +
     //            "and TinhTrangHoSo is not null and TinhTrangHoSo in (select TinhTrangHoSo from DM_TinhTrangPheDuyetHoSo) " +
     //            "and YeuCauNganh_ID is not null and YeuCauNganh_ID in(select YeuCauNganh_ID from DM_NganhLaoDong) " +

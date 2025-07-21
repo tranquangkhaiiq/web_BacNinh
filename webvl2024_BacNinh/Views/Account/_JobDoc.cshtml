@@ -74,7 +74,7 @@
                                         <tbody>
                                             @if (ViewBag.DSHSbyDN != null)
                                             {
-                                                ModelBN dbc = new ModelBN();
+                                                
                                                 foreach (DoanhNghiep_TuyenDung item in ViewBag.DSHSbyDN)
                                                 {
                                                     var hienthi = item.TuyenDung_ID;
@@ -158,7 +158,7 @@
                                             }
                                         </tbody>
                                     </table>
-                                    <div class="thongbao"><span>Click nút "Mới tạo" để "gửi phê duyệt"</span></div>
+                                    <div class="thongbao"><span>Click nút "Mới tạo" để gửi phê duyệt"</span></div>
                                     <div class="thongbao"><span>Bạn chỉ có thể Xóa hồ sơ ở trạng thái "Chờ Phê Duyệt hoặc Mới tạo"</span></div>
                                     <div class="thongbao"><span>Bạn có thể update "Ngày Hết Hạn" để sử dụng lại hồ sơ "Đã hết hạn"</span></div>
                                     <div class="thongbao1"><span>"Click tắt Web" nếu bạn đã tuyển đủ</span></div>

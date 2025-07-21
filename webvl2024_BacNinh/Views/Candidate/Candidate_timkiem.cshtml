@@ -1,8 +1,8 @@
-﻿
-@using webvl2024_BacNinh.Models
+﻿@using webvl2024_BacNinh.Models.table_mirro
 @using webvl2024_BacNinh.DAO
 @using webvl2024_BacNinh.Utils
-@foreach (KhachHang_TimViecLam timviec in ViewBag.Candidate_timkiem)
+
+@foreach (KhachHang_TimViecLam_mirro timviec in ViewBag.Candidate_timkiem)
 {
     var NTV = new NTV_KhachHang_Dao().GetNTV_ByKHID(timviec.KH_ID);
     var dm = new DanhMuc_Dao();
@@ -30,17 +30,17 @@
         var trinhdo = nv.Getlist_khachhangtrinhdo(NTV.KH_ID);
         int mkv = timviec.NoiLamViecMongMuon_ID == null ? 12286 : timviec.NoiLamViecMongMuon_ID.Value;
         string tendc = new DN_DoanhNghiep_Dao().GetDiaChiById(mkv).TenDiaChi;
-        var path = XString.maplocal+ "Avatar_UV\\" + hinh;
+        var path = XString.maplocal + "Avatar_UV\\" + hinh;
 
         var url = "/Nguoi-Tim-Viec/" + strHoTen + "-" + timviec.TimViec_ID;
-        <a href="@url">
+        <a href="@url" target="_blank">
             <div class="col-md-6 col-xs-12">
                 <div class="div_card_hstv">
 
                     <div class="col-md-2" style="padding: 0; margin-bottom: 0">
                         @if (File.Exists(path))
                         {
-                            <img src="@XString.GetImgBase64("Avatar_UV",hinh)" class="img_avatar" hidden/>
+                            <img src="@XString.GetImgBase64("Avatar_UV",hinh)" class="img_avatar" hidden />
                             <img src="~/Content/Upload/Avatar_UV/@hinh" class="img_avatar" />
                         }
                         else
@@ -71,7 +71,7 @@
                             <span>
                                 <i class="material-icons" style="font-size:14px">visibility </i> Lượt Xem: @timviec.LuotXem
                             </span>
-                            
+
                             <span style="margin-left:25px">
                                 <i class="icon-map-marker"></i>  @tendc
                             </span>

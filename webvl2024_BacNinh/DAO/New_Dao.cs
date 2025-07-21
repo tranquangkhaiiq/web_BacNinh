@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Web;
 using webvl2024_BacNinh.Models;
+using webvl2024_BacNinh.DAO;
 namespace webvl2024_BacNinh.DAO
 {
     public class New_Dao
@@ -26,27 +27,27 @@ namespace webvl2024_BacNinh.DAO
             var model = dbc.NewsCategories.FirstOrDefault(kh=>kh.CategoryID == Id);
             return model;
         }
-        public static List<News> Get_NewIndexPortalId(ModelBN db,int CategoryId, int skip, int take)
-        {
-            //CategoryId == 4168 : QuangCao_Small
-            var model = new List<News>();
-            if (skip == 0)
-            {
-                model = db.Database.SqlQuery<News>("SELECT top(1) * FROM [VLBN].[dbo].[News] where CategoryId = @Key and PortalId=81 " +
-                                    "order by NewId desc", new SqlParameter("@Key", CategoryId))
-                                        .Take(take)
-                                        .ToList();
-            }
-            else
-            {
-                model = db.Database.SqlQuery<News>("SELECT top(1) * FROM [VLBN].[dbo].[News] where CategoryId = @Key and PortalId=81 " +
-                                    "order by NewId desc", new SqlParameter("@Key", CategoryId))
-                                        .Skip(skip)
-                                        .Take(take)
-                                        .ToList();
-            }
-            return model;
-        }
+        //public static List<News> Get_NewIndexPortalId(ModelBN db,int CategoryId, int skip, int take)
+        //{
+        //    //CategoryId == 4168 : QuangCao_Small
+        //    var model = new List<News>();
+        //    if (skip == 0)
+        //    {
+        //        model = db.Database.SqlQuery<News>("SELECT top(1) * FROM [ModelBN].[dbo].[News] where CategoryId = @Key and PortalId=81 " +
+        //                            "order by NewId desc", new SqlParameter("@Key", CategoryId))
+        //                                .Take(take)
+        //                                .ToList();
+        //    }
+        //    else
+        //    {
+        //        model = db.Database.SqlQuery<News>("SELECT top(1) * FROM [ModelBN].[dbo].[News] where CategoryId = @Key and PortalId=81 " +
+        //                            "order by NewId desc", new SqlParameter("@Key", CategoryId))
+        //                                .Skip(skip)
+        //                                .Take(take)
+        //                                .ToList();
+        //    }
+        //    return model;
+        //}
         public static List<New_small> Get_QCslideisActive(ModelBN db, int skip, int take)
         {
             var model = new List<New_small>();
@@ -113,9 +114,11 @@ namespace webvl2024_BacNinh.DAO
             }
             return model;
         }
+        //
         public static List<New_small> Get_NewQCslideNOisActive(ModelBN db, int skip, int take)
-        {//chỉ có 10 tin nổi bật qui dinh trong proc "GetListNew_Slide_Khai"
+        {//chỉ có 10 tin nổi bật quan ly boi proc "GetListNew_Slide_Khai"
 
+            ////*****isActive =1 and Hotsite =1 order by Createdate2 desc
             var model = new List<New_small>();
             if (skip == 0 && take == 1)
             {
@@ -125,7 +128,7 @@ namespace webvl2024_BacNinh.DAO
             }
             else if (skip == 0 && take > 1)
             {
-                model = model_NewsSlide.Take(take).ToList();
+                model  = model_NewsSlide.Take(take).ToList();
             }
             else if (skip > 0)
             {

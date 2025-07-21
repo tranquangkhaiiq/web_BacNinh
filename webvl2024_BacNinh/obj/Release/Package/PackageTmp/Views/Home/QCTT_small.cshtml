@@ -33,7 +33,7 @@
         }
         var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + small.NewId;
         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
-            <a href="@url" title="QCTT_small:@title" target="_blank">
+            <a href="@url" title="TT_small:@title" target="_blank">
                 @if (File.Exists(path))
                 {
                     <img src="@XString.GetImgBase64("News_Img", small.ImagePath)" hidden />
@@ -44,14 +44,14 @@
             </a>
         </div>
     }
-    @for (int i = 0; i < ViewBag.QCTT_smallTT; i++)
+    @*@for (int i = 0; i < ViewBag.QCTT_smallTT; i++)
     {
         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
             <a href="" title="">
                 <img src="~/Content/Upload/News_Img/noimgSmall.jpg" />
             </a>
         </div>
-    }
+    }*@
 
     @*<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
             <a href="" title="" target="_blank">
