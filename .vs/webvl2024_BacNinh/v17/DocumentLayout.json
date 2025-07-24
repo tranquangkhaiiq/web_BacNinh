@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\GitHubDestop\\web_BacNinh\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\GitHubDestop\\web_BacNinh\\webvl2024_bacninh\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|e:\\githubdestop\\web_bacninh\\webvl2024_bacninh\\views\\account\\_giaima.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\views\\account\\_giaima.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\GitHubDestop\\web_BacNinh\\webvl2024_bacninh\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\GitHubDestop\\web_BacNinh\\webvl2024_bacninh\\views\\account\\_login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -51,26 +51,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "_giaima.cshtml",
               "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_giaima.cshtml",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\Views\\Account\\_giaima.cshtml",
               "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_giaima.cshtml",
               "RelativeToolTip": "webvl2024_BacNinh\\Views\\Account\\_giaima.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABkAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB0AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-22T09:08:16.81Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AccountController.cs",
               "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\Controllers\\AccountController.cs",
               "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Controllers\\AccountController.cs",
               "RelativeToolTip": "webvl2024_BacNinh\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAoJAAAAAAAAAAAzwBkJAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAIMBAAAAAAAAAAAIwI0BAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-22T09:02:34.148Z",
               "EditorCaption": ""
