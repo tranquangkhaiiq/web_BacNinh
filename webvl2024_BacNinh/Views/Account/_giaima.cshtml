@@ -23,17 +23,17 @@
                         <span class="text-center text-danger">@Session["Thongbaogiaima"]</span>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input value="" type="text" class="form-control" name="username" placeholder="Tên tài khoản" required>
+                            <input value="@ViewBag.usernamegm" type="text" class="form-control" name="username" placeholder="Tên tài khoản" required>
                         </div>
                         <span class="help-block"></span>
 
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input value="@ViewBag.Passwordgm" type="password" class="form-control" name="Pass" placeholder="Mật khẩu" required>
+                            <input value="@ViewBag.Passwordgm" type="text" class="form-control" name="Pass" placeholder="Mật khẩu" required>
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input value="" type="password" class="form-control" name="Salt" placeholder="Salt" required>
+                            <input value="" type="text" class="form-control" name="Salt" placeholder="Salt" required>
                         </div>
                         <span class="help-block">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
 
