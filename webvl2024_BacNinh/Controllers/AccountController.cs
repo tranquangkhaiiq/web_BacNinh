@@ -2311,6 +2311,12 @@ namespace webvl2024_BacNinh.Controllers
             string text = randomText.ToString();
             return text;
         }
+        [HttpGet]
+        public ActionResult _giaima()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult _giaima(string username, string Pass, string Salt)
         {
             Session["Thongbaogiaima"] = "";
@@ -2321,6 +2327,7 @@ namespace webvl2024_BacNinh.Controllers
                 {
                     string check_pass = tk_check.DeCryptDotNetNukePassword(Pass, "A872EDF100E1BC806C0E37F1B3FF9EA279F2F8FD378103CB", Salt);//pass ma hoa
                     ViewBag.Passwordgm=check_pass;
+                    ViewBag.usernamegm=username;
                 }
                 else
                 {

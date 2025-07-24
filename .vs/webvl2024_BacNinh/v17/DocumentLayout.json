@@ -3,19 +3,15 @@
   "WorkspaceRootPath": "E:\\GitHubDestop\\web_BacNinh\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\GitHubDestop\\web_BacNinh\\webvl2024_bacninh\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|e:\\githubdestop\\web_bacninh\\webvl2024_bacninh\\views\\account\\_giaima.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\views\\account\\_giaima.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|e:\\githubdestop\\web_bacninh\\webvl2024_bacninh\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|e:\\githubdestop\\web_bacninh\\webvl2024_bacninh\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|e:\\githubdestop\\web_bacninh\\webvl2024_bacninh\\views\\account\\_login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\GitHubDestop\\web_BacNinh\\webvl2024_bacninh\\views\\account\\_login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\views\\account\\_login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -23,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|e:\\githubdestop\\web_bacninh\\webvl2024_bacninh\\areas\\admin\\adminarearegistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|E:\\GitHubDestop\\web_BacNinh\\webvl2024_bacninh\\areas\\admin\\adminarearegistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\areas\\admin\\adminarearegistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -43,19 +39,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RouteConfig.cs",
-              "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\App_Start\\RouteConfig.cs",
-              "RelativeDocumentMoniker": "webvl2024_BacNinh\\App_Start\\RouteConfig.cs",
-              "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\App_Start\\RouteConfig.cs",
-              "RelativeToolTip": "webvl2024_BacNinh\\App_Start\\RouteConfig.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAowEIAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T09:21:28.337Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "_Login.cshtml",
               "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_Login.cshtml",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\Views\\Account\\_Login.cshtml",
@@ -64,37 +47,37 @@
               "ViewState": "AgIAABIAAAAAAAAAAAAAACcAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-22T09:13:10.659Z",
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "_giaima.cshtml",
               "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_giaima.cshtml",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\Views\\Account\\_giaima.cshtml",
               "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_giaima.cshtml",
               "RelativeToolTip": "webvl2024_BacNinh\\Views\\Account\\_giaima.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABkAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-22T09:08:16.81Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AccountController.cs",
               "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\Controllers\\AccountController.cs",
               "ToolTip": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Controllers\\AccountController.cs",
               "RelativeToolTip": "webvl2024_BacNinh\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAUJAAAAAAAAAAAAAAsJAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAoJAAAAAAAAAAAzwBkJAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-22T09:02:34.148Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "AdminAreaRegistration.cs",
               "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Areas\\Admin\\AdminAreaRegistration.cs",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\Areas\\Admin\\AdminAreaRegistration.cs",
@@ -102,12 +85,11 @@
               "RelativeToolTip": "webvl2024_BacNinh\\Areas\\Admin\\AdminAreaRegistration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T05:33:26.193Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T05:33:26.193Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "CandidateDetail.cshtml",
               "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Views\\Candidate\\CandidateDetail.cshtml",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\Views\\Candidate\\CandidateDetail.cshtml",
@@ -119,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "HomeController.cs",
               "DocumentMoniker": "E:\\GitHubDestop\\web_BacNinh\\webvl2024_BacNinh\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\Controllers\\HomeController.cs",
@@ -127,8 +109,7 @@
               "RelativeToolTip": "webvl2024_BacNinh\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAO8AAAAAAAAAAAAAAPkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T02:49:27.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T02:49:27.47Z"
             }
           ]
         }
