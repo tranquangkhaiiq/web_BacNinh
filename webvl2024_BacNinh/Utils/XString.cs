@@ -17,8 +17,8 @@ namespace webvl2024_BacNinh.Utils
 {
     public static class XString
     {
-        public static string maplocal = ConfigurationManager.AppSettings["maplocal"];//"C:\\inetpub\\wwwfiles\\Upload\\";
-        public static string mapweb = ConfigurationManager.AppSettings["mapweb"];//"E:\\webvl2024_new - Copy\\webvl2024_BacNinh\\Content\\Upload\\";
+        //public static string maplocal = ConfigurationManager.AppSettings["maplocal"];//"C:\\inetpub\\wwwfiles\\Upload\\";
+        //public static string mapweb = ConfigurationManager.AppSettings["mapweb"];//"E:\\webvl2024_new - Copy\\webvl2024_BacNinh\\Content\\Upload\\";
         public static string DiaChi = ConfigurationManager.AppSettings["DiaChi"];
         public static string SDT = ConfigurationManager.AppSettings["SDT"];
         public static string EmailLienhe = ConfigurationManager.AppSettings["EmailLienhe"];
@@ -224,43 +224,39 @@ namespace webvl2024_BacNinh.Utils
             else return nn;
 
         }
-        public static String GetImgBase64(string foder, string img)
-        {
-            //Cac file web khong cho phep, thi xoa luon
-            var path = mapweb + foder + "\\" + img;
-            if (!File.Exists(path))
-            {
-                //tự động lấy các file cần thiết 
-                var ext = getext(img);
-                byte[] imageArray = System.IO.File.ReadAllBytes(maplocal + foder + "\\" + img);
-                //string base64ImageRepresentation = Convert.ToBase64String(imageArray);
-                if (ext.ToLower() == ".jpg" || ext.ToLower() == ".png" || ext.ToLower() == ".gif" || ext.ToLower() == ".pdf" || ext.ToLower() == ".xls"
-                    || ext.ToLower() == ".xlsm" || ext.ToLower() == ".doc" || ext.ToLower() == ".docx" || ext.ToLower() == ".rar" || ext.ToLower() == ".zip" || ext.ToLower() == ".pptx")
-                {
-                    File.WriteAllBytes(mapweb + foder + "\\" + img, imageArray);
-                }
-                else
-                {
-                    Xoahinhcu(foder, img);
-                }
-            }
-            return "";
-            //return $"data: application/jpg ; base64,{base64ImageRepresentation}";
-        }
+        //public static String GetImgBase64(string foder, string img)
+        //{
+        //    //Cac file web khong cho phep, thi xoa luon
+        //    var path = mapweb + foder + "\\" + img;
+        //    if (!File.Exists(path))
+        //    {
+        //        //tự động lấy các file cần thiết 
+        //        var ext = getext(img);
+        //        byte[] imageArray = System.IO.File.ReadAllBytes(maplocal + foder + "\\" + img);
+        //        //string base64ImageRepresentation = Convert.ToBase64String(imageArray);
+        //        if (ext.ToLower() == ".jpg" || ext.ToLower() == ".png" || ext.ToLower() == ".gif" || ext.ToLower() == ".pdf" || ext.ToLower() == ".xls"
+        //            || ext.ToLower() == ".xlsm" || ext.ToLower() == ".doc" || ext.ToLower() == ".docx" || ext.ToLower() == ".rar" || ext.ToLower() == ".zip" || ext.ToLower() == ".pptx")
+        //        {
+        //            File.WriteAllBytes(mapweb + foder + "\\" + img, imageArray);
+        //        }
+        //        else
+        //        {
+        //            Xoahinhcu(foder, img);
+        //        }
+        //    }
+        //    return "";
+        //    //return $"data: application/jpg ; base64,{base64ImageRepresentation}";
+        //}
         public static bool Xoahinhcu(string foder, string img)
         {
             try
             {
-                var pathweb = mapweb + foder + "\\" + img;
-                var pathlocal = maplocal + foder + "\\" + img;
-                //xoa local truoc
-                if (File.Exists(pathlocal))
+                if (img != null && img != "")
                 {
-                    File.Delete(pathlocal);
-                }
-                if (File.Exists(pathweb))
-                {
-                    File.Delete(pathweb);
+                    if (File.Exists(HttpContext.Current.Server.MapPath("~/Content/" + foder + img)))
+                    {
+                        File.Delete(HttpContext.Current.Server.MapPath("~/Content/" + foder + img));
+                    }
                 }
                 return true;
             }

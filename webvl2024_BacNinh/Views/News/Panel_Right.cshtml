@@ -68,7 +68,7 @@
             {
                 var str = " ";
                 var title = kh.Title.ToLower();
-                var path = Server.MapPath("~/Content/Upload/News_Img/" + kh.ImagePath);
+                var fullpath = Server.MapPath("~/Content/Upload/News_Img/" + kh.ImagePath);
                 if (kh.Title.Length > 100)
                 {
                     str = XString.ConvertToUnSign(kh.Title.Substring(0, 100));
@@ -86,9 +86,8 @@
 
                         </div>
                         <div class="col-md-5">
-                            @if (File.Exists(path))
+                            @if (File.Exists(fullpath))
                             {
-
                                 <img src="~/Content/Upload/News_Img/@kh.ImagePath" />
                             }
                             else

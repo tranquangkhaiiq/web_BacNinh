@@ -688,7 +688,6 @@
                         {
                             var str = " ";
                             var title = Long.Title.ToLower();
-                            var path = XString.maplocal + "News_Img\\" + Long.ImagePath;
                             string fullPath = Request.MapPath("~/Content/UpLoad/News_Img/" + Long.ImagePath);
                             var hinhpath = File.Exists(fullPath) ? Long.ImagePath : "SlideLong321.jpg";
                             if (Long.Title.Length > 100)

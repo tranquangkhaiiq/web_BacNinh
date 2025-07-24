@@ -27,7 +27,7 @@
         var quyenloi = all.QuyenLoi.Length > 30 ? "Click xem chi tiết." : all.QuyenLoi;
         var tg = dm.GetTGbyID(all.ThoiGianLamViec_ID);
         var logo = XString.Cutstring(Lg);
-        var path = XString.maplocal + "Logo_DN\\" + XString.Cutstring(logo);
+        var fullpath = Request.MapPath("~/Content/Upload/Logo_DN/" +logo);
         int noilamviecH = 12286;
         if (all.NoiLamViec_HuyenID != null)
         {
@@ -77,9 +77,8 @@
             <div class="col-md-6">
                 <div class="div_card_hstd">
                     <div class="col-md-2" style="padding: 0; margin-bottom: 0">
-                        @if (File.Exists(path))
+                        @if (File.Exists(fullpath))
                         {
-                            <img src="@XString.GetImgBase64("Logo_DN",logo)" class="img_avatar" hidden />
                             <img src="~/Content/Upload/Logo_DN/@logo" class="img_avatar" />
                         }
                         else

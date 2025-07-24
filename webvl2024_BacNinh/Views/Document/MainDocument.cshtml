@@ -55,16 +55,15 @@
                             <tbody>
                                 @foreach (VBPQ_TaiLieu t in Model)
                                 {
-                                    var path = XString.maplocal+ "Document\\" + t.Files;
+                                    var fullpath = Request.MapPath("~/Content/Upload/Document/" + t.Files);
                                     <tr class="odd gradeX">
                                         <td>@Truncate(t.TrichYeu, 200)</td>
                                         <td><a href="~/Content/Upload/Document/@t.Files">@t.SoVanban</a></td>
                                         <td>@Html.FormatValue(t.NgayBanHanh, "{0:dd/MM/yyyy}")</td>
 
                                         <td class="text-center">
-                                            @if (File.Exists(path))
+                                            @if (File.Exists(fullpath))
                                             {
-                                                <a href="@XString.GetImgBase64("Document",t.Files)" hidden />
                                                 <a href="~/Content/Upload/Document/@t.Files">
                                                     <i class="icon-download"></i>
                                                 </a>

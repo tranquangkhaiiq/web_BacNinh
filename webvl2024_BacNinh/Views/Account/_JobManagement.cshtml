@@ -33,9 +33,11 @@
         border-radius: 3px;
         padding: 5px
     }
+
     .img_sp {
         max-height: 150px;
     }
+
     .div_tintuc_t::-webkit-scrollbar-track {
         -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
         background-color: #F5F5F5;
@@ -100,8 +102,8 @@
                             var tuyendung = new DN_HoSoTuyenDung_Dao().GetList_byTuyendungID(ut.TuyenDung_ID);
                             if (tuyendung != null)
                             {
-                                var path = XString.maplocal + "Avatar_UV\\" + hinh;
-                                var path1 = XString.maplocal + "Document\\" + ut.File_CVUngTuyen;
+                                var fullpath = Request.MapPath("~/Content/Upload/Avatar_UV/" + hinh);
+                                var fullpath1 = Request.MapPath("~/Content/Upload/Document/" + ut.File_CVUngTuyen);
                                 foreach (KhachHang_TimViec_NgoaiNgu_2022 nn in ngoaingu)
                                 {
                                     ngng = ngng + nn.DM_NghiepVus.TenNghiepVu + " ;";
@@ -124,9 +126,8 @@
                                             <div class="col-md-6">
                                                 @if (ut.File_CVUngTuyen != null && ut.File_CVUngTuyen != "")
                                                 {
-                                                    if (File.Exists(path1))
+                                                    if (File.Exists(fullpath1))
                                                     {
-                                                        <a href="@XString.GetImgBase64("Document",ut.File_CVUngTuyen)" style="font-size:large" hidden />
                                                         <a href="~/Content/Upload/Document/@ut.File_CVUngTuyen" style="font-size:large"><i class="glyphicon glyphicon-download-alt"></i></a>
                                                         <span>CV ứng viên</span>
                                                     }
@@ -143,9 +144,8 @@
                                         </div>
                                         <div class="row" style="margin:0">
                                             <div class="col-md-2" style="padding: 0; margin-bottom: 0">
-                                                @if (File.Exists(path))
+                                                @if (File.Exists(fullpath))
                                                 {
-                                                    <img src="@XString.GetImgBase64("Avatar_UV",hinh)" class="img_avatar" hidden />
                                                     <img src="~/Content/Upload/Avatar_UV/@hinh" class="img_avatar" />
                                                 }
                                                 else
@@ -284,7 +284,7 @@
                 document.getElementById("HTWW_" + id).innerHTML = "<span>Đã hủy ứng viên</span>";
                 $.ajax({
                     url: "/Account/DN_tuchoiungvien",
-                    data: { KH_ID: khid, tuyendung_ID: tdid, tuchoi:1 },
+                    data: { KH_ID: khid, tuyendung_ID: tdid, tuchoi: 1 },
                     type: "POST",
                     datatype: 'Json',
                     success: function (res) {
@@ -295,7 +295,7 @@
                             $("#HTWW_" + id).css("background-color", "gray");
                             document.getElementById("HTWW_" + id).innerHTML = "<span>Có Lỗi Hủy !!!</span>";
                         }
-                        
+
 
                     }, error: function (err) {
                         console.log(err);
@@ -321,7 +321,7 @@
                             $("#HTWW_" + id).css("background-color", "#ff6a00");
                             document.getElementById("HTWW_" + id).innerHTML = "<span>Có lỗi khôi phục !!!</span>";
                         }
-                        
+
                     }, error: function (err) {
                         console.log(err);
                     }
@@ -335,7 +335,7 @@
         $("#loadingTVL").show();
         $.ajax({
             url: "/Account/_JobHSPhuHop",
-            data: {  },
+            data: {},
             success: function (response) {
                 $("#HSphuhop").append(response);
                 $("#loadingTVL").hide();

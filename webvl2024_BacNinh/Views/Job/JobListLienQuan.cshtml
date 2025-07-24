@@ -54,10 +54,10 @@
         var Lg = DN.Logo;
         var tentieude = XString.Truncate(all.TieuDeTuyenDung, 40);
         var tencty = XString.Truncate(DN.TenDoanhNghiep, 30);
-        
+
         var tg = dm.GetTGbyID(all.ThoiGianLamViec_ID);
         var logo = XString.Cutstring(Lg);
-        var path = XString.maplocal + "Logo_DN\\" + XString.Cutstring(logo);
+        var fullpath = Request.MapPath("~/Content/Upload/Logo_DN/" +logo);
         int noilamviecH = 12286;
         if (all.NoiLamViec_HuyenID != null)
         {
@@ -68,14 +68,14 @@
         string tinh = dndn.GetDiaChiById(tt).TenDiaChi;
 
         var kn = "";
-        
+
         if (all.SoNamKinhNghiem == null || all.SoNamKinhNghiem < 1)
         {
             kn = "Không cần kinh nghiệm";
         }
         else
         { kn = all.SoNamKinhNghiem.ToString() + " năm kinh nghiệm."; }
-        
+
         var luong = " ";
         if ((all.LuongTu == 0 && all.LuongDen == 0) || all.LuongTu == null || all.LuongDen == null)
         {
@@ -95,9 +95,8 @@
             <div class="col-md-4 col-xs-12">
                 <div class="div_card_hstd">
                     <div class="col-md-2" style="padding: 0; margin-bottom: 0">
-                        @if (File.Exists(path))
+                        @if (File.Exists(fullpath))
                         {
-                            <img src="@XString.GetImgBase64("Logo_DN",logo)" class="img_avatar" hidden />
                             <img src="~/Content/Upload/Logo_DN/@logo" class="img_avatar" />
                         }
                         else

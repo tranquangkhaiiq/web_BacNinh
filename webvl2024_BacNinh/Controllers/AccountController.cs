@@ -26,6 +26,7 @@ namespace webvl2024_BacNinh.Controllers
         // GET: Account
         ModelBN dbc = new ModelBN();
         int TT_Tinh = int.Parse(XString.TinhId);
+        TaiKhoanInfo tk_check = new TaiKhoanInfo();
         public ActionResult _Login()
         {
             New_Dao.Pay_Sys = New_Dao.GetPay_Sys(dbc);
@@ -63,7 +64,6 @@ namespace webvl2024_BacNinh.Controllers
             Session.Remove("ThongBao_DN_TD");
             Session.Remove("ThongBao_KH_TimViec");
             var tk = new UserWeb();
-            TaiKhoanInfo tk_check = new TaiKhoanInfo();
             //tài khoản không phân biệt hoa thường.
             var user = dbc.UserWebs.Where(p => p.UserName.ToLower() == UserName.ToLower()).SingleOrDefault();
             if (user != null)
@@ -449,7 +449,7 @@ namespace webvl2024_BacNinh.Controllers
                             WebImage img = new WebImage(file.InputStream);
                             if (img.Width > 300)
                                 img.Resize(300, 350);
-                            img.Save(XString.maplocal + "Logo_DN\\" + ten);
+                            img.Save(Server.MapPath("~/Content/Upload/Logo_DN/") + ten);
                         }
                         else dn.Logo = "logo/TNThumbnail.jpg";
                     }
@@ -702,7 +702,7 @@ namespace webvl2024_BacNinh.Controllers
                         WebImage img = new WebImage(file.InputStream);
                         if (img.Width > 300)
                             img.Resize(300, 350);
-                        img.Save(XString.maplocal + "Logo_DN\\" + ten);
+                        img.Save(Server.MapPath("~/Content/Upload/Logo_DN/") + ten);
                     }
                     else modleDN.Logo = "";
                 }
@@ -1176,7 +1176,7 @@ namespace webvl2024_BacNinh.Controllers
                             WebImage img = new WebImage(file.InputStream);
                             if (img.Width > 300)
                                 img.Resize(300, 350);
-                            img.Save(XString.maplocal + "Avatar_UV\\" + ten);
+                            img.Save(Server.MapPath("~/Content/Upload/Avatar_UV/") + ten);
                         }
                         else { model.Hinh = "AnhDaiDien/AvataNam.jpg"; }
                     }
@@ -1420,7 +1420,7 @@ namespace webvl2024_BacNinh.Controllers
                     var ext = ten.Substring(ten.LastIndexOf('.'));
                     ten = Guid.NewGuid() + ext;
                     model.KhaNangNoiTroi = ten;
-                    file.SaveAs(XString.maplocal + "Document\\" + ten);
+                    file.SaveAs(Server.MapPath("~/Content/Upload/Document/") + ten);
 
                     model.TyLeHoSoHoanThanh = 0;
                 }
@@ -1730,7 +1730,7 @@ namespace webvl2024_BacNinh.Controllers
                     WebImage img = new WebImage(file.InputStream);
                     if (img.Width > 300)
                         img.Resize(300, 350);
-                    img.Save(XString.maplocal + "Avatar_UV\\" + ten);
+                    img.Save(Server.MapPath("~/Content/Upload/Avatar_UV/") + ten);
                 }
             }
             model.HoTen = HoTen_kh;
@@ -2310,6 +2310,29 @@ namespace webvl2024_BacNinh.Controllers
 
             string text = randomText.ToString();
             return text;
+        }
+        public ActionResult _giaima(string username, string Pass, string Salt)
+        {
+            Session["Thongbaogiaima"] = "";
+            var model = dbc.UserWebs.FirstOrDefault(kh=>kh.UserName==username);
+            if(model != null)
+            {
+                if(Pass==model.Password && Salt == model.PasswordSalt)
+                {
+                    string check_pass = tk_check.DeCryptDotNetNukePassword(Pass, "A872EDF100E1BC806C0E37F1B3FF9EA279F2F8FD378103CB", Salt);//pass ma hoa
+                    ViewBag.Passwordgm=check_pass;
+                }
+                else
+                {
+                    Session["Thongbaogiaima"] = "Pass hoặc Salt không đúng !!!.";
+                }
+                return View();
+            }
+            else
+            {
+                Session["Thongbaogiaima"] = "Username không tồn tại!!!.";
+                return View();
+            }
         }
     }
 }

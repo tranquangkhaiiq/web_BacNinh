@@ -95,7 +95,7 @@
             @foreach (New_small cater in ViewBag.TTTTLD)
             {
                 var str = " ";
-                var path = XString.maplocal + "News_Img\\" + cater.ImagePath;
+                var fullpath = Request.MapPath("~/Content/Upload/News_Img/" + cater.ImagePath);
                 if (cater.Title.Length > 100)
                 {
                     str = XString.ConvertToUnSign(cater.Title).Substring(0, 100);
@@ -105,9 +105,8 @@
                 <a class="a_tintuc" href="@url">
                     <div class="row">
                         <div class="col-md-5">
-                            @if (File.Exists(path))
+                            @if (File.Exists(fullpath))
                             {
-                                <img src="@XString.GetImgBase64("News_Img",cater.ImagePath)" hidden />
                                 <img src="~/Content/Upload/News_Img/@cater.ImagePath" />
                             }
                             else

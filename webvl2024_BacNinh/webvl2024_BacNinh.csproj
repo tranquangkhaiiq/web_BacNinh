@@ -146,6 +146,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CandidateController.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
@@ -3788,6 +3789,7 @@
     <Content Include="Content\img\ttcvvllogo.png" />
     <Content Include="Content\img\veneer3_thumb %281%29.jpg" />
     <Content Include="Content\js\dataTables.bootstrap.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
     <None Include="Content\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\js\jquery-1.10.2.js" />
     <Content Include="Content\js\jquery-1.10.2.min.js" />
@@ -6000,6 +6002,7 @@
     <Content Include="Views\Job\Job_XemNhieu.cshtml" />
     <Content Include="Views\Job\MainJob.cshtml" />
     <Content Include="Views\Job\SMStoDN.cshtml" />
+    <Content Include="Views\Account\_giaima.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="i18n\Common.resx" />
@@ -6033,6 +6036,11 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

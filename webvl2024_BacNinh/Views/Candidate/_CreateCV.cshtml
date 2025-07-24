@@ -11,7 +11,7 @@
     var dm = new DanhMuc_Dao();
     var trinhdo = nv.Getlist_khachhangtrinhdo(Model.KH_ID);
     var hinh = XString.Cutstring(Model.Hinh);
-    var path = XString.maplocal + "Avatar_UV\\" + hinh;
+    var fullpath = Request.MapPath("~/Content/Upload/Avatar_UV/" + hinh);
     var dowmain = XString.dowmain;
     string Tinh = ntv.GetDiaChiById(Model.TamTru_Tinh_ID.Value).TenDiaChi;
     string Huyen = ntv.GetDiaChiById(Model.TamTru_Huyen_ID.Value).TenDiaChi;
@@ -38,7 +38,7 @@
                                     <thead>
                                         <tr>
                                             <th>
-                                                @if (File.Exists(path))
+                                                @if (File.Exists(fullpath))
                                                 {
                                                     <img src= "@dowmain/Content/Upload/Avatar_UV/@hinh"/>
                                                 }

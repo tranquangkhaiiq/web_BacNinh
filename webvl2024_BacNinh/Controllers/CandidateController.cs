@@ -280,7 +280,7 @@ namespace webvl2024_BacNinh.Controllers
                             var ext = ten.Substring(ten.LastIndexOf('.'));
                             ten = Guid.NewGuid() + ext;
                             model.KhaNangNoiTroi = ten;
-                            file.SaveAs(XString.maplocal + "Document\\" + ten);
+                            file.SaveAs(Server.MapPath("~/Content/Upload/Document/") + ten);
                         }
                         else
                         {

@@ -82,7 +82,7 @@
         var ChuyenMon = DMChuyenMon != null ? DMChuyenMon.TenChuyenMon : "Không yêu cầu";
         var tg = dm.GetTGbyID(Model.ThoiGianLamViec_ID);
         var logo = XString.Cutstring(DN.Logo);
-        var path = XString.maplocal+ "Logo_DN\\" + XString.Cutstring(logo);
+        var fullpath = Request.MapPath("~/Content/Upload/Logo_DN/" + logo);
         <div class="col-md-8" style="padding:0">
             <div class="card card_t">
                 <div class="body" style="padding: 0; margin: -1px; ">
@@ -91,7 +91,7 @@
                             <button class="btn btn-info btn-width btn-send-msg" style="border-radius: 5px; margin-right:10px "> <i class="material-icons" style="font-size:16px">visibility</i> (@Model.SoLuotXem)</button>
                             @if (Session["quyen"] != null)
                             {
-                                if (Session["quyen"] == "NTV")
+                                if (Session["quyen"].ToString() == "NTV")
                                 {
                                     if (ViewBag.HSNTVungtuyen > 0)
                                     {
@@ -167,9 +167,8 @@
                         <div class="col-md-12" style="padding:15px; margin:0px">
                             
                             <div class="col-md-2 col-xs-12 imgTD">
-                                @if (File.Exists(path))
+                                @if (File.Exists(fullpath))
                                 {
-                                    <img src="@XString.GetImgBase64("Logo_DN",logo)" class="img_avatar" hidden/>
                                     <img src="~/Content/Upload/Logo_DN/@logo" class="img_avatar" />
                                 }
                                 else

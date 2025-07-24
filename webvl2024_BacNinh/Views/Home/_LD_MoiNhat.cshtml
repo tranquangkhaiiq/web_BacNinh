@@ -27,7 +27,7 @@
                     var nv = new Khachhang_trinhdo_nghiepvu_DAO();
                     var trinhdo = nv.Getlist_khachhangtrinhdo(kh.KH_ID);
                     var hinh = XString.Cutstring(NTV.Hinh);
-                    var path = XString.maplocal+ "Avatar_UV\\" + hinh;
+                    var fullpath = Request.MapPath("~/Content/Upload/Avatar_UV/"+hinh);
                     var tgmm = dm.GetTGbyID(kh.ThoiGianLamViecMongMuon);
                     //int mkv = NTV.TamTru_Huyen_ID.Value;
                     int mkv = kh.NoiLamViecMongMuon_ID.Value;
@@ -38,14 +38,12 @@
             <div class="div_moinhat">
                 <div class="row" style="margin:0">
                     <div class="col-md-2" style="padding: 0; margin-bottom: 0">
-                        @if (File.Exists(path))
+                        @if (File.Exists(fullpath))
                         {
-                            //Dung onload thay cho lazyload 
-                            <img src="@XString.GetImgBase64("Avatar_UV",hinh)" class="img_avatar" hidden/>
-                            <img src="/Content/Upload/Avatar_UV/@hinh" class="img_avatar" />
+                            <img src="~/Content/Upload/Avatar_UV/@hinh" class="img_avatar" />
                         }
                         else
-                        { <img src="/Content/Tien/icon3d/NguoiTimViecIcon.png" class="img_avatar" />}
+                        { <img src="~/Content/Tien/icon3d/NguoiTimViecIcon.png" class="img_avatar" />}
                     </div>
                     <div class="col-md-10" style="padding: 0;padding-left:10px; margin-bottom: 0">
 

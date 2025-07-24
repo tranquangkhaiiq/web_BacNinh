@@ -231,11 +231,10 @@
 
                             @if (pdf != "Nopdf")
                             {
-                                var url = "/Content/Upload/News_Img/" + pdf;
-                                var path = XString.maplocal + "News_Img\\" + pdf;
-                                if (File.Exists(path))
+                                var url = "~/Content/Upload/News_Img/" + pdf;
+                                var fullpath = Request.MapPath("~/Content/Upload/News_Img/" + pdf);
+                                if (File.Exists(fullpath))
                                 {
-                                    <img src="@XString.GetImgBase64("News_Img",pdf)" hidden />
                                     <div id="my_pdf_viewer" style="text-align:center">
                                         <div id="canvas_container" style="text-align:center">
                                             <i style="color:white;font-size:20px;cursor: pointer;margin-right: 20px; margin-top: 10px;" id="printfile" onclick="infile(this);" class="fa-solid fa-print"></i>
@@ -294,14 +293,14 @@
                             }
                             var pdf = '@XString.getStringpdf(Model.ImagePath2)';
 
-                            var url = "/Content/Upload/News_Img/" + pdf;
+                            var url = "~/Content/Upload/News_Img/" + pdf;
                             var myState = {
 				                            pdf: null,
 				                            currentPage: 1,
 				                            zoom: 1.4
                             }
                             //console.log(pdf);
-                            pdfjsLib.getDocument('/Content/Upload/News_Img/' + pdf).then((pdf) => {
+                            pdfjsLib.getDocument('~/Content/Upload/News_Img/' + pdf).then((pdf) => {
 
 				                            myState.pdf = pdf;
 				                            render();
@@ -383,7 +382,7 @@ document.getElementById('zoom_out').addEventListener('click', (e) => {
         {
             var str = " ";
             var title = cungcm.Title.ToLower();
-            var path = XString.maplocal + "News_Img\\" + cungcm.ImagePath;
+            var fullpath = Request.MapPath("~/Content/Upload/News_Img/" + cungcm.ImagePath);
             if (cungcm.Title.Length > 100)
             {
                 str = XString.ConvertToUnSign(cungcm.Title).Substring(0, 100);
@@ -395,10 +394,8 @@ document.getElementById('zoom_out').addEventListener('click', (e) => {
                 <div class="row" style="margin:0">
                     <div class="col-md-2" style="padding: 0; margin-bottom: 0">
                         
-                        @if (File.Exists(path))
+                        @if (File.Exists(fullpath))
                         {
-
-                            <img src="@XString.GetImgBase64("News_Img",cungcm.ImagePath)"hidden/>
                             <img src="~/Content/Upload/News_Img/@cungcm.ImagePath" style="width:111px"/>
                         }
                         else

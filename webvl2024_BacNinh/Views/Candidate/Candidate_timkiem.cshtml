@@ -30,17 +30,15 @@
         var trinhdo = nv.Getlist_khachhangtrinhdo(NTV.KH_ID);
         int mkv = timviec.NoiLamViecMongMuon_ID == null ? 12286 : timviec.NoiLamViecMongMuon_ID.Value;
         string tendc = new DN_DoanhNghiep_Dao().GetDiaChiById(mkv).TenDiaChi;
-        var path = XString.maplocal + "Avatar_UV\\" + hinh;
-
+        string fullPath = Request.MapPath("~/Content/UpLoad/Avatar_UV/" + hinh);
         var url = "/Nguoi-Tim-Viec/" + strHoTen + "-" + timviec.TimViec_ID;
         <a href="@url" target="_blank">
             <div class="col-md-6 col-xs-12">
                 <div class="div_card_hstv">
 
                     <div class="col-md-2" style="padding: 0; margin-bottom: 0">
-                        @if (File.Exists(path))
+                        @if (File.Exists(fullPath))
                         {
-                            <img src="@XString.GetImgBase64("Avatar_UV",hinh)" class="img_avatar" hidden />
                             <img src="~/Content/Upload/Avatar_UV/@hinh" class="img_avatar" />
                         }
                         else

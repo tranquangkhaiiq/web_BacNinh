@@ -22,7 +22,7 @@
     {
         var str = " ";
         var title = small.Title.ToLower();
-        var path = XString.maplocal + "News_Img\\" + small.ImagePath;
+        var fullpath = Request.MapPath("~/Content/Upload/News_Img/" + small.ImagePath);
         if (small.Title.Length > 100)
         {
             str = XString.ConvertToUnSign(small.Title.Substring(0, 100));
@@ -34,9 +34,8 @@
         var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + small.NewId;
         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
             <a href="@url" title="TT_small:@title" target="_blank">
-                @if (File.Exists(path))
+                @if (File.Exists(fullpath))
                 {
-                    <img src="@XString.GetImgBase64("News_Img", small.ImagePath)" hidden />
                     <img src="~/Content/Upload/News_Img/@small.ImagePath" />
                 }
                 else
@@ -44,28 +43,4 @@
             </a>
         </div>
     }
-    @*@for (int i = 0; i < ViewBag.QCTT_smallTT; i++)
-    {
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
-            <a href="" title="">
-                <img src="~/Content/Upload/News_Img/noimgSmall.jpg" />
-            </a>
-        </div>
-    }*@
-
-    @*<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
-            <a href="" title="" target="_blank">
-                <img src="~/Content/QuangCao/3.jpg" />
-            </a>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
-            <a href="" title="" target="_blank">
-                <img src="~/Content/QuangCao/4.jpg" />
-            </a>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
-            <a href="" title="" target="_blank">
-                <img src="~/Content/QuangCao/5.jpg" />
-            </a>
-        </div>*@
 </div>

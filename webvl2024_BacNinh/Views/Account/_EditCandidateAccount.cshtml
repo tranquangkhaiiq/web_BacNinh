@@ -55,7 +55,7 @@
         var HoTen = Model.HoTen;
         var DienThoai = Model.DienThoai;
         var Email = Model.Email;
-        var path = XString.maplocal + "Avatar_UV\\" + logo;
+        var fullpath = Request.MapPath("~/Content/Upload/Avatar_UV/" +logo);
         <fieldset id="fom12" class="info_form">
             <div class="container">
                 <h1 class="info_header">@Common.FillInfo</h1>
@@ -225,9 +225,8 @@
                             });
                         </script>
                         <div class="form-group col-sm-6">
-                            @if (File.Exists(path))
+                            @if (File.Exists(fullpath))
                             {
-                                <img src="@XString.GetImgBase64("Avatar_UV",logo)" hidden />
                                 <img class="img-responsive img-thumbnail" src="~/Content/Upload/Avatar_UV/@logo" style="max-width:260px;max-height:200px" />
                             }
 

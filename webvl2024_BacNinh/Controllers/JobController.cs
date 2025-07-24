@@ -226,7 +226,7 @@ namespace webvl2024_BacNinh.Controllers
                 ten = Guid.NewGuid() + ext;
                 item.File_CVUngTuyen = ten;
 
-                file.SaveAs(XString.maplocal + "Document\\" + ten);
+                file.SaveAs(Server.MapPath("~/Content/Upload/Document/") + ten);
             }
             else
             {

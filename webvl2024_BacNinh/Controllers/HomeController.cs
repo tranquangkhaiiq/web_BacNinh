@@ -248,5 +248,6 @@ namespace webvl2024_BacNinh.Controllers
             ViewBag.QC_NewLong = new New_Dao().Get_NewSTTOne(4170);
             return View("Index");
         }
+        
     }
 }

@@ -8,7 +8,7 @@
         {
             var str = " ";
             var title = QC.Title.ToLower();
-            var path = Server.MapPath("~/Content/Upload/News_Img/" + QC.ImagePath);
+            var fullpath = Server.MapPath("~/Content/Upload/News_Img/" + QC.ImagePath);
             if (QC.Title.Length > 100)
             {
                 str = XString.ConvertToUnSign(QC.Title.Substring(0, 100));
@@ -20,9 +20,8 @@
             var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QC.NewId;
             <a href="@url" target="_blank">
 
-                @if (File.Exists(path))
+                @if (File.Exists(fullpath))
                 {
-
                     <img src="~/Content/Upload/News_Img/@QC.ImagePath"/>
                 }
                 else
@@ -39,7 +38,7 @@
     {
         var str = " ";
         var title = QC.Title.ToLower();
-        var path = Server.MapPath("~/Content/Upload/News_Img/" + QC.ImagePath);
+        var fullpath = Server.MapPath("~/Content/Upload/News_Img/" + QC.ImagePath);
         if (QC.Title.Length > 100)
         {
             str = XString.ConvertToUnSign(QC.Title.Substring(0, 100));
@@ -51,9 +50,8 @@
         var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QC.NewId;
         <div class="item">
             <a href="@url" target="_blank">
-                @if (File.Exists(path))
+                @if (File.Exists(fullpath))
                 {
-
                     <img src="~/Content/Upload/News_Img/@QC.ImagePath" />
                 }
                 else

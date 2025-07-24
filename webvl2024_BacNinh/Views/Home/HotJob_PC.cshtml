@@ -34,7 +34,7 @@
                 var ngoaingu = nv_dao.NghiepVu_Ngoaingu(mm.TuyenDung_ID);
                 var tinhoc = nv_dao.NghiepVu_TinHoc(mm.TuyenDung_ID);
                 var logo = XString.Cutstring(Lg);
-                var path = XString.maplocal + "Logo_DN\\" + XString.Cutstring(logo);
+                var fullpath = Request.MapPath("~/Content/Upload/Logo_DN/"+logo);
                 var DMchucdanh = dm.GetChucDanhbyID(mm.ChucDanh_ID);
                 var chucdanh = DMchucdanh != null ? DMchucdanh.TenChucDanh : "Không có";
                 var DMChuyenMon = dm.GetChuyenMonbyID(mm.YeuCauTrinhDo_ID);
@@ -45,11 +45,9 @@
                 var url = "/Tuyen-Dung/" + str + "-" + mm.TuyenDung_ID.ToString();
                 <div class="row" style="margin:0">
                     <div class="col-md-2" style="padding: 0; margin-bottom: 0">
-                        @if (File.Exists(path))
+                        @if (File.Exists(fullpath))
                         {
-                            //Su dung cho do onload thay lazyload
-                            <img src="@XString.GetImgBase64("Logo_DN",logo)" class="img_avatar" hidden/>
-                            <img src="/Content/Upload/Logo_DN/@logo" class="img_avatar" />
+                            <img src="~/Content/Upload/Logo_DN/@logo" class="img_avatar" />
                         }
                         else
                         {<img src="/Content/Tien/icon3d/ctyicon.jpg" class="img_avatar" />}
@@ -245,7 +243,7 @@
             var ngoaingu = nv_dao.NghiepVu_Ngoaingu(mm.TuyenDung_ID);
             var tinhoc = nv_dao.NghiepVu_TinHoc(mm.TuyenDung_ID);
             var logo = XString.Cutstring(Lg);
-            var path = XString.maplocal+ "Logo_DN\\" + XString.Cutstring(logo);
+            var fullpath = Request.MapPath("~/Content/Upload/Logo_DN/" + logo);
             var DMchucdanh = dm.GetChucDanhbyID(mm.ChucDanh_ID);
             var chucdanh = DMchucdanh != null ? DMchucdanh.TenChucDanh : "Không có";
             var DMChuyenMon = dm.GetChuyenMonbyID(mm.YeuCauTrinhDo_ID);
@@ -257,14 +255,12 @@
             <div class="item" style="margin-left:5px">
                 <div class="row" style="margin:0">
                     <div class="col-md-2" style="padding: 0; margin-bottom: 0">
-                        @if (File.Exists(path))
+                        @if (File.Exists(fullpath))
                         {
-                            //Su dung cho do onload thay lazyload
-                            <img src="@XString.GetImgBase64("Logo_DN",logo)" class="img_avatar" hidden/>
-                            <img src="/Content/Upload/Logo_DN/@logo" class="img_avatar" />
+                            <img src="~/Content/Upload/Logo_DN/@logo" class="img_avatar" />
                         }
                         else
-                        {<img src="/Content/Tien/icon3d/ctyicon.jpg" class="img_avatar" />}
+                        {<img src="~/Content/Tien/icon3d/ctyicon.jpg" class="img_avatar" />}
 
                     </div>
                     <div class="col-md-10 div_tieude" style="margin-top:5px;padding-left:5px;height:100px">

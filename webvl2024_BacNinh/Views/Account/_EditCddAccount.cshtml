@@ -27,7 +27,6 @@
             var HoTen = Model.HoTen;
             var DienThoai = Model.DienThoai;
             var Email = Model.Email;
-            var path = XString.maplocal + "Avatar_UV\\" + logo;
             <ul class="nav nav-pills ">
                 <li class="active"><a id="kh0" data-toggle="pill" href="#ungtuyen">Tên-Thông tin khác</a></li>
                 <li><a id="kh1" data-toggle="pill" href="#phuhop">Địa Chỉ-Email</a></li>
@@ -146,42 +145,7 @@
                                 <span class="icon-case"><i class="glyphicon glyphicon-record"></i></span>
                                 <input value="@Email" style="height: 42px !important" type="email" class="form-control" id="Email" name="Email" required>
                             </div>
-                            @*<div class="form-group">
-                                    <p>@Common.Img Đại Diện(Tạo ấn tượng với nhà tuyển dụng)<span>*</span></p>
-                                    <div class="image-upload">
-                                        <input id="file-input" type="file" name="HinhDaiDien" />
-                                        <p id="thongbaosite" style="color:red; display:none">File quá lớn !!!</p>
-                                        @Html.HiddenFor(kh => kh.Hinh)
-                                    </div>
-                                    <script>
-                                        //$('#file-input').bind('change', function () {
-                                        //    //this.files[0].size gets the size of your file.
-                                        //    var ff = this.files[0]
-                                        //    if (ff != null) {
-                                        //        var size = ff.size;
-                                        //        const file = Math.round((size / 1024));
-                                        //        if (file >= 5200) {
-                                        //            $("#thongbaosite").css('display', 'block');
-                                        //            document.getElementById('btnUpdateTT').disabled = true;
-                                        //        } else {
-                                        //            $("#thongbaosite").css('display', 'none')
-                                        //            document.getElementById('btnUpdateTT').disabled = false;
-                                        //        }
-                                        //    } else {
-                                        //        $("#thongbaosite").css('display', 'none')
-                                        //        document.getElementById('btnUpdateTT').disabled = false;
-                                        //    }
-                                        //});
-                                    </script>
-                                    <div class="form-group col-sm-6">
-                                        @if (File.Exists(path))
-                                        {
-                                            <img src="@XString.GetImgBase64("Avatar_UV",logo)" hidden />
-                                            <img class="img-responsive img-thumbnail" src="~/Content/Upload/Avatar_UV/@logo" style="max-width:260px;max-height:200px" />
-                                        }
-
-                                    </div>
-                                </div>*@
+                            
                             <div class="form-group">
                                 <p>@Common.MaritalStatus <span>*</span></p>
                                 <span class="icon-case"><i class="glyphicon glyphicon-user"></i></span>

@@ -41,7 +41,7 @@
                 //var cv = (Html.Raw(DNTD.MoTaCongViec).ToString()).Substring(0, 100);
                 var title = DN.TenDoanhNghiep.ToLower();
                 var logo = XString.Cutstring(Lg);
-                var path = XString.maplocal + "Logo_DN\\" + XString.Cutstring(logo);
+                var fullpath = Request.MapPath("~/Content/Upload/Logo_DN/"+logo);
                 var tg = dm.GetTGbyID(DNTD.ThoiGianLamViec_ID);
                 var DMchucdanh = dm.GetChucDanhbyID(DNTD.ChucDanh_ID);
                 var chucdanh = DMchucdanh != null ? DMchucdanh.TenChucDanh : "Không có";
@@ -56,14 +56,12 @@
                 <div class="div_moinhat">
                     <div class="row" style="margin:0">
                         <div class="col-md-2" style="padding: 0; margin-bottom: 0">
-                            @if (File.Exists(path))
+                            @if (File.Exists(fullpath))
                             {
-                                //Dung onload thay cho lazyload
-                                <img src="@XString.GetImgBase64("Logo_DN",logo)" class="img_avatar" hidden />
-                                <img src="/Content/Upload/Logo_DN/@logo" class="img_avatar" />
+                                <img src="~/Content/Upload/Logo_DN/@logo" class="img_avatar" />
                             }
                             else
-                            {<img src="/Content/Tien/icon3d/ctyicon.jpg" class="img_avatar" />}
+                            {<img src="~/Content/Tien/icon3d/ctyicon.jpg" class="img_avatar" />}
                         </div>
                         <div class="col-md-10" style="padding: 0;padding-left:10px; margin-bottom: 0">
                             <a href="@url" target="_blank" style="color: #555">
@@ -100,39 +98,5 @@
                 </div>
             }
         }
-        @*<div class="div_moinhat">
-            <div class="row" style="margin:0">
-                <div class="col-md-2" style="padding: 0; margin-bottom: 0">
-                    <img class="img_avatar" src="~/Content/Tien/icon3d/ctyicon.jpg" />
-                </div>
-                <div class="col-md-10" style="padding: 0;padding-left:10px; margin-bottom: 0">
-                    <h4 class="h4_tieude">
-                        Nhân viên kinh doanh (Giờ hành chính)
-                    </h4>
-                    <h5 class="h5_name">
-                        Công ty TNHH MTV Sao Mai
-                    </h5>
-                </div>
-            </div>
-            <div class="row" style="margin:0; margin-top:5px">
-                <div class="col-md-12" style="padding: 0; margin-bottom: 0">
-                    <p style="margin-bottom:5px">
-                        Thiết lập các mục tiêu công việc, phân công, giao việc, hướng dẫn, giám sát việc thực hiện của các Phòng ban, bộ phận và cán bộ nhân viên.
-                    </p>
-                    <p style="margin-bottom:0px">
-                        <a>
-                            <i class="icon-usd"></i> 30.000.000
-                        </a>
-                        <a style="margin-left:30px">
-                            <i class="icon-map-marker"></i> Quận Nam Từ Liêm
-                        </a>
-                        <a style="margin-left:30px">
-                            <i class="icon-time"></i> Toàn thời gian
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>*@
-
     </div>
 </div>

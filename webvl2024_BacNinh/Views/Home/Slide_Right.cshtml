@@ -120,7 +120,7 @@
             {
                 var str = " ";
                 var title = QC_Right.Title.ToLower();
-                var path = Server.MapPath("~/Content/Upload/News_Img/" + QC_Right.ImagePath);
+                var fullpath = Server.MapPath("~/Content/Upload/News_Img/" + QC_Right.ImagePath);
                 if (QC_Right.Title.Length > 100)
                 {
                     str = XString.ConvertToUnSign(QC_Right.Title.Substring(0, 100));
@@ -132,7 +132,7 @@
                 var url = "/Tin-Tuc/" + str.Replace("/", "-") + "-" + QC_Right.NewId;
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-top:5px">
                     <a href="@url" target="_blank" title="QC_Right:@title">
-                        @if (File.Exists(path))
+                        @if (File.Exists(fullpath))
                         {
                             <img class="lazy" data-src="/Content/Upload/News_Img/@QC_Right.ImagePath" style="width:100%;height:120px" />
                         }

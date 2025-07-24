@@ -63,6 +63,12 @@ namespace webvl2024_BacNinh
                namespaces: new[] { "webvl2024_BacNinh.Controllers" }
            );
             routes.MapRoute(
+               name: "giaima",
+               url: "giai-ma",
+               defaults: new { controller = "Account", action = "_giaima", id = UrlParameter.Optional },
+               namespaces: new[] { "webvl2024_BacNinh.Controllers" }
+           );
+            routes.MapRoute(
              name: "UngVien",
              url: "Ung-Vien",
              defaults: new { controller = "Candidate", action = "MainCandidate", id = UrlParameter.Optional },
