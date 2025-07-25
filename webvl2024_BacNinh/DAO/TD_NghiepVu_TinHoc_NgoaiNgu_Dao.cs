@@ -56,6 +56,7 @@ namespace webvl2024_BacNinh.DAO
                 return true;
             }catch (Exception ex)
             {
+                var loi = ex.Message;
                 return false;
             }
         }
@@ -97,6 +98,7 @@ namespace webvl2024_BacNinh.DAO
             }
             catch (Exception ex)
             {
+                var loi = ex.Message;
                 return false;
             }
         }

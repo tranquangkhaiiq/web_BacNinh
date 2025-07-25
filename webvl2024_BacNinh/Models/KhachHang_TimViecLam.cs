@@ -35,7 +35,7 @@ namespace webvl2024_BacNinh.Models
 
         public int NgheMongMuon_ID { get; set; }
 
-        public int? LoaiHinhDNMongMuon_ID { get; set; }
+        public int LoaiHinhDNMongMuon_ID { get; set; }
 
         public int? NoiLamViecMongMuon_ID { get; set; }
 
@@ -70,7 +70,7 @@ namespace webvl2024_BacNinh.Models
 
         public bool? KichHoat { get; set; }
 
-        public int? TinhTrangPheDuyetHoSo_ID { get; set; }
+        public int TinhTrangPheDuyetHoSo_ID { get; set; }
 
         public int? NguoiTao { get; set; }
 

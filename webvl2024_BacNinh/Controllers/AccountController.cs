@@ -931,6 +931,7 @@ namespace webvl2024_BacNinh.Controllers
             }
             catch (Exception ex)
             {
+                var loi = ex.Message;
                 Session["ThongBao_DN_TD"] = "Update Có Lỗi !!!" + Tieude_kh;
                 return View("_MainJob");
             }
