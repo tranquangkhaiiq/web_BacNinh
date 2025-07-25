@@ -277,3 +277,10 @@ E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\bin\Owin.dll
 E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.xml
 E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.Security.xml
 E:\GitHubDestop\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Git pm\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.dll
+D:\Git pm\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.Security.dll
+D:\Git pm\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Git pm\web_BacNinh\webvl2024_BacNinh\bin\Owin.dll
+D:\Git pm\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.xml
+D:\Git pm\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.Security.xml
+D:\Git pm\web_BacNinh\webvl2024_BacNinh\bin\Microsoft.Owin.Security.Facebook.xml
