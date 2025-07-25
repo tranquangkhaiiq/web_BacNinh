@@ -3,23 +3,15 @@
   "WorkspaceRootPath": "D:\\Git pm\\web_BacNinh\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|d:\\git pm\\web_bacninh\\webvl2024_bacninh\\dao\\candidateconlleradmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\dao\\candidateconlleradmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|D:\\Git pm\\web_BacNinh\\webvl2024_bacninh\\views\\home\\ungvienxemnhieu_pc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\views\\home\\ungvienxemnhieu_pc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|D:\\Git pm\\web_BacNinh\\webvl2024_bacninh\\views\\candidate\\candidatedetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\views\\candidate\\candidatedetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|d:\\git pm\\web_bacninh\\webvl2024_bacninh\\views\\home\\ungvienxemnhieu_pc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\views\\home\\ungvienxemnhieu_pc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|d:\\git pm\\web_bacninh\\webvl2024_bacninh\\models\\khachhang_timvieclam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\models\\khachhang_timvieclam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|d:\\git pm\\web_bacninh\\webvl2024_bacninh\\dao\\khachhang_trinhdo_nghiepvu_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|D:\\Git pm\\web_BacNinh\\webvl2024_bacninh\\dao\\khachhang_trinhdo_nghiepvu_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\dao\\khachhang_trinhdo_nghiepvu_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -27,16 +19,8 @@
       "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|d:\\git pm\\web_bacninh\\webvl2024_bacninh\\dao\\td_nghiepvu_tinhoc_ngoaingu_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|D:\\Git pm\\web_BacNinh\\webvl2024_bacninh\\dao\\td_nghiepvu_tinhoc_ngoaingu_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\dao\\td_nghiepvu_tinhoc_ngoaingu_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|D:\\Git pm\\web_BacNinh\\webvl2024_bacninh\\views\\account\\_giaima.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\views\\account\\_giaima.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|D:\\Git pm\\web_BacNinh\\webvl2024_bacninh\\views\\account\\_login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|solutionrelative:webvl2024_bacninh\\views\\account\\_login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02B50BF3-51A4-46EC-B8BA-B9852F621B35}|webvl2024_BacNinh\\webvl2024_BacNinh.csproj|D:\\Git pm\\web_BacNinh\\webvl2024_bacninh\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,51 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_Login.cshtml",
-              "DocumentMoniker": "D:\\Git pm\\web_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_Login.cshtml",
-              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Views\\Account\\_Login.cshtml",
-              "ToolTip": "D:\\Git pm\\web_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_Login.cshtml",
-              "RelativeToolTip": "webvl2024_BacNinh\\Views\\Account\\_Login.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACcAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-22T09:13:10.659Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CandidateConllerADMIN.cs",
-              "DocumentMoniker": "D:\\Git pm\\web_BacNinh\\webvl2024_BacNinh\\DAO\\CandidateConllerADMIN.cs",
-              "RelativeDocumentMoniker": "webvl2024_BacNinh\\DAO\\CandidateConllerADMIN.cs",
-              "ToolTip": "D:\\Git pm\\web_BacNinh\\webvl2024_BacNinh\\DAO\\CandidateConllerADMIN.cs",
-              "RelativeToolTip": "webvl2024_BacNinh\\DAO\\CandidateConllerADMIN.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T02:54:51.452Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "KhachHang_TimViecLam.cs",
-              "DocumentMoniker": "D:\\Git pm\\web_BacNinh\\webvl2024_BacNinh\\Models\\KhachHang_TimViecLam.cs",
-              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Models\\KhachHang_TimViecLam.cs",
-              "ToolTip": "D:\\Git pm\\web_BacNinh\\webvl2024_BacNinh\\Models\\KhachHang_TimViecLam.cs",
-              "RelativeToolTip": "webvl2024_BacNinh\\Models\\KhachHang_TimViecLam.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAxwCgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T02:51:22.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "UngVienXemNhieu_PC.cshtml",
               "DocumentMoniker": "D:\\Git pm\\web_BacNinh\\webvl2024_BacNinh\\Views\\Home\\UngVienXemNhieu_PC.cshtml",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\Views\\Home\\UngVienXemNhieu_PC.cshtml",
@@ -107,7 +51,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Khachhang_trinhdo_nghiepvu_DAO.cs",
               "DocumentMoniker": "D:\\Git pm\\web_BacNinh\\webvl2024_BacNinh\\DAO\\Khachhang_trinhdo_nghiepvu_DAO.cs",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\DAO\\Khachhang_trinhdo_nghiepvu_DAO.cs",
@@ -115,8 +59,7 @@
               "RelativeToolTip": "webvl2024_BacNinh\\DAO\\Khachhang_trinhdo_nghiepvu_DAO.cs",
               "ViewState": "AgIAANYAAAAAAAAAAIAywOEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T02:41:30.176Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T02:41:30.176Z"
             },
             {
               "$type": "Document",
@@ -128,25 +71,11 @@
               "RelativeToolTip": "webvl2024_BacNinh\\Views\\Candidate\\CandidateDetail.cshtml",
               "ViewState": "AgIAACwCAAAAAAAAAAAewDUCAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-21T09:02:07.978Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T09:02:07.978Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "_giaima.cshtml",
-              "DocumentMoniker": "D:\\Git pm\\web_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_giaima.cshtml",
-              "RelativeDocumentMoniker": "webvl2024_BacNinh\\Views\\Account\\_giaima.cshtml",
-              "ToolTip": "D:\\Git pm\\web_BacNinh\\webvl2024_BacNinh\\Views\\Account\\_giaima.cshtml",
-              "RelativeToolTip": "webvl2024_BacNinh\\Views\\Account\\_giaima.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAB0AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-22T09:08:16.81Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\Git pm\\web_BacNinh\\webvl2024_BacNinh\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\Controllers\\AccountController.cs",
@@ -154,12 +83,11 @@
               "RelativeToolTip": "webvl2024_BacNinh\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAIYFAAAAAAAAAAAowKUDAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T09:02:34.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T09:02:34.148Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Git pm\\web_BacNinh\\webvl2024_BacNinh\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\Controllers\\HomeController.cs",
@@ -167,12 +95,11 @@
               "RelativeToolTip": "webvl2024_BacNinh\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAGYAAAAAAAAAAAA3wG4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T02:49:27.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T02:49:27.47Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "TD_NghiepVu_TinHoc_NgoaiNgu_Dao.cs",
               "DocumentMoniker": "D:\\Git pm\\web_BacNinh\\webvl2024_BacNinh\\DAO\\TD_NghiepVu_TinHoc_NgoaiNgu_Dao.cs",
               "RelativeDocumentMoniker": "webvl2024_BacNinh\\DAO\\TD_NghiepVu_TinHoc_NgoaiNgu_Dao.cs",
@@ -180,8 +107,7 @@
               "RelativeToolTip": "webvl2024_BacNinh\\DAO\\TD_NghiepVu_TinHoc_NgoaiNgu_Dao.cs",
               "ViewState": "AgIAAFkAAAAAAAAAAIAywGQAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T02:42:16.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T02:42:16.448Z"
             }
           ]
         }
